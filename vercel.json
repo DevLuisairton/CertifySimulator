@@ -1,17 +1,5 @@
 {
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/pages/(.*)",
-      "dest": "/pages/$1"
-    },
-    {
-      "src": "/simulados/(.*)",
-      "dest": "/pages/simulados/$1"
-    }
-  ],
-  "cleanUrls": true
-}
+    "routes": [
+      { "src": "/(.*)", "dest": "/public/index.html" }
+    ]
+  }
