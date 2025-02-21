@@ -1,0 +1,286 @@
+/* Skip Link */
+.skip-link {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem 2rem;
+    z-index: 1001;
+    transition: var(--transition);
+    border-radius: 0 0 var(--radius) var(--radius);
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--primary);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background: rgba(74, 20, 140, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1002;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1002;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    margin: 5px auto;
+    transition: var(--transition);
+    transform-origin: center;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: var(--transition);
+        opacity: 0;
+        padding: 5rem 2rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+        opacity: 1;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.4s ease;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%), url('/assets/img/logo_sem_nome.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--white);
+    overflow: hidden; /* Garante que o pseudo-elemento não ultrapasse os limites */
+}
+
+/* Efeito de desfoque no plano de fundo */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(300px); /* Desfoque padrão para desktop */
+    z-index: 1;
+}
+
+/* Fallback para dispositivos que não suportam blur */
+@supports not (filter: blur(300px)) {
+    .hero::before {
+        background: rgba(0, 0, 0, 0.1); /* Fundo escuro semi-transparente */
+    }
+}
+
+.hero-content {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    z-index: 2; /* Garante que o conteúdo fique acima do desfoque */
+}
+
+/* Estilo destacado para o h1 */
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para melhorar a legibilidade */
+}
+
+/* Estilo destacado para o parágrafo */
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhorar a legibilidade */
+}
+
+/* Estilo do botão */
+.cta-button {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-dark);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem; /* Ajuste o tamanho da fonte para dispositivos menores */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Ajuste o tamanho da fonte para dispositivos menores */
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* Reduzir o desfoque em dispositivos móveis para melhorar a performance */
+    .hero::before {
+        filter: blur(150px); /* Desfoque mais suave para mobile */
+    }
+}
+
+/* Footer */
+footer {
+    background: var(--primary-dark);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

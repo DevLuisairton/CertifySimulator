@@ -1,0 +1,123 @@
+#cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem; /* Reduz o gap para mobile */
+        padding: 1rem; /* Reduz o padding para mobile */
+    }
+}
+
+.cert-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .cert-card {
+        padding: 1rem; /* Reduz o padding no mobile */
+    }
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.cert-card:hover::before {
+    transform: scaleX(1);
+}
+
+.cert-card img {
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cert-card img {
+        width: 80%; /* Reduz o tamanho da imagem no mobile */
+        height: auto;
+        margin-bottom: 0.5rem; /* Reduz a margem inferior */
+    }
+}
+
+.cert-card h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .cert-card h2 {
+        font-size: 1.1rem; /* Reduz o tamanho da fonte no mobile */
+        margin-bottom: 0.5rem; /* Reduz a margem inferior */
+    }
+}
+
+.cert-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .cert-card p {
+        display: none; /* Esconde o parágrafo no mobile */
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(74, 20, 140, 0.3);
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .cta-button {
+        padding: 0.5rem 1rem; /* Reduz o padding no mobile */
+        font-size: 0.8rem; /* Reduz o tamanho da fonte no mobile */
+        margin-top: 1rem; /* Reduz a margem superior */
+    }
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(74, 20, 140, 0.5);
+}

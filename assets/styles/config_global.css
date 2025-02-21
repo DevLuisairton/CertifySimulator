@@ -1,0 +1,25 @@
+:root {
+    --primary: #4a148c;
+    --primary-light: #7c43bd;
+    --primary-dark: #12005e;
+    --white: #ffffff;
+    --gray-light: #f5f5f5;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --max-width: 1200px;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background: var(--gray-light);
+    color: #333;
+    line-height: 1.6;
+    padding-top: 70px;
+}
