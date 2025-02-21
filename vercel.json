@@ -1,9 +1,17 @@
 {
-  "rewrites": [
+  "version": 2,
+  "routes": [
     {
-      "source": "/simulados/cloud_Praticner/:path*",
-      "destination": "/pages/simulados/cloud_Praticner/:path*"
+      "src": "/styles/(.*)",
+      "dest": "/assets/styles/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/assets/js/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
-  ],
-  "cleanUrls": true
+  ]
 }
