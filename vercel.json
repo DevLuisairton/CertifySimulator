@@ -1,5 +1,13 @@
 {
-    "routes": [
-      { "src": "/(.*)", "dest": "/public/index.html" }
-    ]
-  }
+  "cleanUrls": true,
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/pages/(.*)", "dest": "/pages/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "max-age=31536000" }]
+    }
+  ]
+}
