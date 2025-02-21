@@ -174,7 +174,7 @@
 /* Hero Section */
 .hero {
     position: relative;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%), url('/assets/img/logo_sem_nome.png');
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%), url('/public/assets/img/logo_sem_nome.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,13 +1,15 @@
 {
-  "cleanUrls": true,
-  "routes": [
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/pages/(.*)", "dest": "/pages/$1" }
-  ],
-  "headers": [
+  "rewrites": [
     {
-      "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "max-age=31536000" }]
+      "source": "/simulados/cloud_Praticner/:path*",
+      "destination": "/pages/simulados/cloud_Praticner/:path*"
     }
-  ]
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "cleanUrls": true,
+  "staticFiles": {
+    "public": "public"
+  }
 }
