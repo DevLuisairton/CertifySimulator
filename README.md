@@ -17,13 +17,13 @@ Bem-vindo ao **SertifySimulator**, o seu portal definitivo para dominar as certi
 
 Pronto para decolar na sua jornada rumo à certificação em Cloud Computing? 
 
-👉 [Clique aqui para começar!](#)
+👉 [https://sertifysimulatorteste.vercel.app/](#)
 
-## 📚 Recursos Adicionais
+## 📚 Recursos em andamento 
 
 - **Guia de Estudos**: Materiais de estudo recomendados para cada certificação.
 - **Dicas de Especialistas**: Conselhos práticos de profissionais certificados.
-- **Blog Cloud**: Artigos, tutoriais e novidades sobre o mundo da nuvem.
+- **Links para cursos preparatorios**: Melhores cursos sobre o mundo da nuvem.
 
 ## 🤝 Contribua
 
@@ -31,12 +31,12 @@ O CloudSimulados é um projeto colaborativo! Se você é um especialista em Clou
 
 ## 📧 Contato
 
-Tem dúvidas, sugestões ou quer saber mais? Entre em contato conosco em [contato@cloudsimulados.com](#).
+Tem dúvidas, sugestões ou quer saber mais? Entre em contato comigo em [luisairtonsilva@gmail.com](#).
 
 ---
 
-**CloudSimulados**: Onde o conhecimento encontra a nuvem, e a sua carreira decola! 🌥️🚀
+**SertifySimulator**: Onde o conhecimento encontra a nuvem, e a sua carreira decola! 🌥️🚀
 
 ---
 
-*CloudSimulados não é afiliado, patrocinado ou endossado por AWS, Microsoft, Google ou qualquer outra entidade de certificação em Cloud Computing.*
+*SertifySimulator não é afiliado, patrocinado ou endossado por AWS, Microsoft, Google ou qualquer outra entidade de certificação em Cloud Computing.*
