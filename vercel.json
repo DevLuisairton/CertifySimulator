@@ -5,11 +5,5 @@
       "destination": "/pages/simulados/cloud_Praticner/:path*"
     }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ],
-  "cleanUrls": true,
-  "staticFiles": {
-    "public": "public"
-  }
+  "cleanUrls": true
 }
