@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/assets/img/logo.png" type="image/png">
-    <title>Questionário</title>
-    <script src="/assets/js/simulado_one.js" defer></script>
-    <link rel="stylesheet" href="/assets/styles/formulario.css"/>
-  </head>
-  <body>
-    <main>
 
-      <header>
-        <h1>Teste seus conhecimentos</h1>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/assets/img/logo.png" type="image/png">
+  <title>Questionário</title>
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="index.css" />
+</head>
 
-      <div id="quiz"></div>
+<body>
+  <main>
+    <header>
+      <h1>Teste seus conhecimentos</h1>
+    </header>
 
-      <template>
-        <div class="quiz-item">
-          <h3>Pergunta 01</h3>
-          <dl>
-            <dt>
-              <input type="radio" name="item" value="0" />
-              <span>Resposta A</span>
-            </dt>
-          </dl>
-        </div>
-      </template>
+    <!-- Área onde as perguntas serão renderizadas -->
+    <div id="quiz"></div>
 
-      <div id="acertos">
-        <strong>Acertos</strong>
-        <span>0 de 10</span>
+    <!-- Template para cada questão -->
+    <template>
+      <div class="quiz-item">
+        <h3>Pergunta 01</h3>
+        <dl>
+          <dt>
+            <input type="radio" name="item" value="0" />
+            <span>Resposta A</span>
+          </dt>
+        </dl>
       </div>
-    </main>
-  </body>
+    </template>
+
+    <!-- Botão para finalizar o simulado -->
+    <button id="finalizar">Finalizar Simulado</button>
+
+    <!-- Área para exibir o resumo após finalizar -->
+    <div id="resumo" style="display: none;"></div>
+
+    <!-- Botão para reiniciar o simulado -->
+    <button id="reiniciar" style="display: none;">Reiniciar Simulado</button>
+  </main>
+</body>
+
 </html>

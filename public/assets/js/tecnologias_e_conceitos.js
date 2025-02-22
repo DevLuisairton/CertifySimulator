@@ -642,42 +642,102 @@ const perguntas = [
 
 ];
 
-const quiz = document.querySelector("#quiz")
-const template = document.querySelector("template")
+const quiz = document.querySelector("#quiz");
+const template = document.querySelector("template");
+const finalizarBtn = document.querySelector("#finalizar");
+const reiniciarBtn = document.querySelector("#reiniciar");
 
-const corretas = new Set()
-const totalDePerguntas = perguntas.length
-const mostrarTotal = document.querySelector("#acertos span")
-mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
+const corretas = new Set();
+const marcadas = new Set();
+const totalDePerguntas = perguntas.length;
 
-// loop ou laço de repetição 
 for (const item of perguntas) {
-  const quizItem = template.content.cloneNode(true)
-  quizItem.querySelector("h3").textContent = item.pergunta
+  const quizItem = template.content.cloneNode(true);
+  quizItem.querySelector("h3").textContent = item.pergunta;
 
-  for(let resposta of item.respostas) {
-    const dt = quizItem.querySelector("dl dt").cloneNode(true)
-    dt.querySelector("span").textContent = resposta
-    dt.querySelector("input").setAttribute("name", "perguntas-" + perguntas.indexOf(item))
-    dt.querySelector("input").value = item.respostas.indexOf(resposta)
-    dt.querySelector("input").onchange = (event) => {
-      const estaCorreta = event.target.value == item.correta
-     
-      corretas.delete(item)
-      if (estaCorreta) {
-        corretas.add(item)
-      }
-
-      mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
+  // Adicionar bandeirinha
+  const bandeirinha = document.createElement("span");
+  bandeirinha.textContent = "🚩";
+  bandeirinha.style.cursor = "pointer";
+  bandeirinha.style.marginLeft = "auto";
+  bandeirinha.style.opacity = "0.5";
+  bandeirinha.onclick = () => {
+    if (marcadas.has(item)) {
+      marcadas.delete(item);
+      bandeirinha.style.opacity = "0.5";
+    } else {
+      marcadas.add(item);
+      bandeirinha.style.opacity = "1";
     }
+  };
+  quizItem.querySelector("h3").appendChild(bandeirinha);
 
-    quizItem.querySelector("dl").appendChild(dt)
+  for (let resposta of item.respostas) {
+    const dt = quizItem.querySelector("dl dt").cloneNode(true);
+    dt.querySelector("span").textContent = resposta;
+    dt.querySelector("input").setAttribute("name", "perguntas-" + perguntas.indexOf(item));
+    dt.querySelector("input").value = item.respostas.indexOf(resposta);
+    dt.querySelector("input").onchange = (event) => {
+      const estaCorreta = event.target.value == item.correta;
+
+      corretas.delete(item);
+      if (estaCorreta) {
+        corretas.add(item);
+      }
+    };
+
+    quizItem.querySelector("dl").appendChild(dt);
   }
 
-  quizItem.querySelector("dl dt").remove()
-
+  quizItem.querySelector("dl dt").remove();
 
   // coloca a pergunta na tela
-  quiz.appendChild(quizItem)
+  quiz.appendChild(quizItem);
 }
+
+// Função para finalizar o simulado
+finalizarBtn.addEventListener("click", () => {
+  const resumo = document.querySelector("#resumo");
+  resumo.innerHTML = ""; // Limpa o conteúdo anterior
+
+  const acertos = corretas.size;
+  const erros = totalDePerguntas - acertos;
+  const porcentagemAcertos = Math.round((acertos / totalDePerguntas) * 100);
+
+  // Exibe o resumo
+  resumo.innerHTML += `
+    <h2>Resumo do Simulado</h2>
+    <p>✅ Acertos: ${acertos}</p>
+    <p>❌ Erros: ${erros}</p>
+    <p>📊 Porcentagem de Acertos: <strong style="color: #82027b;">${porcentagemAcertos}%</strong></p>
+    <h3>Detalhes das Questões:</h3>
+  `;
+
+  // Percorre todas as questões para mostrar o resultado
+  perguntas.forEach((item, index) => {
+    const respostaUsuario = document.querySelector(`input[name="perguntas-${index}"]:checked`);
+    const acertou = respostaUsuario && respostaUsuario.value == item.correta;
+    const respostaCorreta = item.respostas[item.correta];
+    const respostaSelecionada = respostaUsuario ? item.respostas[respostaUsuario.value] : "Nenhuma resposta selecionada";
+
+    resumo.innerHTML += `
+      <div class="questao-resumo">
+        <p><strong>Questão ${index + 1}:</strong> ${item.pergunta}</p>
+        <p>${acertou ? "✅ Acertou" : "❌ Errou"}</p>
+        <p>Sua resposta: ${respostaSelecionada}</p>
+        <p>Resposta correta: ${respostaCorreta}</p>
+      </div>
+    `;
+  });
+
+  // Exibe o resumo e o botão de reiniciar
+  resumo.style.display = "block";
+  reiniciarBtn.style.display = "block";
+  finalizarBtn.style.display = "none";
+});
+
+// Função para reiniciar o simulado
+reiniciarBtn.addEventListener("click", () => {
+  window.location.reload(); // Recarrega a página para reiniciar o simulado
+});
 
