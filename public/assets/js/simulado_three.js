@@ -247,6 +247,15 @@ finalizarBtn.addEventListener("click", () => {
 
 // Função para reiniciar o simulado
 reiniciarBtn.addEventListener("click", () => {
-  window.location.reload(); // Recarrega a página para reiniciar o simulado
+  // Rola a página até a primeira questão
+  const primeiraQuestao = document.querySelector(".quiz-item");
+  if (primeiraQuestao) {
+    primeiraQuestao.scrollIntoView({ behavior: "smooth" });
+  }
+
+  // Recarrega a página após um pequeno delay para garantir que a rolagem ocorra
+  setTimeout(() => {
+    window.location.reload();
+  }, 500); // 500ms de delay
 });
 
