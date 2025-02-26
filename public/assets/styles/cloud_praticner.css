@@ -1,0 +1,26 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Garante responsividade */
+  margin: 1.25rem auto;
+  padding-top: 6.25rem;
+}
+
+.img-central {
+  width: 9.375rem; /* Tamanho fixo para todas as imagens */
+  height: 9.375rem; /* Tamanho fixo para todas as imagens */
+  object-fit: contain; /* Garante que a imagem inteira seja visível sem distorção */
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .image-container {
+      flex-direction: column; /* Empilha imagens em telas pequenas */
+  }
+
+  .image-frame {
+      width: 100%; /* Ocupa a largura total em telas pequenas */
+      max-width: 200px; /* Limita a largura máxima */
+  }
+}

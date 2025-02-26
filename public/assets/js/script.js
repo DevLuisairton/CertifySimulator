@@ -1,77 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const navbar = document.querySelector('.navbar');
-    const navItems = document.querySelectorAll('.nav-links li');
-
-    // Verifica se os elementos existem antes de prosseguir
-    if (!menuToggle || !navLinks || !navbar) return;
-
-    // Adiciona índice para animação escalonada
-    navItems.forEach((item, index) => {
-        item.style.setProperty('--i', index);
+     // Animação das barras de progresso quando visíveis na tela
+     document.addEventListener('DOMContentLoaded', function() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        function animateProgressBar() {
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight) && (rect.bottom >= 0);
+                
+                if (isVisible) {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                }
+            });
+        }
+        
+        // Executar uma vez na carga inicial
+        animateProgressBar();
+        
+        // Executar quando rolar a página
+        window.addEventListener('scroll', animateProgressBar);
     });
 
-    // Função para alternar o menu
-    const toggleMenu = () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-
-        // Animação escalonada para os itens do menu
-        navItems.forEach((item, index) => {
-            if (navLinks.classList.contains('active')) {
-                item.style.transitionDelay = `${index * 0.1}s`;
-            } else {
-                item.style.transitionDelay = `${(navItems.length - index) * 0.1}s`;
-            }
-        });
+    // Botão de voltar ao topo
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("backToTop").style.display = "block";
+        } else {
+            document.getElementById("backToTop").style.display = "none";
+        }
     };
 
-    // Adiciona evento de clique ao botão do menu
-    menuToggle.addEventListener('click', toggleMenu);
+    document.getElementById("backToTop").onclick = function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
 
-    // Fecha o menu ao clicar fora
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.navbar-content') && 
-            !e.target.closest('.nav-links') && 
-            navLinks.classList.contains('active')) {
-            toggleMenu();
-        }
-    });
+    // Menu de navegação responsivo
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
 
-    // Scroll suave para links de navegação
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            
-            if (target) {
-                // Fecha o menu móvel se estiver aberto
-                if (navLinks.classList.contains('active')) {
-                    toggleMenu();
-                }
+    // Modal
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+    }
 
-                // Scroll suave para o alvo
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Fechar modal ao clicar fora
+    window.onclick = function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
             }
         });
-    });
-
-    // Navegação por teclado para cartões de certificação
-    document.querySelectorAll('.cert-card').forEach(card => {
-        card.setAttribute('tabindex', '0'); // Melhora a acessibilidade
-        card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                card.click();
-            }
-        });
-    });
-});
+    }

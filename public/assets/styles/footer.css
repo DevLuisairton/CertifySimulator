@@ -1,0 +1,165 @@
+footer {
+  background-color: var(--primary-dark); /* Cor de fundo escura */
+  color: var(--white);
+  padding: 5rem 0 2.5rem; /* Aumentei o padding para mais espaço */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  font-family: 'Poppins', sans-serif; /* Fonte moderna */
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px; /* Espaçamento maior entre colunas */
+  max-width: 75rem; /* Largura máxima para melhor leitura */
+  margin: 0 auto; /* Centralizado */
+  padding: 0 20px; /* Padding lateral */
+}
+
+.footer-column h3 {
+  margin-bottom: 25px;
+  font-size: 22px; /* Tamanho maior para títulos */
+  font-weight: 700; /* Fonte mais forte */
+  color: var(--white);
+  text-transform: uppercase; /* Texto em maiúsculas */
+  letter-spacing: 1.5px; /* Espaçamento entre letras */
+  position: relative; /* Para o efeito de sublinhado */
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary); /* Linha decorativa abaixo do título */
+  transition: width 0.3s ease; /* Animação ao hover */
+}
+
+.footer-column h3:hover::after {
+  width: 100%; /* Efeito de expansão ao hover */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 15px; /* Espaçamento maior entre itens */
+}
+
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 16px; /* Tamanho de fonte maior */
+  font-weight: 500; /* Peso médio para melhor legibilidade */
+  display: inline-block; /* Para efeitos de hover */
+  position: relative; /* Para o efeito de sublinhado */
+}
+
+.footer-column a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary); /* Linha decorativa */
+  transition: width 0.3s ease; /* Animação ao hover */
+}
+
+.footer-column a:hover {
+  color: var(--white);
+}
+
+.footer-column a:hover::after {
+  width: 100%; /* Efeito de expansão ao hover */
+}
+
+.footer-logo {
+  display: block;
+  width: 18.75rem; /* Tamanho ajustado */
+  height: auto; /* Proporção mantida */
+  margin: -4rem auto 2rem; /* Posicionamento ajustado */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)); /* Sombra mais suave */
+  
+}
+
+.footer-logo:hover {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)); /* Sombra mais intensa */
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 60px; /* Margem maior */
+  font-weight: 400; /* Peso leve para o texto */
+}
+
+.see-all-btn {
+  display: inline-block;
+  width: auto;
+  padding: 14px 28px; /* Padding maior */
+  margin: 40px auto 0;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: var(--transition);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  position: relative; /* Para o efeito de hover */
+  overflow: hidden; /* Para o efeito de onda */
+}
+
+.see-all-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+}
+
+.see-all-btn:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px); /* Efeito de levantar */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.see-all-btn:hover::after {
+  transform: translate(-50%, -50%) scale(1); /* Efeito de onda ao hover */
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 14px 18px; /* Padding maior */
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  display: none;
+  transition: var(--transition);
+  font-size: 20px; /* Tamanho maior do ícone */
+  z-index: 1000; /* Garantir que fique acima de outros elementos */
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-light);
+  transform: scale(1.1) rotate(360deg); /* Efeito de rotação ao hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
