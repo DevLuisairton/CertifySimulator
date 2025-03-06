@@ -453,7 +453,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 30 * 60, // 30 minutos em segundos
+  timeRemaining: 40 * 60, // 30 minutos em segundos
   timerInterval: null,
   examFinished: false
 };
