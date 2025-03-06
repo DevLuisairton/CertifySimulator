@@ -1,183 +1,243 @@
 const originalQuestions = [
   {
     id: 1,
-    text: "Uma empresa deseja usar uma solução de rede da AWS que possa atuar como um gateway centralizado entre várias VPCs e redes locais. Qual serviço ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual serviço da AWS é usado para coletar e monitorar métricas de desempenho de instâncias EC2, bancos de dados e outros recursos?",
     options: [
-      "Gateway VPC endpoint",
-      "AWS Direct Connect",
-      "AWS Transit Gateway",
-      "VPC Peering"
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS X-Ray",
+      "AWS Config"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Transit Gateway é um serviço que atua como um hub centralizado para conectar várias VPCs e redes locais, facilitando a comunicação entre elas de forma escalável e segura."
+    correctAnswer: 1,
+    explanation: "O Amazon CloudWatch permite coletar e monitorar métricas de desempenho para diversos serviços da AWS, incluindo EC2 e RDS."
   },
   {
     id: 2,
-    text: "Qual serviço ou ferramenta complementar da AWS cria casos de negócios baseados em dados para planejamento de nuvem?",
+    text: "Quais das seguintes afirmações sobre AWS CloudTrail são verdadeiras? (Escolha duas)",
     options: [
-      "Avaliador de migração (Migration Evaluator)",
-      "Condutor de faturamento da AWS (AWS Billing Conductor)",
-      "Console de faturamento da AWS (AWS Billing Console)",
-      "Previsão da Forecast (Amazon Forecast)"
+      "Registra eventos de API e atividades em contas da AWS",
+      "Permite a execução de consultas SQL diretamente sobre os logs coletados",
+      "Fornece rastreamento detalhado de requisições HTTP em aplicações",
+      "Ajuda a detectar atividades suspeitas e auditoria de conformidade"
     ],
-    correctAnswer: 0,
-    explanation: "O Avaliador de Migração (Migration Evaluator) ajuda a criar casos de negócios baseados em dados para planejamento de migração para a nuvem, fornecendo insights sobre custos e benefícios."
+    correctAnswer: [0, 3],
+    explanation: "O AWS CloudTrail registra eventos de API e atividades em contas da AWS, sendo útil para auditoria e detecção de atividades suspeitas."
   },
   {
     id: 3,
-    text: "Um administrador observou que vários recursos da AWS foram excluídos ontem. Qual serviço da AWS ajudará a identificar a causa e determinar qual usuário excluiu os recursos?",
+    text: "Qual é a principal função do AWS X-Ray?",
     options: [
-      "AWS CloudTrail",
-      "Amazon Inspector",
-      "Amazon GuardDuty",
-      "AWS Trusted Advisor"
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear e analisar requisições em aplicações distribuídas",
+      "Auditar a conformidade de recursos da AWS",
+      "Coletar logs de eventos de API"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS CloudTrail registra todas as chamadas de API feitas na conta da AWS, permitindo rastrear quem realizou ações como a exclusão de recursos."
+    correctAnswer: 1,
+    explanation: "O AWS X-Ray rastreia e analisa requisições em aplicações distribuídas, ajudando a identificar gargalos e problemas de desempenho."
   },
   {
     id: 4,
-    text: "Uma empresa de telecomunicações está procurando expandir sua cobertura 5G em todo o país e, como resultado, precisa provisionar e construir sua própria rede celular privada com a ajuda da AWS. Qual solução a AWS fornece para ajudar com isso?",
+    text: "Quais são benefícios do AWS Config? (Escolha duas)",
     options: [
-      "AWS Private 5G",
-      "AWS Wavelength",
-      "AWS Outposts",
-      "AWS Direct Connect"
+      "Auditar a conformidade de recursos da AWS",
+      "Monitorar métricas de desempenho em tempo real",
+      "Fornecer rastreamento detalhado de requisições HTTP",
+      "Ajudar a detectar mudanças não autorizadas em recursos"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS Private 5G é uma solução que permite às empresas implantar e gerenciar suas próprias redes celulares privadas 5G de forma rápida e fácil."
+    correctAnswer: [0, 3],
+    explanation: "O AWS Config audita a conformidade de recursos e ajuda a detectar mudanças não autorizadas."
   },
   {
     id: 5,
-    text: "Qual é o volume total de dados que pode ser armazenado no Amazon S3?",
+    text: "Qual é a principal função do Amazon Athena?",
     options: [
-      "10 PB",
-      "50 PB",
-      "100 PB",
-      "ilimitado"
+      "Executar consultas SQL diretamente sobre dados armazenados no Amazon S3",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear requisições em aplicações distribuídas",
+      "Coletar logs de eventos de API"
     ],
-    correctAnswer: 3,
-    explanation: "O Amazon S3 oferece armazenamento ilimitado, permitindo que os usuários armazenem qualquer quantidade de dados sem preocupação com limites de capacidade."
+    correctAnswer: 0,
+    explanation: "O Amazon Athena permite executar consultas SQL diretamente sobre dados armazenados no Amazon S3, sem necessidade de infraestrutura."
   },
   {
     id: 6,
-    text: "Um aplicativo herdado de computação de alto desempenho (HPC) herdado será migrado para a AWS. Qual tipo de adaptador de rede deve ser usado?",
+    text: "Quais são características do AWS Glue? (Escolha duas)",
     options: [
-      "Endereço IP elástico",
-      "Elastic Network Adapter/ENA",
-      "Elastic Fabric Adapter/EFA",
-      "Elastic Network Interface/ENI"
+      "Serviço ETL (Extract, Transform, Load) totalmente gerenciado",
+      "Permite executar consultas SQL sobre dados no S3",
+      "Fornece rastreamento detalhado de requisições HTTP",
+      "Prepara e transforma dados para análise"
     ],
-    correctAnswer: 2,
-    explanation: "O Elastic Fabric Adapter (EFA) é projetado para aplicativos de computação de alto desempenho (HPC), oferecendo baixa latência e alta taxa de transferência para comunicação entre instâncias."
+    correctAnswer: [0, 3],
+    explanation: "O AWS Glue é um serviço ETL totalmente gerenciado que prepara e transforma dados para análise."
   },
   {
     id: 7,
-    text: "Qual entidade garante que seu aplicativo no Amazon Elastic Compute Cloud (Amazon EC2) sempre tenha a quantidade certa de capacidade para lidar com a demanda de tráfego atual?",
+    text: "Qual é a principal função do Amazon QuickSight?",
     options: [
-      "Amazon EC2 Auto Scaling",
-      "Multi-AZ deployment",
-      "Network Load Balancer",
-      "Application Load Balancer"
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Fornecer visualizações e dashboards de dados em tempo real",
+      "Rastrear requisições em aplicações distribuídas",
+      "Coletar logs de eventos de API"
     ],
-    correctAnswer: 0,
-    explanation: "O Amazon EC2 Auto Scaling ajusta automaticamente o número de instâncias EC2 com base na demanda, garantindo que o aplicativo tenha capacidade suficiente para lidar com o tráfego."
+    correctAnswer: 1,
+    explanation: "O Amazon QuickSight fornece visualizações e dashboards de dados em tempo real para análise de negócios."
   },
   {
     id: 8,
-    text: "Uma empresa deseja configurar uma conexão de rede segura do local para a Nuvem AWS em até 1 semana. Qual solução atenderá a esses requisitos?",
+    text: "Quais são benefícios do AWS Data Pipeline? (Escola duas)",
     options: [
-      "AWS Direct Connect",
-      "Amazon VPC",
-      "AWS Site-to-Site VPN",
-      "Edge location"
+      "Orquestrar e automatizar movimentação e transformação de dados",
+      "Executar consultas SQL sobre dados no S3",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Fornecer visualizações de dados em tempo real"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Site-to-Site VPN permite configurar uma conexão segura entre a rede local e a AWS em poucos dias, sem a necessidade de hardware físico adicional."
+    correctAnswer: [0, 1],
+    explanation: "O AWS Data Pipeline orquestra e automatiza a movimentação e transformação de dados entre serviços da AWS."
   },
   {
     id: 9,
-    text: "Quando um usuário deseja utilizar suas licenças de software existentes por soquete, por núcleo ou por máquina virtual para um servidor Microsoft Windows em execução na AWS, qual tipo de instância do Amazon EC2 é necessário?",
+    text: "Qual é a principal função do AWS Trusted Advisor?",
     options: [
-      "Instâncias spot",
-      "Instâncias Dedicadas",
-      "Hosts Dedicados",
-      "Instâncias Reservadas"
+      "Fornecer recomendações para otimizar custos, segurança e desempenho",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear requisições em aplicações distribuídas",
+      "Coletar logs de eventos de API"
     ],
-    correctAnswer: 2,
-    explanation: "Os Hosts Dedicados permitem que os usuários utilizem suas licenças de software existentes por soquete, núcleo ou máquina virtual, atendendo a requisitos de licenciamento específicos."
+    correctAnswer: 0,
+    explanation: "O AWS Trusted Advisor fornece recomendações para otimizar custos, segurança e desempenho na AWS."
   },
   {
     id: 10,
-    text: "Qual princípio de design está relacionado ao pilar de confiabilidade de acordo com o AWS Well-Architected Framework?",
+    text: "Quais são características do Amazon Kinesis? (Escolha duas)",
     options: [
-      "Testar procedimentos de recuperação",
-      "Realizar experimentos com mais frequência",
-      "Expandir globalmente em minutos",
-      "Analisar e atribuir despesas"
+      "Processar e analisar fluxos de dados em tempo real",
+      "Executar consultas SQL sobre dados no S3",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Coletar logs de eventos de API"
     ],
-    correctAnswer: 0,
-    explanation: "Testar procedimentos de recuperação é um princípio fundamental do pilar de Confiabilidade, garantindo que os sistemas possam se recuperar de falhas de forma eficaz."
+    correctAnswer: [0, 3],
+    explanation: "O Amazon Kinesis processa e analisa fluxos de dados em tempo real e pode coletar logs de eventos de API."
   },
   {
     id: 11,
-    text: "Uma empresa armazena dados em um bucket do Amazon S3. Qual tarefa é responsabilidade da AWS?",
+    text: "Qual é a principal função do Amazon CloudWatch Logs?",
     options: [
-      "Configurar uma política de ciclo de vida do S3.",
-      "Ativar o versionamento do S3.",
-      "Configurar políticas de bucket do S3.",
-      "Proteger a infraestrutura que suporta o armazenamento S3."
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Coletar, armazenar e analisar logs de aplicações e serviços",
+      "Rastrear requisições em aplicações distribuídas",
+      "Auditar a conformidade de recursos da AWS"
     ],
-    correctAnswer: 3,
-    explanation: "De acordo com o modelo de responsabilidade compartilhada, a AWS é responsável pela segurança da infraestrutura que suporta o armazenamento S3, enquanto o cliente é responsável por configurar políticas e versionamento."
+    correctAnswer: 1,
+    explanation: "O Amazon CloudWatch Logs coleta, armazena e analisa logs de aplicações e serviços da AWS."
   },
   {
     id: 12,
-    text: "Qual serviço da AWS é um banco de dados NoSQL totalmente gerenciado?",
+    text: "Quais são benefícios do AWS X-Ray? (Escolha duas)",
     options: [
-      "Amazon RDS",
-      "Amazon Redshift",
-      "Amazon DynamoDB",
-      "Amazon Aurora"
+      "Rastrear requisições em aplicações distribuídas",
+      "Identificar gargalos de desempenho em aplicações",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Auditar a conformidade de recursos da AWS"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado que oferece desempenho rápido e consistente com escalabilidade automática."
+    correctAnswer: [0, 1],
+    explanation: "O AWS X-Ray rastreia requisições em aplicações distribuídas e ajuda a identificar gargalos de desempenho."
   },
   {
     id: 13,
-    text: "Uma empresa deseja transferir um Windows Server 2022 virtual que está atualmente em execução em seu próprio data center para a AWS. A empresa quer converter automaticamente o servidor existente para rodar diretamente na infraestrutura da AWS em vez de em um hardware virtualizado. Qual serviço da AWS atenderá a esses requisitos?",
+    text: "Qual é a principal função do AWS Config Rules?",
     options: [
-      "AWS DataSync",
-      "AWS Database Migration Service (AWS DMS)",
-      "AWS Application Discovery Service",
-      "AWS Application Migration Service"
+      "Auditar a conformidade de recursos da AWS",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear requisições em aplicações distribuídas",
+      "Coletar logs de eventos de API"
     ],
-    correctAnswer: 3,
-    explanation: "O AWS Application Migration Service permite migrar servidores físicos ou virtuais para a AWS, convertendo automaticamente o sistema operacional e os aplicativos para rodar na infraestrutura da AWS."
+    correctAnswer: 0,
+    explanation: "O AWS Config Rules audita a conformidade de recursos da AWS com base em regras personalizadas."
   },
   {
     id: 14,
-    text: "Uma empresa deseja migrar seu banco de dados SQL Server local para a AWS Cloud. A empresa quer que a AWS gerencie a administração diária do banco de dados. Qual serviço da AWS atenderá aos requisitos da empresa?",
+    text: "Quais são características do Amazon Athena? (Escolha duas)",
     options: [
-      "Amazon EC2 for Microsoft SQL Server",
-      "Amazon DynamoDB",
-      "Amazon RDS",
-      "Amazon Aurora"
+      "Executar consultas SQL sobre dados no S3",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Fornecer visualizações de dados em tempo real",
+      "Não requer infraestrutura gerenciada"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon RDS é um serviço gerenciado que facilita a configuração, operação e escalabilidade de bancos de dados relacionais, como o SQL Server, sem a necessidade de gerenciar a infraestrutura subjacente."
+    correctAnswer: [0, 3],
+    explanation: "O Amazon Athena permite executar consultas SQL sobre dados no S3 sem necessidade de infraestrutura gerenciada."
   },
   {
     id: 15,
-    text: "Uma empresa precisa de filtragem de rede sem estado para sua VPC. Qual serviço, ferramenta ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual é a principal função do AWS Glue Data Catalog?",
     options: [
-      "VPC Peering",
-      "Security Group",
-      "Network ACL",
-      "AWS WAF"
+      "Armazenar metadados sobre fontes de dados",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear requisições em aplicações distribuídas",
+      "Coletar logs de eventos de API"
     ],
-    correctAnswer: 2,
-    explanation: "As Network ACLs (Listas de Controle de Acesso) fornecem filtragem de rede sem estado para controlar o tráfego de entrada e saída em uma VPC."
+    correctAnswer: 0,
+    explanation: "O AWS Glue Data Catalog armazena metadados sobre fontes de dados, facilitando a descoberta e o acesso."
+  },
+  {
+    id: 16,
+    text: "Quais são benefícios do Amazon QuickSight? (Escolha duas)",
+    options: [
+      "Fornecer visualizações e dashboards de dados em tempo real",
+      "Executar consultas SQL sobre dados no S3",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Integrar-se com diversas fontes de dados"
+    ],
+    correctAnswer: [0, 3],
+    explanation: "O Amazon QuickSight fornece visualizações em tempo real e integra-se com diversas fontes de dados."
+  },
+  {
+    id: 17,
+    text: "Qual é a principal função do AWS Data Pipeline?",
+    options: [
+      "Orquestrar e automatizar movimentação e transformação de dados",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear requisições em aplicações distribuídas",
+      "Coletar logs de eventos de API"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS Data Pipeline orquestra e automatiza a movimentação e transformação de dados entre serviços da AWS."
+  },
+  {
+    id: 18,
+    text: "Quais são características do AWS Trusted Advisor? (Escolha duas)",
+    options: [
+      "Fornecer recomendações para otimizar custos, segurança e desempenho",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear requisições em aplicações distribuídas",
+      "Auditar a conformidade de recursos da AWS"
+    ],
+    correctAnswer: [0, 1],
+    explanation: "O AWS Trusted Advisor fornece recomendações para otimizar custos, segurança e desempenho."
+  },
+  {
+    id: 19,
+    text: "Qual é a principal função do Amazon Kinesis Data Streams?",
+    options: [
+      "Processar e analisar fluxos de dados em tempo real",
+      "Monitorar métricas de desempenho de instâncias EC2",
+      "Rastrear requisições em aplicações distribuídas",
+      "Coletar logs de eventos de API"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon Kinesis Data Streams processa e analisa fluxos de dados em tempo real."
+  },
+  {
+    id: 20,
+    text: "Quais são benefícios do Amazon CloudWatch Alarms? (Escolha duas)",
+    options: [
+      "Monitorar métricas e acionar ações automatizadas",
+      "Executar consultas SQL sobre dados no S3",
+      "Rastrear requisições em aplicações distribuídas",
+      "Notificar sobre mudanças em recursos da AWS"
+    ],
+    correctAnswer: [0, 3],
+    explanation: "O Amazon CloudWatch Alarms monitora métricas e pode notificar sobre mudanças ou acionar ações automatizadas."
   }
 ];
 

@@ -1,183 +1,243 @@
 const originalQuestions = [
   {
     id: 1,
-    text: "Uma empresa deseja usar uma solução de rede da AWS que possa atuar como um gateway centralizado entre várias VPCs e redes locais. Qual serviço ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual recurso da Amazon VPC permite que instâncias em uma sub-rede privada acessem a internet?",
     options: [
-      "Gateway VPC endpoint",
-      "AWS Direct Connect",
-      "AWS Transit Gateway",
-      "VPC Peering"
+      "Internet Gateway (IGW)",
+      "NAT Gateway",
+      "Elastic Load Balancer",
+      "Security Group"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Transit Gateway é um serviço que atua como um hub centralizado para conectar várias VPCs e redes locais, facilitando a comunicação entre elas de forma escalável e segura."
+    correctAnswer: 1,
+    explanation: "O NAT Gateway permite que instâncias em sub-redes privadas acessem a internet enquanto impedem conexões externas diretas."
   },
   {
     id: 2,
-    text: "Qual serviço ou ferramenta complementar da AWS cria casos de negócios baseados em dados para planejamento de nuvem?",
+    text: "Quais das seguintes afirmações sobre Security Groups e Network ACLs são verdadeiras? (Escolha duas)",
     options: [
-      "Avaliador de migração (Migration Evaluator)",
-      "Condutor de faturamento da AWS (AWS Billing Conductor)",
-      "Console de faturamento da AWS (AWS Billing Console)",
-      "Previsão da Forecast (Amazon Forecast)"
+      "Security Groups são stateful, enquanto Network ACLs são stateless",
+      "Network ACLs aplicam regras somente a tráfego de entrada",
+      "Security Groups permitem tráfego apenas quando há uma regra explícita",
+      "Network ACLs são específicas para cada instância dentro da VPC"
     ],
-    correctAnswer: 0,
-    explanation: "O Avaliador de Migração (Migration Evaluator) ajuda a criar casos de negócios baseados em dados para planejamento de migração para a nuvem, fornecendo insights sobre custos e benefícios."
+    correctAnswer: [0, 2],
+    explanation: "Security Groups são stateful e permitem tráfego apenas quando há regras explícitas, enquanto Network ACLs são stateless e controlam tráfego de entrada e saída."
   },
   {
     id: 3,
-    text: "Um administrador observou que vários recursos da AWS foram excluídos ontem. Qual serviço da AWS ajudará a identificar a causa e determinar qual usuário excluiu os recursos?",
+    text: "Qual é a função de um Internet Gateway (IGW) em uma VPC?",
     options: [
-      "AWS CloudTrail",
-      "Amazon Inspector",
-      "Amazon GuardDuty",
-      "AWS Trusted Advisor"
+      "Permitir comunicação entre instâncias em sub-redes privadas",
+      "Fornecer acesso à internet para instâncias em sub-redes públicas",
+      "Criptografar o tráfego entre instâncias EC2",
+      "Balancear carga entre múltiplas sub-redes"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS CloudTrail registra todas as chamadas de API feitas na conta da AWS, permitindo rastrear quem realizou ações como a exclusão de recursos."
+    correctAnswer: 1,
+    explanation: "O Internet Gateway permite que instâncias em sub-redes públicas acessem a internet."
   },
   {
     id: 4,
-    text: "Uma empresa de telecomunicações está procurando expandir sua cobertura 5G em todo o país e, como resultado, precisa provisionar e construir sua própria rede celular privada com a ajuda da AWS. Qual solução a AWS fornece para ajudar com isso?",
+    text: "Quais são características do Elastic Load Balancing (ELB)? (Escolha duas)",
     options: [
-      "AWS Private 5G",
-      "AWS Wavelength",
-      "AWS Outposts",
-      "AWS Direct Connect"
+      "Distribui tráfego entre múltiplas instâncias EC2",
+      "Fornece um endereço IP estático para aplicações",
+      "Opera apenas dentro de uma única sub-rede",
+      "Suporta balanceamento de carga entre regiões"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS Private 5G é uma solução que permite às empresas implantar e gerenciar suas próprias redes celulares privadas 5G de forma rápida e fácil."
+    correctAnswer: [0, 3],
+    explanation: "O ELB distribui tráfego entre instâncias EC2 e pode operar entre múltiplas regiões."
   },
   {
     id: 5,
-    text: "Qual é o volume total de dados que pode ser armazenado no Amazon S3?",
+    text: "Qual é a principal diferença entre Security Groups e Network ACLs?",
     options: [
-      "10 PB",
-      "50 PB",
-      "100 PB",
-      "ilimitado"
+      "Security Groups são stateless, enquanto Network ACLs são stateful",
+      "Security Groups aplicam regras apenas a tráfego de saída",
+      "Network ACLs operam no nível da sub-rede, enquanto Security Groups operam no nível da instância",
+      "Network ACLs são específicas para cada instância EC2"
     ],
-    correctAnswer: 3,
-    explanation: "O Amazon S3 oferece armazenamento ilimitado, permitindo que os usuários armazenem qualquer quantidade de dados sem preocupação com limites de capacidade."
+    correctAnswer: 2,
+    explanation: "Network ACLs operam no nível da sub-rede, enquanto Security Groups operam no nível da instância."
   },
   {
     id: 6,
-    text: "Um aplicativo herdado de computação de alto desempenho (HPC) herdado será migrado para a AWS. Qual tipo de adaptador de rede deve ser usado?",
+    text: "Quais são benefícios do AWS Direct Connect? (Escolha duas)",
     options: [
-      "Endereço IP elástico",
-      "Elastic Network Adapter/ENA",
-      "Elastic Fabric Adapter/EFA",
-      "Elastic Network Interface/ENI"
+      "Reduzir a latência de conexão com a AWS",
+      "Fornecer uma conexão de internet pública dedicada",
+      "Aumentar a segurança com conexões privadas",
+      "Substituir a necessidade de uma VPC"
     ],
-    correctAnswer: 2,
-    explanation: "O Elastic Fabric Adapter (EFA) é projetado para aplicativos de computação de alto desempenho (HPC), oferecendo baixa latência e alta taxa de transferência para comunicação entre instâncias."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Direct Connect reduz a latência e aumenta a segurança com conexões privadas."
   },
   {
     id: 7,
-    text: "Qual entidade garante que seu aplicativo no Amazon Elastic Compute Cloud (Amazon EC2) sempre tenha a quantidade certa de capacidade para lidar com a demanda de tráfego atual?",
+    text: "Qual é a função do Amazon Route 53?",
     options: [
-      "Amazon EC2 Auto Scaling",
-      "Multi-AZ deployment",
-      "Network Load Balancer",
-      "Application Load Balancer"
+      "Fornecer balanceamento de carga entre instâncias EC2",
+      "Gerenciar domínios e rotear tráfego para recursos AWS",
+      "Criptografar o tráfego entre sub-redes",
+      "Automatizar a criação de sub-redes"
     ],
-    correctAnswer: 0,
-    explanation: "O Amazon EC2 Auto Scaling ajusta automaticamente o número de instâncias EC2 com base na demanda, garantindo que o aplicativo tenha capacidade suficiente para lidar com o tráfego."
+    correctAnswer: 1,
+    explanation: "O Amazon Route 53 gerencia domínios e roteia tráfego para recursos AWS."
   },
   {
     id: 8,
-    text: "Uma empresa deseja configurar uma conexão de rede segura do local para a Nuvem AWS em até 1 semana. Qual solução atenderá a esses requisitos?",
+    text: "Quais são características de uma sub-rede pública em uma VPC? (Escolha duas)",
     options: [
-      "AWS Direct Connect",
-      "Amazon VPC",
-      "AWS Site-to-Site VPN",
-      "Edge location"
+      "Pode acessar a internet diretamente via Internet Gateway",
+      "É usada apenas para instâncias que não precisam de acesso à internet",
+      "Pode ter um NAT Gateway para acesso à internet",
+      "Não pode ser associada a um Security Group"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Site-to-Site VPN permite configurar uma conexão segura entre a rede local e a AWS em poucos dias, sem a necessidade de hardware físico adicional."
+    correctAnswer: [0, 2],
+    explanation: "Sub-redes públicas podem acessar a internet via Internet Gateway e podem usar NAT Gateway."
   },
   {
     id: 9,
-    text: "Quando um usuário deseja utilizar suas licenças de software existentes por soquete, por núcleo ou por máquina virtual para um servidor Microsoft Windows em execução na AWS, qual tipo de instância do Amazon EC2 é necessário?",
+    text: "Qual é a função de um NAT Gateway em uma VPC?",
     options: [
-      "Instâncias spot",
-      "Instâncias Dedicadas",
-      "Hosts Dedicados",
-      "Instâncias Reservadas"
+      "Permitir que instâncias em sub-redes públicas acessem a internet",
+      "Permitir que instâncias em sub-redes privadas acessem a internet",
+      "Criptografar o tráfego entre sub-redes",
+      "Fornecer balanceamento de carga entre instâncias EC2"
     ],
-    correctAnswer: 2,
-    explanation: "Os Hosts Dedicados permitem que os usuários utilizem suas licenças de software existentes por soquete, núcleo ou máquina virtual, atendendo a requisitos de licenciamento específicos."
+    correctAnswer: 1,
+    explanation: "O NAT Gateway permite que instâncias em sub-redes privadas acessem a internet."
   },
   {
     id: 10,
-    text: "Qual princípio de design está relacionado ao pilar de confiabilidade de acordo com o AWS Well-Architected Framework?",
+    text: "Quais são benefícios do AWS VPN? (Escolha duas)",
     options: [
-      "Testar procedimentos de recuperação",
-      "Realizar experimentos com mais frequência",
-      "Expandir globalmente em minutos",
-      "Analisar e atribuir despesas"
+      "Fornecer uma conexão segura entre a rede local e a VPC",
+      "Reduzir custos de transferência de dados",
+      "Substituir a necessidade de um Internet Gateway",
+      "Criptografar o tráfego entre instâncias EC2"
     ],
-    correctAnswer: 0,
-    explanation: "Testar procedimentos de recuperação é um princípio fundamental do pilar de Confiabilidade, garantindo que os sistemas possam se recuperar de falhas de forma eficaz."
+    correctAnswer: [0, 1],
+    explanation: "O AWS VPN fornece conexões seguras e pode reduzir custos de transferência de dados."
   },
   {
     id: 11,
-    text: "Uma empresa armazena dados em um bucket do Amazon S3. Qual tarefa é responsabilidade da AWS?",
+    text: "Qual é a função de um Security Group em uma VPC?",
     options: [
-      "Configurar uma política de ciclo de vida do S3.",
-      "Ativar o versionamento do S3.",
-      "Configurar políticas de bucket do S3.",
-      "Proteger a infraestrutura que suporta o armazenamento S3."
+      "Controlar o tráfego de entrada e saída no nível da sub-rede",
+      "Controlar o tráfego de entrada e saída no nível da instância",
+      "Fornecer balanceamento de carga entre instâncias EC2",
+      "Criptografar o tráfego entre sub-redes"
     ],
-    correctAnswer: 3,
-    explanation: "De acordo com o modelo de responsabilidade compartilhada, a AWS é responsável pela segurança da infraestrutura que suporta o armazenamento S3, enquanto o cliente é responsável por configurar políticas e versionamento."
+    correctAnswer: 1,
+    explanation: "Security Groups controlam o tráfego de entrada e saída no nível da instância."
   },
   {
     id: 12,
-    text: "Qual serviço da AWS é um banco de dados NoSQL totalmente gerenciado?",
+    text: "Quais são características do Amazon Route 53? (Escolha duas)",
     options: [
-      "Amazon RDS",
-      "Amazon Redshift",
-      "Amazon DynamoDB",
-      "Amazon Aurora"
+      "Fornece balanceamento de carga global",
+      "Opera apenas dentro de uma única região",
+      "Gerencia domínios e roteia tráfego para recursos AWS",
+      "Substitui a necessidade de um Internet Gateway"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado que oferece desempenho rápido e consistente com escalabilidade automática."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Route 53 fornece balanceamento de carga global e gerencia domínios."
   },
   {
     id: 13,
-    text: "Uma empresa deseja transferir um Windows Server 2022 virtual que está atualmente em execução em seu próprio data center para a AWS. A empresa quer converter automaticamente o servidor existente para rodar diretamente na infraestrutura da AWS em vez de em um hardware virtualizado. Qual serviço da AWS atenderá a esses requisitos?",
+    text: "Qual é a função de um Elastic Load Balancer (ELB)?",
     options: [
-      "AWS DataSync",
-      "AWS Database Migration Service (AWS DMS)",
-      "AWS Application Discovery Service",
-      "AWS Application Migration Service"
+      "Criptografar o tráfego entre sub-redes",
+      "Distribuir tráfego entre múltiplas instâncias EC2",
+      "Fornecer acesso à internet para sub-redes privadas",
+      "Automatizar a criação de sub-redes"
     ],
-    correctAnswer: 3,
-    explanation: "O AWS Application Migration Service permite migrar servidores físicos ou virtuais para a AWS, convertendo automaticamente o sistema operacional e os aplicativos para rodar na infraestrutura da AWS."
+    correctAnswer: 1,
+    explanation: "O ELB distribui tráfego entre múltiplas instâncias EC2."
   },
   {
     id: 14,
-    text: "Uma empresa deseja migrar seu banco de dados SQL Server local para a AWS Cloud. A empresa quer que a AWS gerencie a administração diária do banco de dados. Qual serviço da AWS atenderá aos requisitos da empresa?",
+    text: "Quais são benefícios do AWS Direct Connect? (Escolha duas)",
     options: [
-      "Amazon EC2 for Microsoft SQL Server",
-      "Amazon DynamoDB",
-      "Amazon RDS",
-      "Amazon Aurora"
+      "Reduzir a latência de conexão com a AWS",
+      "Fornecer uma conexão de internet pública dedicada",
+      "Aumentar a segurança com conexões privadas",
+      "Substituir a necessidade de uma VPC"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon RDS é um serviço gerenciado que facilita a configuração, operação e escalabilidade de bancos de dados relacionais, como o SQL Server, sem a necessidade de gerenciar a infraestrutura subjacente."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Direct Connect reduz a latência e aumenta a segurança com conexões privadas."
   },
   {
     id: 15,
-    text: "Uma empresa precisa de filtragem de rede sem estado para sua VPC. Qual serviço, ferramenta ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual é a função de um Network ACL em uma VPC?",
     options: [
-      "VPC Peering",
-      "Security Group",
-      "Network ACL",
-      "AWS WAF"
+      "Controlar o tráfego de entrada e saída no nível da instância",
+      "Controlar o tráfego de entrada e saída no nível da sub-rede",
+      "Fornecer balanceamento de carga entre instâncias EC2",
+      "Criptografar o tráfego entre sub-redes"
     ],
-    correctAnswer: 2,
-    explanation: "As Network ACLs (Listas de Controle de Acesso) fornecem filtragem de rede sem estado para controlar o tráfego de entrada e saída em uma VPC."
+    correctAnswer: 1,
+    explanation: "Network ACLs controlam o tráfego de entrada e saída no nível da sub-rede."
+  },
+  {
+    id: 16,
+    text: "Quais são características de uma sub-rede privada em uma VPC? (Escolha duas)",
+    options: [
+      "Pode acessar a internet diretamente via Internet Gateway",
+      "Não pode acessar a internet diretamente",
+      "Pode usar um NAT Gateway para acesso à internet",
+      "Não pode ser associada a um Security Group"
+    ],
+    correctAnswer: [1, 2],
+    explanation: "Sub-redes privadas não podem acessar a internet diretamente, mas podem usar um NAT Gateway."
+  },
+  {
+    id: 17,
+    text: "Qual é a função de um Internet Gateway (IGW) em uma VPC?",
+    options: [
+      "Permitir comunicação entre instâncias em sub-redes privadas",
+      "Fornecer acesso à internet para instâncias em sub-redes públicas",
+      "Criptografar o tráfego entre instâncias EC2",
+      "Balancear carga entre múltiplas sub-redes"
+    ],
+    correctAnswer: 1,
+    explanation: "O Internet Gateway permite que instâncias em sub-redes públicas acessem a internet."
+  },
+  {
+    id: 18,
+    text: "Quais são benefícios do AWS VPN? (Escolha duas)",
+    options: [
+      "Fornecer uma conexão segura entre a rede local e a VPC",
+      "Reduzir custos de transferência de dados",
+      "Substituir a necessidade de um Internet Gateway",
+      "Criptografar o tráfego entre instâncias EC2"
+    ],
+    correctAnswer: [0, 1],
+    explanation: "O AWS VPN fornece conexões seguras e pode reduzir custos de transferência de dados."
+  },
+  {
+    id: 19,
+    text: "Qual é a função de um Security Group em uma VPC?",
+    options: [
+      "Controlar o tráfego de entrada e saída no nível da sub-rede",
+      "Controlar o tráfego de entrada e saída no nível da instância",
+      "Fornecer balanceamento de carga entre instâncias EC2",
+      "Criptografar o tráfego entre sub-redes"
+    ],
+    correctAnswer: 1,
+    explanation: "Security Groups controlam o tráfego de entrada e saída no nível da instância."
+  },
+  {
+    id: 20,
+    text: "Qual é a função do Amazon Route 53?",
+    options: [
+      "Fornecer balanceamento de carga entre instâncias EC2",
+      "Gerenciar domínios e rotear tráfego para recursos AWS",
+      "Criptografar o tráfego entre sub-redes",
+      "Automatizar a criação de sub-redes"
+    ],
+    correctAnswer: 1,
+    explanation: "O Amazon Route 53 gerencia domínios e roteia tráfego para recursos AWS."
   }
 ];
 

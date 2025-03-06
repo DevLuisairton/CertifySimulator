@@ -1,183 +1,243 @@
 const originalQuestions = [
   {
     id: 1,
-    text: "Uma empresa deseja usar uma solução de rede da AWS que possa atuar como um gateway centralizado entre várias VPCs e redes locais. Qual serviço ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual modelo de precificação da AWS permite pagar apenas pelo que for consumido, sem compromissos de longo prazo?",
     options: [
-      "Gateway VPC endpoint",
-      "AWS Direct Connect",
-      "AWS Transit Gateway",
-      "VPC Peering"
+      "Instâncias Reservadas (RIs)",
+      "Pay-as-you-go",
+      "Spot Instances",
+      "Savings Plans"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Transit Gateway é um serviço que atua como um hub centralizado para conectar várias VPCs e redes locais, facilitando a comunicação entre elas de forma escalável e segura."
+    correctAnswer: 1,
+    explanation: "O modelo Pay-as-you-go permite pagar apenas pelo que for consumido, oferecendo flexibilidade sem compromissos de longo prazo."
   },
   {
     id: 2,
-    text: "Qual serviço ou ferramenta complementar da AWS cria casos de negócios baseados em dados para planejamento de nuvem?",
+    text: "Quais são benefícios do AWS Cost Explorer? (Escolha duas)",
     options: [
-      "Avaliador de migração (Migration Evaluator)",
-      "Condutor de faturamento da AWS (AWS Billing Conductor)",
-      "Console de faturamento da AWS (AWS Billing Console)",
-      "Previsão da Forecast (Amazon Forecast)"
+      "Permite visualizar e analisar padrões de gastos na AWS",
+      "Oferece recomendações para reduzir custos com instâncias EC2",
+      "Garante acesso gratuito a suporte técnico 24/7",
+      "Automatiza a aplicação de limites de orçamento e alertas"
     ],
-    correctAnswer: 0,
-    explanation: "O Avaliador de Migração (Migration Evaluator) ajuda a criar casos de negócios baseados em dados para planejamento de migração para a nuvem, fornecendo insights sobre custos e benefícios."
+    correctAnswer: [0, 1],
+    explanation: "O AWS Cost Explorer permite visualizar e analisar padrões de gastos, além de fornecer recomendações para otimização de custos."
   },
   {
     id: 3,
-    text: "Um administrador observou que vários recursos da AWS foram excluídos ontem. Qual serviço da AWS ajudará a identificar a causa e determinar qual usuário excluiu os recursos?",
+    text: "Qual é a principal vantagem das Instâncias Reservadas (RIs)?",
     options: [
-      "AWS CloudTrail",
-      "Amazon Inspector",
-      "Amazon GuardDuty",
-      "AWS Trusted Advisor"
+      "Permitem pagar apenas pelo que for consumido",
+      "Oferecem descontos significativos em troca de compromissos de longo prazo",
+      "São ideais para workloads imprevisíveis",
+      "Não exigem pagamento antecipado"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS CloudTrail registra todas as chamadas de API feitas na conta da AWS, permitindo rastrear quem realizou ações como a exclusão de recursos."
+    correctAnswer: 1,
+    explanation: "As Instâncias Reservadas oferecem descontos significativos em troca de compromissos de longo prazo, como pagamento antecipado ou termos de 1 ou 3 anos."
   },
   {
     id: 4,
-    text: "Uma empresa de telecomunicações está procurando expandir sua cobertura 5G em todo o país e, como resultado, precisa provisionar e construir sua própria rede celular privada com a ajuda da AWS. Qual solução a AWS fornece para ajudar com isso?",
+    text: "Quais são características dos Savings Plans? (Escolha duas)",
     options: [
-      "AWS Private 5G",
-      "AWS Wavelength",
-      "AWS Outposts",
-      "AWS Direct Connect"
+      "Oferecem descontos em troca de compromissos de uso contínuo",
+      "São aplicáveis apenas a instâncias EC2",
+      "Permitem flexibilidade para mudar tipos de instâncias e regiões",
+      "Não exigem pagamento antecipado"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS Private 5G é uma solução que permite às empresas implantar e gerenciar suas próprias redes celulares privadas 5G de forma rápida e fácil."
+    correctAnswer: [0, 2],
+    explanation: "Os Savings Plans oferecem descontos em troca de compromissos de uso contínuo e permitem flexibilidade para mudar tipos de instâncias e regiões."
   },
   {
     id: 5,
-    text: "Qual é o volume total de dados que pode ser armazenado no Amazon S3?",
+    text: "Qual é a principal vantagem das Spot Instances?",
     options: [
-      "10 PB",
-      "50 PB",
-      "100 PB",
-      "ilimitado"
+      "Garantia de disponibilidade contínua por 24 horas",
+      "Custos significativamente reduzidos em comparação com instâncias On-Demand",
+      "Ideal para workloads críticos que não toleram interrupções",
+      "Descontos em troca de compromissos de longo prazo"
     ],
-    correctAnswer: 3,
-    explanation: "O Amazon S3 oferece armazenamento ilimitado, permitindo que os usuários armazenem qualquer quantidade de dados sem preocupação com limites de capacidade."
+    correctAnswer: 1,
+    explanation: "As Spot Instances oferecem custos significativamente reduzidos, mas podem ser interrompidas pela AWS se a capacidade for necessária para outros clientes."
   },
   {
     id: 6,
-    text: "Um aplicativo herdado de computação de alto desempenho (HPC) herdado será migrado para a AWS. Qual tipo de adaptador de rede deve ser usado?",
+    text: "Quais são benefícios do AWS Budgets? (Escolha duas)",
     options: [
-      "Endereço IP elástico",
-      "Elastic Network Adapter/ENA",
-      "Elastic Fabric Adapter/EFA",
-      "Elastic Network Interface/ENI"
+      "Permite definir limites de orçamento e receber alertas",
+      "Oferece descontos automáticos em instâncias EC2",
+      "Automatiza a aplicação de Savings Plans",
+      "Ajuda a monitorar e controlar gastos na AWS"
     ],
-    correctAnswer: 2,
-    explanation: "O Elastic Fabric Adapter (EFA) é projetado para aplicativos de computação de alto desempenho (HPC), oferecendo baixa latência e alta taxa de transferência para comunicação entre instâncias."
+    correctAnswer: [0, 3],
+    explanation: "O AWS Budgets permite definir limites de orçamento, receber alertas e monitorar gastos na AWS."
   },
   {
     id: 7,
-    text: "Qual entidade garante que seu aplicativo no Amazon Elastic Compute Cloud (Amazon EC2) sempre tenha a quantidade certa de capacidade para lidar com a demanda de tráfego atual?",
+    text: "Qual é a principal função do AWS Cost and Usage Report (CUR)?",
     options: [
-      "Amazon EC2 Auto Scaling",
-      "Multi-AZ deployment",
-      "Network Load Balancer",
-      "Application Load Balancer"
+      "Fornecer recomendações para otimização de custos",
+      "Detalhar o uso e os custos de todos os serviços da AWS",
+      "Automatizar a aplicação de Savings Plans",
+      "Garantir acesso gratuito a suporte técnico"
     ],
-    correctAnswer: 0,
-    explanation: "O Amazon EC2 Auto Scaling ajusta automaticamente o número de instâncias EC2 com base na demanda, garantindo que o aplicativo tenha capacidade suficiente para lidar com o tráfego."
+    correctAnswer: 1,
+    explanation: "O AWS Cost and Usage Report detalha o uso e os custos de todos os serviços da AWS, permitindo análises detalhadas."
   },
   {
     id: 8,
-    text: "Uma empresa deseja configurar uma conexão de rede segura do local para a Nuvem AWS em até 1 semana. Qual solução atenderá a esses requisitos?",
+    text: "Quais são benefícios do AWS Pricing Calculator? (Escolha duas)",
     options: [
-      "AWS Direct Connect",
-      "Amazon VPC",
-      "AWS Site-to-Site VPN",
-      "Edge location"
+      "Permite estimar custos de serviços AWS antes de usá-los",
+      "Oferece descontos automáticos em instâncias EC2",
+      "Automatiza a aplicação de Savings Plans",
+      "Ajuda a comparar custos entre diferentes configurações de serviços"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Site-to-Site VPN permite configurar uma conexão segura entre a rede local e a AWS em poucos dias, sem a necessidade de hardware físico adicional."
+    correctAnswer: [0, 3],
+    explanation: "O AWS Pricing Calculator permite estimar custos e comparar diferentes configurações de serviços antes de usá-los."
   },
   {
     id: 9,
-    text: "Quando um usuário deseja utilizar suas licenças de software existentes por soquete, por núcleo ou por máquina virtual para um servidor Microsoft Windows em execução na AWS, qual tipo de instância do Amazon EC2 é necessário?",
+    text: "Qual é a principal característica do Plano Básico (Gratuito) da AWS?",
     options: [
-      "Instâncias spot",
-      "Instâncias Dedicadas",
-      "Hosts Dedicados",
-      "Instâncias Reservadas"
+      "Oferece acesso gratuito a suporte técnico 24/7",
+      "Permite uso gratuito de serviços populares dentro de limites específicos",
+      "Garante descontos automáticos em instâncias EC2",
+      "Automatiza a aplicação de Savings Plans"
     ],
-    correctAnswer: 2,
-    explanation: "Os Hosts Dedicados permitem que os usuários utilizem suas licenças de software existentes por soquete, núcleo ou máquina virtual, atendendo a requisitos de licenciamento específicos."
+    correctAnswer: 1,
+    explanation: "O Plano Básico (Gratuito) permite uso gratuito de serviços populares da AWS dentro de limites específicos por 12 meses."
   },
   {
     id: 10,
-    text: "Qual princípio de design está relacionado ao pilar de confiabilidade de acordo com o AWS Well-Architected Framework?",
+    text: "Quais são características do Pay-as-you-go? (Escolha duas)",
     options: [
-      "Testar procedimentos de recuperação",
-      "Realizar experimentos com mais frequência",
-      "Expandir globalmente em minutos",
-      "Analisar e atribuir despesas"
+      "Permite pagar apenas pelo que for consumido",
+      "Exige compromissos de longo prazo",
+      "Oferece descontos significativos em troca de uso contínuo",
+      "É ideal para workloads imprevisíveis"
     ],
-    correctAnswer: 0,
-    explanation: "Testar procedimentos de recuperação é um princípio fundamental do pilar de Confiabilidade, garantindo que os sistemas possam se recuperar de falhas de forma eficaz."
+    correctAnswer: [0, 3],
+    explanation: "O Pay-as-you-go permite pagar apenas pelo que for consumido e é ideal para workloads imprevisíveis."
   },
   {
     id: 11,
-    text: "Uma empresa armazena dados em um bucket do Amazon S3. Qual tarefa é responsabilidade da AWS?",
+    text: "Qual é a principal vantagem das Savings Plans em relação às Instâncias Reservadas (RIs)?",
     options: [
-      "Configurar uma política de ciclo de vida do S3.",
-      "Ativar o versionamento do S3.",
-      "Configurar políticas de bucket do S3.",
-      "Proteger a infraestrutura que suporta o armazenamento S3."
+      "Oferecem descontos maiores",
+      "Permitem flexibilidade para mudar tipos de instâncias e regiões",
+      "Não exigem pagamento antecipado",
+      "São ideais para workloads de curta duração"
     ],
-    correctAnswer: 3,
-    explanation: "De acordo com o modelo de responsabilidade compartilhada, a AWS é responsável pela segurança da infraestrutura que suporta o armazenamento S3, enquanto o cliente é responsável por configurar políticas e versionamento."
+    correctAnswer: 1,
+    explanation: "Os Savings Plans permitem flexibilidade para mudar tipos de instâncias e regiões, ao contrário das RIs, que são mais rígidas."
   },
   {
     id: 12,
-    text: "Qual serviço da AWS é um banco de dados NoSQL totalmente gerenciado?",
+    text: "Quais são benefícios das Spot Instances? (Escolha duas)",
     options: [
-      "Amazon RDS",
-      "Amazon Redshift",
-      "Amazon DynamoDB",
-      "Amazon Aurora"
+      "Custos significativamente reduzidos",
+      "Garantia de disponibilidade contínua por 24 horas",
+      "Ideal para workloads tolerantes a interrupções",
+      "Descontos em troca de compromissos de longo prazo"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado que oferece desempenho rápido e consistente com escalabilidade automática."
+    correctAnswer: [0, 2],
+    explanation: "As Spot Instances oferecem custos reduzidos e são ideais para workloads tolerantes a interrupções."
   },
   {
     id: 13,
-    text: "Uma empresa deseja transferir um Windows Server 2022 virtual que está atualmente em execução em seu próprio data center para a AWS. A empresa quer converter automaticamente o servidor existente para rodar diretamente na infraestrutura da AWS em vez de em um hardware virtualizado. Qual serviço da AWS atenderá a esses requisitos?",
+    text: "Qual é a principal função do AWS Budgets?",
     options: [
-      "AWS DataSync",
-      "AWS Database Migration Service (AWS DMS)",
-      "AWS Application Discovery Service",
-      "AWS Application Migration Service"
+      "Fornecer recomendações para otimização de custos",
+      "Definir limites de orçamento e alertas para gastos na AWS",
+      "Automatizar a aplicação de Savings Plans",
+      "Garantir acesso gratuito a suporte técnico"
     ],
-    correctAnswer: 3,
-    explanation: "O AWS Application Migration Service permite migrar servidores físicos ou virtuais para a AWS, convertendo automaticamente o sistema operacional e os aplicativos para rodar na infraestrutura da AWS."
+    correctAnswer: 1,
+    explanation: "O AWS Budgets permite definir limites de orçamento e alertas para monitorar e controlar gastos na AWS."
   },
   {
     id: 14,
-    text: "Uma empresa deseja migrar seu banco de dados SQL Server local para a AWS Cloud. A empresa quer que a AWS gerencie a administração diária do banco de dados. Qual serviço da AWS atenderá aos requisitos da empresa?",
+    text: "Quais são características do AWS Cost and Usage Report (CUR)? (Escolha duas)",
     options: [
-      "Amazon EC2 for Microsoft SQL Server",
-      "Amazon DynamoDB",
-      "Amazon RDS",
-      "Amazon Aurora"
+      "Detalha o uso e os custos de todos os serviços da AWS",
+      "Oferece descontos automáticos em instâncias EC2",
+      "Permite análises detalhadas e personalizadas",
+      "Automatiza a aplicação de Savings Plans"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon RDS é um serviço gerenciado que facilita a configuração, operação e escalabilidade de bancos de dados relacionais, como o SQL Server, sem a necessidade de gerenciar a infraestrutura subjacente."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Cost and Usage Report detalha o uso e os custos de serviços AWS e permite análises personalizadas."
   },
   {
     id: 15,
-    text: "Uma empresa precisa de filtragem de rede sem estado para sua VPC. Qual serviço, ferramenta ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual é a principal vantagem do AWS Pricing Calculator?",
     options: [
-      "VPC Peering",
-      "Security Group",
-      "Network ACL",
-      "AWS WAF"
+      "Oferece descontos automáticos em instâncias EC2",
+      "Permite estimar custos de serviços AWS antes de usá-los",
+      "Automatiza a aplicação de Savings Plans",
+      "Garante acesso gratuito a suporte técnico"
     ],
-    correctAnswer: 2,
-    explanation: "As Network ACLs (Listas de Controle de Acesso) fornecem filtragem de rede sem estado para controlar o tráfego de entrada e saída em uma VPC."
+    correctAnswer: 1,
+    explanation: "O AWS Pricing Calculator permite estimar custos de serviços AWS antes de usá-los, ajudando no planejamento financeiro."
+  },
+  {
+    id: 16,
+    text: "Quais são benefícios do Plano Básico (Gratuito) da AWS? (Escolha duas)",
+    options: [
+      "Permite uso gratuito de serviços populares dentro de limites específicos",
+      "Oferece acesso gratuito a suporte técnico 24/7",
+      "Garante descontos automáticos em instâncias EC2",
+      "É válido por 12 meses"
+    ],
+    correctAnswer: [0, 3],
+    explanation: "O Plano Básico (Gratuito) permite uso gratuito de serviços populares dentro de limites específicos por 12 meses."
+  },
+  {
+    id: 17,
+    text: "Qual é a principal vantagem do Pay-as-you-go?",
+    options: [
+      "Descontos significativos em troca de compromissos de longo prazo",
+      "Flexibilidade para pagar apenas pelo que for consumido",
+      "Ideal para workloads de longa duração",
+      "Garantia de disponibilidade contínua por 24 horas"
+    ],
+    correctAnswer: 1,
+    explanation: "O Pay-as-you-go oferece flexibilidade para pagar apenas pelo que for consumido, sem compromissos de longo prazo."
+  },
+  {
+    id: 18,
+    text: "Quais são características das Instâncias Reservadas (RIs)? (Escolha duas)",
+    options: [
+      "Oferecem descontos em troca de compromissos de longo prazo",
+      "Permitem pagar apenas pelo que for consumido",
+      "São ideais para workloads imprevisíveis",
+      "Podem ser adquiridas com termos de 1 ou 3 anos"
+    ],
+    correctAnswer: [0, 3],
+    explanation: "As Instâncias Reservadas oferecem descontos em troca de compromissos de longo prazo, como termos de 1 ou 3 anos."
+  },
+  {
+    id: 19,
+    text: "Qual é a principal vantagem das Savings Plans?",
+    options: [
+      "Descontos maiores que as Instâncias Reservadas",
+      "Flexibilidade para mudar tipos de instâncias e regiões",
+      "Ideal para workloads de curta duração",
+      "Não exigem pagamento antecipado"
+    ],
+    correctAnswer: 1,
+    explanation: "Os Savings Plans oferecem flexibilidade para mudar tipos de instâncias e regiões, ao contrário das RIs."
+  },
+  {
+    id: 20,
+    text: "Quais são benefícios do AWS Cost Explorer? (Escolha duas)",
+    options: [
+      "Permite visualizar e analisar padrões de gastos na AWS",
+      "Oferece recomendações para otimização de custos",
+      "Automatiza a aplicação de Savings Plans",
+      "Garante acesso gratuito a suporte técnico"
+    ],
+    correctAnswer: [0, 1],
+    explanation: "O AWS Cost Explorer permite visualizar padrões de gastos e oferece recomendações para otimização de custos."
   }
 ];
 

@@ -1,183 +1,243 @@
 const originalQuestions = [
   {
     id: 1,
-    text: "Uma empresa deseja usar uma solução de rede da AWS que possa atuar como um gateway centralizado entre várias VPCs e redes locais. Qual serviço ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual das seguintes opções descreve corretamente uma vantagem do Amazon S3?",
     options: [
-      "Gateway VPC endpoint",
-      "AWS Direct Connect",
-      "AWS Transit Gateway",
-      "VPC Peering"
+      "Armazena dados em blocos para acesso de baixa latência",
+      "Oferece armazenamento distribuído e escalável para objetos",
+      "Requer provisionamento prévio de capacidade",
+      "É um banco de dados NoSQL altamente escalável"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Transit Gateway é um serviço que atua como um hub centralizado para conectar várias VPCs e redes locais, facilitando a comunicação entre elas de forma escalável e segura."
+    correctAnswer: 1,
+    explanation: "O Amazon S3 é um serviço de armazenamento de objetos altamente escalável e distribuído, ideal para armazenar grandes quantidades de dados."
   },
   {
     id: 2,
-    text: "Qual serviço ou ferramenta complementar da AWS cria casos de negócios baseados em dados para planejamento de nuvem?",
+    text: "Quais das seguintes características são verdadeiras sobre o Amazon RDS? (Escolha duas)",
     options: [
-      "Avaliador de migração (Migration Evaluator)",
-      "Condutor de faturamento da AWS (AWS Billing Conductor)",
-      "Console de faturamento da AWS (AWS Billing Console)",
-      "Previsão da Forecast (Amazon Forecast)"
+      "Suporta bancos de dados relacionais como MySQL, PostgreSQL e SQL Server",
+      "Permite dimensionamento automático horizontal nativo",
+      "Gerencia backups, atualizações e failover automaticamente",
+      "Usa apenas armazenamento baseado em objetos"
     ],
-    correctAnswer: 0,
-    explanation: "O Avaliador de Migração (Migration Evaluator) ajuda a criar casos de negócios baseados em dados para planejamento de migração para a nuvem, fornecendo insights sobre custos e benefícios."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon RDS suporta vários bancos de dados relacionais e gerencia tarefas operacionais como backups e failover de forma automática."
   },
   {
     id: 3,
-    text: "Um administrador observou que vários recursos da AWS foram excluídos ontem. Qual serviço da AWS ajudará a identificar a causa e determinar qual usuário excluiu os recursos?",
+    text: "Qual é a principal diferença entre Amazon EBS e Amazon S3?",
     options: [
-      "AWS CloudTrail",
-      "Amazon Inspector",
-      "Amazon GuardDuty",
-      "AWS Trusted Advisor"
+      "Amazon EBS é um serviço de armazenamento de blocos, enquanto Amazon S3 é um serviço de armazenamento de objetos",
+      "Amazon EBS é usado apenas para backups, enquanto Amazon S3 é usado para bancos de dados",
+      "Amazon EBS é escalável globalmente, enquanto Amazon S3 é limitado a uma única região",
+      "Amazon EBS é um banco de dados NoSQL, enquanto Amazon S3 é um banco de dados relacional"
     ],
     correctAnswer: 0,
-    explanation: "O AWS CloudTrail registra todas as chamadas de API feitas na conta da AWS, permitindo rastrear quem realizou ações como a exclusão de recursos."
+    explanation: "O Amazon EBS é um serviço de armazenamento de blocos para instâncias EC2, enquanto o Amazon S3 é um serviço de armazenamento de objetos."
   },
   {
     id: 4,
-    text: "Uma empresa de telecomunicações está procurando expandir sua cobertura 5G em todo o país e, como resultado, precisa provisionar e construir sua própria rede celular privada com a ajuda da AWS. Qual solução a AWS fornece para ajudar com isso?",
+    text: "Quais são características do Amazon DynamoDB? (Escolha duas)",
     options: [
-      "AWS Private 5G",
-      "AWS Wavelength",
-      "AWS Outposts",
-      "AWS Direct Connect"
+      "Banco de dados NoSQL gerenciado e altamente escalável",
+      "Suporta apenas consultas SQL tradicionais",
+      "Oferece desempenho de milissegundos de latência única dígito",
+      "Requer provisionamento manual de capacidade de armazenamento"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS Private 5G é uma solução que permite às empresas implantar e gerenciar suas próprias redes celulares privadas 5G de forma rápida e fácil."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon DynamoDB é um banco de dados NoSQL gerenciado e altamente escalável, com desempenho de milissegundos de latência única dígito."
   },
   {
     id: 5,
-    text: "Qual é o volume total de dados que pode ser armazenado no Amazon S3?",
+    text: "Qual é a principal vantagem do Amazon Aurora em relação ao Amazon RDS?",
     options: [
-      "10 PB",
-      "50 PB",
-      "100 PB",
-      "ilimitado"
+      "Oferece desempenho e escalabilidade superiores com compatibilidade MySQL e PostgreSQL",
+      "É um banco de dados NoSQL altamente escalável",
+      "Não requer backups automáticos",
+      "É mais barato que todas as outras opções de banco de dados na AWS"
     ],
-    correctAnswer: 3,
-    explanation: "O Amazon S3 oferece armazenamento ilimitado, permitindo que os usuários armazenem qualquer quantidade de dados sem preocupação com limites de capacidade."
+    correctAnswer: 0,
+    explanation: "O Amazon Aurora oferece desempenho e escalabilidade superiores, sendo compatível com MySQL e PostgreSQL."
   },
   {
     id: 6,
-    text: "Um aplicativo herdado de computação de alto desempenho (HPC) herdado será migrado para a AWS. Qual tipo de adaptador de rede deve ser usado?",
+    text: "Quais são benefícios do Amazon Redshift? (Escolha duas)",
     options: [
-      "Endereço IP elástico",
-      "Elastic Network Adapter/ENA",
-      "Elastic Fabric Adapter/EFA",
-      "Elastic Network Interface/ENI"
+      "Data warehouse escalável para análise de grandes volumes de dados",
+      "Banco de dados relacional para transações online",
+      "Integração nativa com ferramentas de BI como Tableau e Power BI",
+      "Ideal para aplicativos que exigem baixa latência de milissegundos"
     ],
-    correctAnswer: 2,
-    explanation: "O Elastic Fabric Adapter (EFA) é projetado para aplicativos de computação de alto desempenho (HPC), oferecendo baixa latência e alta taxa de transferência para comunicação entre instâncias."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Redshift é um data warehouse escalável para análise de dados e integra-se com ferramentas de BI."
   },
   {
     id: 7,
-    text: "Qual entidade garante que seu aplicativo no Amazon Elastic Compute Cloud (Amazon EC2) sempre tenha a quantidade certa de capacidade para lidar com a demanda de tráfego atual?",
+    text: "Qual é a principal função do Amazon Glacier?",
     options: [
-      "Amazon EC2 Auto Scaling",
-      "Multi-AZ deployment",
-      "Network Load Balancer",
-      "Application Load Balancer"
+      "Armazenamento de objetos de baixo custo para dados acessados com frequência",
+      "Armazenamento de longo prazo e baixo custo para arquivamento de dados",
+      "Banco de dados NoSQL para grandes volumes de dados",
+      "Armazenamento de blocos para instâncias EC2"
     ],
-    correctAnswer: 0,
-    explanation: "O Amazon EC2 Auto Scaling ajusta automaticamente o número de instâncias EC2 com base na demanda, garantindo que o aplicativo tenha capacidade suficiente para lidar com o tráfego."
+    correctAnswer: 1,
+    explanation: "O Amazon Glacier é projetado para armazenamento de longo prazo e baixo custo, ideal para arquivamento de dados."
   },
   {
     id: 8,
-    text: "Uma empresa deseja configurar uma conexão de rede segura do local para a Nuvem AWS em até 1 semana. Qual solução atenderá a esses requisitos?",
+    text: "Quais são características do AWS Backup? (Escolha duas)",
     options: [
-      "AWS Direct Connect",
-      "Amazon VPC",
-      "AWS Site-to-Site VPN",
-      "Edge location"
+      "Oferece backup centralizado para múltiplos serviços AWS",
+      "Requer configuração manual para cada recurso",
+      "Permite agendamento e políticas de retenção de backups",
+      "Funciona apenas com Amazon S3"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Site-to-Site VPN permite configurar uma conexão segura entre a rede local e a AWS em poucos dias, sem a necessidade de hardware físico adicional."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Backup oferece backup centralizado e permite agendamento e políticas de retenção."
   },
   {
     id: 9,
-    text: "Quando um usuário deseja utilizar suas licenças de software existentes por soquete, por núcleo ou por máquina virtual para um servidor Microsoft Windows em execução na AWS, qual tipo de instância do Amazon EC2 é necessário?",
+    text: "Qual é a principal vantagem do Amazon EFS em relação ao Amazon EBS?",
     options: [
-      "Instâncias spot",
-      "Instâncias Dedicadas",
-      "Hosts Dedicados",
-      "Instâncias Reservadas"
+      "Oferece armazenamento de arquivos compartilhados e escalável",
+      "É mais barato que o Amazon EBS",
+      "Funciona apenas com instâncias EC2 em uma única sub-rede",
+      "Não requer configuração de permissões"
     ],
-    correctAnswer: 2,
-    explanation: "Os Hosts Dedicados permitem que os usuários utilizem suas licenças de software existentes por soquete, núcleo ou máquina virtual, atendendo a requisitos de licenciamento específicos."
+    correctAnswer: 0,
+    explanation: "O Amazon EFS oferece armazenamento de arquivos compartilhados e escalável, ao contrário do Amazon EBS, que é baseado em blocos."
   },
   {
     id: 10,
-    text: "Qual princípio de design está relacionado ao pilar de confiabilidade de acordo com o AWS Well-Architected Framework?",
+    text: "Quais são benefícios do Amazon DocumentDB? (Escolha duas)",
     options: [
-      "Testar procedimentos de recuperação",
-      "Realizar experimentos com mais frequência",
-      "Expandir globalmente em minutos",
-      "Analisar e atribuir despesas"
+      "Banco de dados NoSQL compatível com MongoDB",
+      "Suporta apenas consultas SQL tradicionais",
+      "Oferece escalabilidade automática e alta disponibilidade",
+      "Requer provisionamento manual de capacidade de armazenamento"
     ],
-    correctAnswer: 0,
-    explanation: "Testar procedimentos de recuperação é um princípio fundamental do pilar de Confiabilidade, garantindo que os sistemas possam se recuperar de falhas de forma eficaz."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon DocumentDB é compatível com MongoDB e oferece escalabilidade automática e alta disponibilidade."
   },
   {
     id: 11,
-    text: "Uma empresa armazena dados em um bucket do Amazon S3. Qual tarefa é responsabilidade da AWS?",
+    text: "Qual é a principal função do Amazon S3 Glacier Deep Archive?",
     options: [
-      "Configurar uma política de ciclo de vida do S3.",
-      "Ativar o versionamento do S3.",
-      "Configurar políticas de bucket do S3.",
-      "Proteger a infraestrutura que suporta o armazenamento S3."
+      "Armazenamento de objetos para dados acessados com frequência",
+      "Armazenamento de longo prazo com o menor custo da AWS",
+      "Banco de dados relacional para análise de dados",
+      "Armazenamento de blocos para instâncias EC2"
     ],
-    correctAnswer: 3,
-    explanation: "De acordo com o modelo de responsabilidade compartilhada, a AWS é responsável pela segurança da infraestrutura que suporta o armazenamento S3, enquanto o cliente é responsável por configurar políticas e versionamento."
+    correctAnswer: 1,
+    explanation: "O Amazon S3 Glacier Deep Archive é a opção de armazenamento de longo prazo com o menor custo da AWS."
   },
   {
     id: 12,
-    text: "Qual serviço da AWS é um banco de dados NoSQL totalmente gerenciado?",
+    text: "Quais são características do Amazon Aurora? (Escolha duas)",
     options: [
-      "Amazon RDS",
-      "Amazon Redshift",
-      "Amazon DynamoDB",
-      "Amazon Aurora"
+      "Compatível com MySQL e PostgreSQL",
+      "Banco de dados NoSQL altamente escalável",
+      "Oferece replicação automática em três zonas de disponibilidade",
+      "Requer configuração manual de backups"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado que oferece desempenho rápido e consistente com escalabilidade automática."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Aurora é compatível com MySQL e PostgreSQL e oferece replicação automática em três zonas de disponibilidade."
   },
   {
     id: 13,
-    text: "Uma empresa deseja transferir um Windows Server 2022 virtual que está atualmente em execução em seu próprio data center para a AWS. A empresa quer converter automaticamente o servidor existente para rodar diretamente na infraestrutura da AWS em vez de em um hardware virtualizado. Qual serviço da AWS atenderá a esses requisitos?",
+    text: "Qual é a principal vantagem do Amazon DynamoDB em relação a bancos de dados relacionais?",
     options: [
-      "AWS DataSync",
-      "AWS Database Migration Service (AWS DMS)",
-      "AWS Application Discovery Service",
-      "AWS Application Migration Service"
+      "Oferece desempenho de milissegundos de latência única dígito para qualquer escala",
+      "Suporta consultas SQL complexas",
+      "Requer provisionamento manual de capacidade",
+      "É mais barato que todos os bancos de dados relacionais"
     ],
-    correctAnswer: 3,
-    explanation: "O AWS Application Migration Service permite migrar servidores físicos ou virtuais para a AWS, convertendo automaticamente o sistema operacional e os aplicativos para rodar na infraestrutura da AWS."
+    correctAnswer: 0,
+    explanation: "O Amazon DynamoDB oferece desempenho de milissegundos de latência única dígito, independentemente da escala."
   },
   {
     id: 14,
-    text: "Uma empresa deseja migrar seu banco de dados SQL Server local para a AWS Cloud. A empresa quer que a AWS gerencie a administração diária do banco de dados. Qual serviço da AWS atenderá aos requisitos da empresa?",
+    text: "Quais são benefícios do Amazon EBS? (Escolha duas)",
     options: [
-      "Amazon EC2 for Microsoft SQL Server",
-      "Amazon DynamoDB",
-      "Amazon RDS",
-      "Amazon Aurora"
+      "Armazenamento de blocos persistente para instâncias EC2",
+      "Oferece armazenamento compartilhado entre múltiplas instâncias",
+      "Permite snapshots para backups",
+      "É um serviço de armazenamento de objetos"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon RDS é um serviço gerenciado que facilita a configuração, operação e escalabilidade de bancos de dados relacionais, como o SQL Server, sem a necessidade de gerenciar a infraestrutura subjacente."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon EBS fornece armazenamento de blocos persistente para instâncias EC2 e permite snapshots para backups."
   },
   {
     id: 15,
-    text: "Uma empresa precisa de filtragem de rede sem estado para sua VPC. Qual serviço, ferramenta ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual é a principal função do Amazon Redshift?",
     options: [
-      "VPC Peering",
-      "Security Group",
-      "Network ACL",
-      "AWS WAF"
+      "Banco de dados relacional para transações online",
+      "Data warehouse para análise de grandes volumes de dados",
+      "Armazenamento de objetos para dados não estruturados",
+      "Banco de dados NoSQL para aplicativos de baixa latência"
     ],
-    correctAnswer: 2,
-    explanation: "As Network ACLs (Listas de Controle de Acesso) fornecem filtragem de rede sem estado para controlar o tráfego de entrada e saída em uma VPC."
+    correctAnswer: 1,
+    explanation: "O Amazon Redshift é um data warehouse projetado para análise de grandes volumes de dados."
+  },
+  {
+    id: 16,
+    text: "Quais são características do Amazon S3 Intelligent-Tiering? (Escolha duas)",
+    options: [
+      "Move objetos automaticamente entre camadas de armazenamento com base no acesso",
+      "Oferece apenas uma camada de armazenamento de baixo custo",
+      "Requer configuração manual para mover objetos entre camadas",
+      "Ideal para dados com padrões de acesso desconhecidos ou variáveis"
+    ],
+    correctAnswer: [0, 3],
+    explanation: "O Amazon S3 Intelligent-Tiering move objetos automaticamente entre camadas e é ideal para dados com padrões de acesso desconhecidos."
+  },
+  {
+    id: 17,
+    text: "Qual é a principal vantagem do Amazon EFS em relação ao Amazon S3?",
+    options: [
+      "Oferece armazenamento de arquivos compartilhados e escalável",
+      "É mais barato que o Amazon S3",
+      "Funciona apenas com instâncias EC2 em uma única sub-rede",
+      "Não requer configuração de permissões"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon EFS oferece armazenamento de arquivos compartilhados e escalável, ao contrário do Amazon S3, que é baseado em objetos."
+  },
+  {
+    id: 18,
+    text: "Quais são benefícios do Amazon RDS? (Escolha duas)",
+    options: [
+      "Gerencia backups, patches e failover automaticamente",
+      "Oferece dimensionamento automático horizontal nativo",
+      "Suporta apenas bancos de dados NoSQL",
+      "Requer configuração manual de backups"
+    ],
+    correctAnswer: [0, 1],
+    explanation: "O Amazon RDS gerencia backups, patches e failover automaticamente e oferece dimensionamento automático."
+  },
+  {
+    id: 19,
+    text: "Qual é a principal função do Amazon DocumentDB?",
+    options: [
+      "Banco de dados relacional para análise de dados",
+      "Banco de dados NoSQL compatível com MongoDB",
+      "Armazenamento de objetos para dados não estruturados",
+      "Data warehouse para grandes volumes de dados"
+    ],
+    correctAnswer: 1,
+    explanation: "O Amazon DocumentDB é um banco de dados NoSQL compatível com MongoDB."
+  },
+  {
+    id: 20,
+    text: "Quais são características do Amazon S3? (Escolha duas)",
+    options: [
+      "Armazenamento de objetos altamente escalável",
+      "Oferece apenas uma camada de armazenamento de baixo custo",
+      "Ideal para armazenar grandes volumes de dados não estruturados",
+      "Requer provisionamento manual de capacidade"
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Amazon S3 é um serviço de armazenamento de objetos altamente escalável e ideal para dados não estruturados."
   }
 ];
 

@@ -1,183 +1,243 @@
 const originalQuestions = [
   {
     id: 1,
-    text: "Uma empresa deseja usar uma solução de rede da AWS que possa atuar como um gateway centralizado entre várias VPCs e redes locais. Qual serviço ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual é a principal vantagem do uso de múltiplas Zonas de Disponibilidade (AZs) em uma região AWS?",
     options: [
-      "Gateway VPC endpoint",
-      "AWS Direct Connect",
-      "AWS Transit Gateway",
-      "VPC Peering"
+      "Reduzir custos operacionais de armazenamento",
+      "Aumentar a resiliência e disponibilidade dos serviços",
+      "Evitar a necessidade de balanceadores de carga",
+      "Garantir latências mais baixas em redes locais"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Transit Gateway é um serviço que atua como um hub centralizado para conectar várias VPCs e redes locais, facilitando a comunicação entre elas de forma escalável e segura."
+    correctAnswer: 1,
+    explanation: "O uso de múltiplas AZs aumenta a resiliência e a disponibilidade dos serviços, garantindo continuidade mesmo em caso de falha de uma zona."
   },
   {
     id: 2,
-    text: "Qual serviço ou ferramenta complementar da AWS cria casos de negócios baseados em dados para planejamento de nuvem?",
+    text: "Quais são benefícios do AWS Global Accelerator? (Escolha duas)",
     options: [
-      "Avaliador de migração (Migration Evaluator)",
-      "Condutor de faturamento da AWS (AWS Billing Conductor)",
-      "Console de faturamento da AWS (AWS Billing Console)",
-      "Previsão da Forecast (Amazon Forecast)"
+      "Melhoria na latência para usuários globais",
+      "Criação automática de backups de instâncias EC2",
+      "Fornece um endereço IP estático para aplicativos globais",
+      "Oferece armazenamento distribuído para dados não estruturados"
     ],
-    correctAnswer: 0,
-    explanation: "O Avaliador de Migração (Migration Evaluator) ajuda a criar casos de negócios baseados em dados para planejamento de migração para a nuvem, fornecendo insights sobre custos e benefícios."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Global Accelerator melhora a latência ao direcionar tráfego para a região ideal e fornece um IP estático para maior estabilidade."
   },
   {
     id: 3,
-    text: "Um administrador observou que vários recursos da AWS foram excluídos ontem. Qual serviço da AWS ajudará a identificar a causa e determinar qual usuário excluiu os recursos?",
+    text: "Qual é a função das Edge Locations no Amazon CloudFront?",
     options: [
-      "AWS CloudTrail",
-      "Amazon Inspector",
-      "Amazon GuardDuty",
-      "AWS Trusted Advisor"
+      "Armazenar backups de dados críticos",
+      "Distribuir conteúdo com baixa latência para usuários finais",
+      "Gerenciar instâncias EC2 em múltiplas regiões",
+      "Fornecer conectividade direta com data centers locais"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS CloudTrail registra todas as chamadas de API feitas na conta da AWS, permitindo rastrear quem realizou ações como a exclusão de recursos."
+    correctAnswer: 1,
+    explanation: "As Edge Locations distribuem conteúdo com baixa latência, melhorando a experiência do usuário final."
   },
   {
     id: 4,
-    text: "Uma empresa de telecomunicações está procurando expandir sua cobertura 5G em todo o país e, como resultado, precisa provisionar e construir sua própria rede celular privada com a ajuda da AWS. Qual solução a AWS fornece para ajudar com isso?",
+    text: "Quais são características do AWS Backup? (Escolha duas)",
     options: [
-      "AWS Private 5G",
-      "AWS Wavelength",
-      "AWS Outposts",
-      "AWS Direct Connect"
+      "Oferece backup centralizado para serviços AWS",
+      "Requer configuração manual para cada recurso",
+      "Integra-se apenas com Amazon S3",
+      "Permite agendamento e políticas de retenção de backups"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS Private 5G é uma solução que permite às empresas implantar e gerenciar suas próprias redes celulares privadas 5G de forma rápida e fácil."
+    correctAnswer: [0, 3],
+    explanation: "O AWS Backup oferece backup centralizado e permite agendamento e políticas de retenção."
   },
   {
     id: 5,
-    text: "Qual é o volume total de dados que pode ser armazenado no Amazon S3?",
+    text: "Qual é o objetivo do AWS Well-Architected Framework?",
     options: [
-      "10 PB",
-      "50 PB",
-      "100 PB",
-      "ilimitado"
+      "Reduzir custos de infraestrutura em 50%",
+      "Fornecer práticas recomendadas para projetar sistemas seguros e eficientes",
+      "Automatizar a criação de instâncias EC2",
+      "Substituir a necessidade de monitoramento de aplicações"
     ],
-    correctAnswer: 3,
-    explanation: "O Amazon S3 oferece armazenamento ilimitado, permitindo que os usuários armazenem qualquer quantidade de dados sem preocupação com limites de capacidade."
+    correctAnswer: 1,
+    explanation: "O AWS Well-Architected Framework fornece práticas recomendadas para projetar sistemas seguros, eficientes e resilientes."
   },
   {
     id: 6,
-    text: "Um aplicativo herdado de computação de alto desempenho (HPC) herdado será migrado para a AWS. Qual tipo de adaptador de rede deve ser usado?",
+    text: "Quais são benefícios de usar múltiplas regiões AWS? (Escolha duas)",
     options: [
-      "Endereço IP elástico",
-      "Elastic Network Adapter/ENA",
-      "Elastic Fabric Adapter/EFA",
-      "Elastic Network Interface/ENI"
+      "Maior resiliência contra falhas regionais",
+      "Redução automática de custos de transferência de dados",
+      "Melhoria na latência para usuários globais",
+      "Eliminação da necessidade de Zonas de Disponibilidade"
     ],
-    correctAnswer: 2,
-    explanation: "O Elastic Fabric Adapter (EFA) é projetado para aplicativos de computação de alto desempenho (HPC), oferecendo baixa latência e alta taxa de transferência para comunicação entre instâncias."
+    correctAnswer: [0, 2],
+    explanation: "Usar múltiplas regiões aumenta a resiliência e melhora a latência para usuários globais."
   },
   {
     id: 7,
-    text: "Qual entidade garante que seu aplicativo no Amazon Elastic Compute Cloud (Amazon EC2) sempre tenha a quantidade certa de capacidade para lidar com a demanda de tráfego atual?",
+    text: "Qual é a principal função do Amazon CloudFront?",
     options: [
-      "Amazon EC2 Auto Scaling",
-      "Multi-AZ deployment",
-      "Network Load Balancer",
-      "Application Load Balancer"
+      "Fornecer armazenamento de objetos ilimitado",
+      "Distribuir conteúdo com baixa latência e alta transferência",
+      "Gerenciar instâncias EC2 em tempo real",
+      "Automatizar backups de bancos de dados"
     ],
-    correctAnswer: 0,
-    explanation: "O Amazon EC2 Auto Scaling ajusta automaticamente o número de instâncias EC2 com base na demanda, garantindo que o aplicativo tenha capacidade suficiente para lidar com o tráfego."
+    correctAnswer: 1,
+    explanation: "O Amazon CloudFront é uma CDN que distribui conteúdo com baixa latência e alta transferência."
   },
   {
     id: 8,
-    text: "Uma empresa deseja configurar uma conexão de rede segura do local para a Nuvem AWS em até 1 semana. Qual solução atenderá a esses requisitos?",
+    text: "Quais são práticas recomendadas para alta disponibilidade no AWS? (Escolha duas)",
     options: [
-      "AWS Direct Connect",
-      "Amazon VPC",
-      "AWS Site-to-Site VPN",
-      "Edge location"
+      "Usar uma única Zona de Disponibilidade para reduzir custos",
+      "Distribuir aplicações em múltiplas AZs",
+      "Utilizar apenas instâncias Spot para workloads críticos",
+      "Configurar balanceadores de carga entre AZs"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Site-to-Site VPN permite configurar uma conexão segura entre a rede local e a AWS em poucos dias, sem a necessidade de hardware físico adicional."
+    correctAnswer: [1, 3],
+    explanation: "Distribuir aplicações em múltiplas AZs e usar balanceadores de carga são práticas essenciais para alta disponibilidade."
   },
   {
     id: 9,
-    text: "Quando um usuário deseja utilizar suas licenças de software existentes por soquete, por núcleo ou por máquina virtual para um servidor Microsoft Windows em execução na AWS, qual tipo de instância do Amazon EC2 é necessário?",
+    text: "Qual é a vantagem do uso de Edge Locations em aplicações globais?",
     options: [
-      "Instâncias spot",
-      "Instâncias Dedicadas",
-      "Hosts Dedicados",
-      "Instâncias Reservadas"
+      "Reduzir a necessidade de balanceadores de carga",
+      "Melhorar a latência para usuários finais",
+      "Fornecer armazenamento de dados ilimitado",
+      "Automatizar a criação de instâncias EC2"
     ],
-    correctAnswer: 2,
-    explanation: "Os Hosts Dedicados permitem que os usuários utilizem suas licenças de software existentes por soquete, núcleo ou máquina virtual, atendendo a requisitos de licenciamento específicos."
+    correctAnswer: 1,
+    explanation: "Edge Locations melhoram a latência ao aproximar o conteúdo dos usuários finais."
   },
   {
     id: 10,
-    text: "Qual princípio de design está relacionado ao pilar de confiabilidade de acordo com o AWS Well-Architected Framework?",
+    text: "Quais são benefícios do AWS Global Accelerator? (Escolha duas)",
     options: [
-      "Testar procedimentos de recuperação",
-      "Realizar experimentos com mais frequência",
-      "Expandir globalmente em minutos",
-      "Analisar e atribuir despesas"
+      "Reduzir custos de transferência de dados entre regiões",
+      "Melhorar a disponibilidade de aplicações globais",
+      "Fornecer um IP estático para aplicações",
+      "Automatizar a criação de backups"
     ],
-    correctAnswer: 0,
-    explanation: "Testar procedimentos de recuperação é um princípio fundamental do pilar de Confiabilidade, garantindo que os sistemas possam se recuperar de falhas de forma eficaz."
+    correctAnswer: [1, 2],
+    explanation: "O AWS Global Accelerator melhora a disponibilidade e fornece um IP estático para aplicações globais."
   },
   {
     id: 11,
-    text: "Uma empresa armazena dados em um bucket do Amazon S3. Qual tarefa é responsabilidade da AWS?",
+    text: "Qual é a principal função do AWS Backup?",
     options: [
-      "Configurar uma política de ciclo de vida do S3.",
-      "Ativar o versionamento do S3.",
-      "Configurar políticas de bucket do S3.",
-      "Proteger a infraestrutura que suporta o armazenamento S3."
+      "Automatizar a criação de instâncias EC2",
+      "Gerenciar backups centralizados para serviços AWS",
+      "Fornecer armazenamento de objetos de baixo custo",
+      "Monitorar o desempenho de aplicações"
     ],
-    correctAnswer: 3,
-    explanation: "De acordo com o modelo de responsabilidade compartilhada, a AWS é responsável pela segurança da infraestrutura que suporta o armazenamento S3, enquanto o cliente é responsável por configurar políticas e versionamento."
+    correctAnswer: 1,
+    explanation: "O AWS Backup gerencia backups centralizados para serviços AWS de forma automatizada."
   },
   {
     id: 12,
-    text: "Qual serviço da AWS é um banco de dados NoSQL totalmente gerenciado?",
+    text: "Quais são pilares do AWS Well-Architected Framework? (Escolha duas)",
     options: [
-      "Amazon RDS",
-      "Amazon Redshift",
-      "Amazon DynamoDB",
-      "Amazon Aurora"
+      "Segurança e Excelência Operacional",
+      "Redução de Custos Automática",
+      "Eliminação de Zonas de Disponibilidade",
+      "Escalabilidade e Resiliência"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado que oferece desempenho rápido e consistente com escalabilidade automática."
+    correctAnswer: [0, 3],
+    explanation: "Segurança e Excelência Operacional são pilares do AWS Well-Architected Framework."
   },
   {
     id: 13,
-    text: "Uma empresa deseja transferir um Windows Server 2022 virtual que está atualmente em execução em seu próprio data center para a AWS. A empresa quer converter automaticamente o servidor existente para rodar diretamente na infraestrutura da AWS em vez de em um hardware virtualizado. Qual serviço da AWS atenderá a esses requisitos?",
+    text: "Qual é a vantagem de usar múltiplas Zonas de Disponibilidade (AZs)?",
     options: [
-      "AWS DataSync",
-      "AWS Database Migration Service (AWS DMS)",
-      "AWS Application Discovery Service",
-      "AWS Application Migration Service"
+      "Reduzir a latência entre regiões",
+      "Aumentar a resiliência de aplicações",
+      "Eliminar a necessidade de balanceadores de carga",
+      "Reduzir custos de armazenamento"
     ],
-    correctAnswer: 3,
-    explanation: "O AWS Application Migration Service permite migrar servidores físicos ou virtuais para a AWS, convertendo automaticamente o sistema operacional e os aplicativos para rodar na infraestrutura da AWS."
+    correctAnswer: 1,
+    explanation: "Usar múltiplas AZs aumenta a resiliência de aplicações, garantindo continuidade em caso de falhas."
   },
   {
     id: 14,
-    text: "Uma empresa deseja migrar seu banco de dados SQL Server local para a AWS Cloud. A empresa quer que a AWS gerencie a administração diária do banco de dados. Qual serviço da AWS atenderá aos requisitos da empresa?",
+    text: "Quais são benefícios do Amazon CloudFront? (Escolha duas)",
     options: [
-      "Amazon EC2 for Microsoft SQL Server",
-      "Amazon DynamoDB",
-      "Amazon RDS",
-      "Amazon Aurora"
+      "Distribuição de conteúdo com baixa latência",
+      "Armazenamento ilimitado de dados não estruturados",
+      "Integração com AWS Global Accelerator",
+      "Cache de conteúdo para melhorar desempenho"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon RDS é um serviço gerenciado que facilita a configuração, operação e escalabilidade de bancos de dados relacionais, como o SQL Server, sem a necessidade de gerenciar a infraestrutura subjacente."
+    correctAnswer: [0, 3],
+    explanation: "O Amazon CloudFront distribui conteúdo com baixa latência e usa cache para melhorar desempenho."
   },
   {
     id: 15,
-    text: "Uma empresa precisa de filtragem de rede sem estado para sua VPC. Qual serviço, ferramenta ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual é a função do AWS Global Accelerator?",
     options: [
-      "VPC Peering",
-      "Security Group",
-      "Network ACL",
-      "AWS WAF"
+      "Fornecer armazenamento de objetos global",
+      "Melhorar a latência e disponibilidade de aplicações globais",
+      "Automatizar a criação de instâncias EC2",
+      "Gerenciar backups entre regiões"
     ],
-    correctAnswer: 2,
-    explanation: "As Network ACLs (Listas de Controle de Acesso) fornecem filtragem de rede sem estado para controlar o tráfego de entrada e saída em uma VPC."
+    correctAnswer: 1,
+    explanation: "O AWS Global Accelerator melhora a latência e a disponibilidade de aplicações globais."
+  },
+  {
+    id: 16,
+    text: "Quais são práticas recomendadas pelo AWS Well-Architected Framework? (Escolha duas)",
+    options: [
+      "Usar uma única AZ para reduzir custos",
+      "Implementar monitoramento contínuo",
+      "Eliminar o uso de balanceadores de carga",
+      "Projetar para falhas e recuperação"
+    ],
+    correctAnswer: [1, 3],
+    explanation: "Monitoramento contínuo e design para falhas são práticas recomendadas pelo AWS Well-Architected Framework."
+  },
+  {
+    id: 17,
+    text: "Qual é a vantagem de usar Edge Locations?",
+    options: [
+      "Reduzir custos de armazenamento",
+      "Melhorar a latência para usuários finais",
+      "Automatizar a criação de instâncias EC2",
+      "Fornecer backups automáticos"
+    ],
+    correctAnswer: 1,
+    explanation: "Edge Locations melhoram a latência ao aproximar o conteúdo dos usuários finais."
+  },
+  {
+    id: 18,
+    text: "Quais são benefícios do AWS Backup? (Escolha duas)",
+    options: [
+      "Centralização de backups para múltiplos serviços",
+      "Redução automática de custos de armazenamento",
+      "Agendamento e políticas de retenção",
+      "Eliminação da necessidade de monitoramento"
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O AWS Backup centraliza backups e permite agendamento e políticas de retenção."
+  },
+  {
+    id: 19,
+    text: "Qual é o objetivo do AWS Well-Architected Framework?",
+    options: [
+      "Reduzir custos de infraestrutura",
+      "Fornecer práticas recomendadas para arquiteturas seguras e eficientes",
+      "Automatizar a criação de instâncias EC2",
+      "Substituir a necessidade de balanceadores de carga"
+    ],
+    correctAnswer: 1,
+    explanation: "O AWS Well-Architected Framework fornece práticas recomendadas para arquiteturas seguras e eficientes."
+  },
+  {
+    id: 20,
+    text: "Quais são benefícios de usar múltiplas regiões AWS? (Escolha duas)",
+    options: [
+      "Maior resiliência contra falhas regionais",
+      "Redução automática de custos de transferência de dados",
+      "Melhoria na latência para usuários globais",
+      "Eliminação da necessidade de Zonas de Disponibilidade"
+    ],
+    correctAnswer: [0, 2],
+    explanation: "Usar múltiplas regiões aumenta a resiliência e melhora a latência para usuários globais."
   }
 ];
 

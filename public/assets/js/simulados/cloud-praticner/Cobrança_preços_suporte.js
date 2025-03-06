@@ -453,7 +453,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 90 * 60, // 90 minutos em segundos
+  timeRemaining: 30 * 60, // 90 minutos em segundos
   timerInterval: null,
   examFinished: false
 };
@@ -476,8 +476,8 @@ const confirmFinishBtn = document.getElementById('confirm-finish');
 function shuffleArray(array) {
   const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
   return newArray;
 }
@@ -492,94 +492,115 @@ function formatTime(seconds) {
 // Iniciar o timer
 function startTimer() {
   examState.timerInterval = setInterval(() => {
-      examState.timeRemaining--;
-      
-      timerDisplay.textContent = formatTime(examState.timeRemaining);
-      
-      if (examState.timeRemaining <= 300) {
-          timerDisplay.classList.add('countdown-warning');
-      }
-      
-      if (examState.timeRemaining <= 0) {
-          clearInterval(examState.timerInterval);
-          finishExam();
-      }
+    examState.timeRemaining--;
+
+    timerDisplay.textContent = formatTime(examState.timeRemaining);
+
+    if (examState.timeRemaining <= 300) {
+      timerDisplay.classList.add('countdown-warning');
+    }
+
+    if (examState.timeRemaining <= 0) {
+      clearInterval(examState.timerInterval);
+      finishExam();
+    }
   }, 1000);
 }
 
 // Renderizar a navegação de questões
 function renderQuestionNav() {
   questionNav.innerHTML = '';
-  
+
   questions.forEach((question, index) => {
-      const navItem = document.createElement('div');
-      navItem.className = 'question-nav-item';
-      navItem.textContent = index + 1;
-      
-      if (index === examState.currentQuestionIndex) {
-          navItem.classList.add('current');
-      }
-      if (examState.answers[question.id] !== undefined) {
-          navItem.classList.add('answered');
-      }
-      if (examState.markedForReview.has(question.id)) {
-          navItem.classList.add('marked');
-      }
-      
-      navItem.addEventListener('click', () => {
-          examState.currentQuestionIndex = index;
-          renderCurrentQuestion();
-          renderQuestionNav();
-      });
-      
-      questionNav.appendChild(navItem);
+    const navItem = document.createElement('div');
+    navItem.className = 'question-nav-item';
+    navItem.textContent = index + 1;
+
+    if (index === examState.currentQuestionIndex) {
+      navItem.classList.add('current');
+    }
+    if (examState.answers[question.id] !== undefined && examState.answers[question.id].length > 0) {
+      navItem.classList.add('answered');
+    }
+    if (examState.markedForReview.has(question.id)) {
+      navItem.classList.add('marked');
+    }
+
+    navItem.addEventListener('click', () => {
+      examState.currentQuestionIndex = index;
+      renderCurrentQuestion();
+      renderQuestionNav();
+    });
+
+    questionNav.appendChild(navItem);
   });
 }
 
 // Renderizar a questão atual
 function renderCurrentQuestion() {
   const question = questions[examState.currentQuestionIndex];
-  
+  const selectedAnswers = examState.answers[question.id] || [];
+
   questionContainer.innerHTML = `
-      <div class="question-header">
-          <span class="question-number">Questão ${examState.currentQuestionIndex + 1} de ${questions.length}</span>
-          <button class="review-btn ${examState.markedForReview.has(question.id) ? 'marked' : ''}" data-id="${question.id}">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3z"></path>
-              </svg>
-              ${examState.markedForReview.has(question.id) ? 'Remover Marcação' : 'Marcar para Revisão'}
-          </button>
-      </div>
-      <div class="question-text">${question.text}</div>
-      <div class="options">
-          ${question.options.map((option, idx) => `
-              <div class="option ${examState.answers[question.id] === idx ? 'selected' : ''}" data-index="${idx}">
-                  ${String.fromCharCode(65 + idx)}. ${option}
-              </div>
-          `).join('')}
-      </div>
+    <div class="question-header">
+      <span class="question-number">Questão ${examState.currentQuestionIndex + 1} de ${questions.length}</span>
+      <button class="review-btn ${examState.markedForReview.has(question.id) ? 'marked' : ''}" data-id="${question.id}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3z"></path>
+        </svg>
+        ${examState.markedForReview.has(question.id) ? 'Remover Marcação' : 'Marcar para Revisão'}
+      </button>
+    </div>
+    <div class="question-text">${question.text}</div>
+    <div class="options">
+      ${question.options.map((option, idx) => `
+        <div class="option ${selectedAnswers.includes(idx) ? 'selected' : ''}" data-index="${idx}">
+          ${String.fromCharCode(65 + idx)}. ${option}
+        </div>
+      `).join('')}
+    </div>
   `;
-  
+
   const reviewBtn = questionContainer.querySelector('.review-btn');
   reviewBtn.addEventListener('click', () => {
-      toggleReviewMark(question.id);
+    toggleReviewMark(question.id);
   });
-  
+
   const options = questionContainer.querySelectorAll('.option');
   options.forEach(option => {
-      option.addEventListener('click', () => {
-          const selectedIndex = parseInt(option.getAttribute('data-index'));
-          selectAnswer(question.id, selectedIndex);
-      });
+    option.addEventListener('click', () => {
+      const selectedIndex = parseInt(option.getAttribute('data-index'));
+      selectAnswer(question.id, selectedIndex);
+    });
   });
-  
+
   prevBtn.disabled = examState.currentQuestionIndex === 0;
   nextBtn.disabled = examState.currentQuestionIndex === questions.length - 1;
 }
 
-// Selecionar uma resposta
+// Selecionar uma resposta (ajustada para suportar uma ou duas escolhas)
 function selectAnswer(questionId, answerIndex) {
-  examState.answers[questionId] = answerIndex;
+  const question = questions.find(q => q.id === questionId);
+  const isMultipleChoice = Array.isArray(question.correctAnswer) && question.correctAnswer.length === 2;
+
+  if (!examState.answers[questionId]) {
+    examState.answers[questionId] = [];
+  }
+
+  const answerArray = examState.answers[questionId];
+  const index = answerArray.indexOf(answerIndex);
+
+  if (index === -1) {
+    if (isMultipleChoice && answerArray.length >= 2) {
+      return; // Não permite mais de duas escolhas para perguntas de múltipla escolha
+    } else if (!isMultipleChoice && answerArray.length >= 1) {
+      return; // Não permite mais de uma escolha para perguntas de única escolha
+    }
+    answerArray.push(answerIndex);
+  } else {
+    answerArray.splice(index, 1);
+  }
+
   renderCurrentQuestion();
   renderQuestionNav();
 }
@@ -587,9 +608,9 @@ function selectAnswer(questionId, answerIndex) {
 // Alternar marcação para revisão
 function toggleReviewMark(questionId) {
   if (examState.markedForReview.has(questionId)) {
-      examState.markedForReview.delete(questionId);
+    examState.markedForReview.delete(questionId);
   } else {
-      examState.markedForReview.add(questionId);
+    examState.markedForReview.add(questionId);
   }
   renderCurrentQuestion();
   renderQuestionNav();
@@ -598,17 +619,17 @@ function toggleReviewMark(questionId) {
 // Navegação entre questões
 function goToNextQuestion() {
   if (examState.currentQuestionIndex < questions.length - 1) {
-      examState.currentQuestionIndex++;
-      renderCurrentQuestion();
-      renderQuestionNav();
+    examState.currentQuestionIndex++;
+    renderCurrentQuestion();
+    renderQuestionNav();
   }
 }
 
 function goToPrevQuestion() {
   if (examState.currentQuestionIndex > 0) {
-      examState.currentQuestionIndex--;
-      renderCurrentQuestion();
-      renderQuestionNav();
+    examState.currentQuestionIndex--;
+    renderCurrentQuestion();
+    renderQuestionNav();
   }
 }
 
@@ -621,90 +642,105 @@ function finishExam() {
   renderResults();
 }
 
-// Renderizar resultados (Função modificada)
+// Renderizar resultados (ajustada para suportar uma ou duas escolhas)
 function renderResults() {
   let correctCount = 0;
   let incorrectCount = 0;
   let unansweredCount = 0;
-  
+
   questions.forEach(question => {
-      if (examState.answers[question.id] === undefined) {
-          unansweredCount++;
-      } else if (examState.answers[question.id] === question.correctAnswer) {
-          correctCount++;
-      } else {
-          incorrectCount++;
-      }
+    const selectedAnswers = examState.answers[question.id] || [];
+    const correctAnswers = Array.isArray(question.correctAnswer) ? question.correctAnswer : [question.correctAnswer];
+
+    if (selectedAnswers.length === 0) {
+      unansweredCount++;
+    } else if (arraysEqual(selectedAnswers.sort(), correctAnswers.sort())) {
+      correctCount++;
+    } else {
+      incorrectCount++;
+    }
   });
 
   // Cálculo da porcentagem de acertos
   const percentage = ((correctCount / questions.length) * 100).toFixed(2);
-  
+
   // Atualizar exibição do score com porcentagem
   document.getElementById('score').textContent = `${correctCount}/${questions.length} (${percentage}%)`;
-  
+
   document.getElementById('correct-count').textContent = correctCount;
   document.getElementById('incorrect-count').textContent = incorrectCount;
   document.getElementById('unanswered-count').textContent = unansweredCount;
-  
+
   const resultsQuestionsContainer = document.getElementById('results-questions');
   resultsQuestionsContainer.innerHTML = '';
-  
+
   questions.forEach(question => {
-      let status = 'unanswered';
-      let statusText = 'Não Respondida';
-      
-      if (examState.answers[question.id] !== undefined) {
-          status = examState.answers[question.id] === question.correctAnswer ? 'correct' : 'incorrect';
-          statusText = examState.answers[question.id] === question.correctAnswer ? 'Correta' : 'Incorreta';
-      }
-      
-      const resultHTML = `
-          <div class="results-question">
-              <div class="results-question-header">
-                  <h3>Questão ${questions.indexOf(question) + 1}</h3>
-                  <span class="results-question-status status-${status}">${statusText}</span>
-              </div>
-              <div class="question-text">${question.text}</div>
-              <div class="options">
-                  ${question.options.map((option, idx) => `
-                      <div class="option ${idx === question.correctAnswer ? 'correct' : ''} ${(examState.answers[question.id] === idx && examState.answers[question.id] !== question.correctAnswer) ? 'incorrect' : ''}">
-                          ${String.fromCharCode(65 + idx)}. ${option}
-                          ${idx === question.correctAnswer ? ' ✓' : ''}
-                          ${(examState.answers[question.id] === idx && examState.answers[question.id] !== question.correctAnswer) ? ' ✗' : ''}
-                      </div>
-                  `).join('')}
-              </div>
-              <div class="explanation">
-                  <strong>Explicação:</strong> ${question.explanation}
-              </div>
-          </div>
-      `;
-      
-      resultsQuestionsContainer.innerHTML += resultHTML;
+    const selectedAnswers = examState.answers[question.id] || [];
+    const correctAnswers = Array.isArray(question.correctAnswer) ? question.correctAnswer : [question.correctAnswer];
+
+    let status = 'unanswered';
+    let statusText = 'Não Respondida';
+
+    if (selectedAnswers.length > 0) {
+      status = arraysEqual(selectedAnswers.sort(), correctAnswers.sort()) ? 'correct' : 'incorrect';
+      statusText = arraysEqual(selectedAnswers.sort(), correctAnswers.sort()) ? 'Correta' : 'Incorreta';
+    }
+
+    const resultHTML = `
+      <div class="results-question">
+        <div class="results-question-header">
+          <h3>Questão ${questions.indexOf(question) + 1}</h3>
+          <span class="results-question-status status-${status}">${statusText}</span>
+        </div>
+        <div class="question-text">${question.text}</div>
+        <div class="options">
+          ${question.options.map((option, idx) => `
+            <div class="option ${correctAnswers.includes(idx) ? 'correct' : ''} ${(selectedAnswers.includes(idx) && !correctAnswers.includes(idx)) ? 'incorrect' : ''}">
+              ${String.fromCharCode(65 + idx)}. ${option}
+              ${correctAnswers.includes(idx) ? ' ✓' : ''}
+              ${(selectedAnswers.includes(idx) && !correctAnswers.includes(idx)) ? ' ✗' : ''}
+            </div>
+          `).join('')}
+        </div>
+        <div class="explanation">
+          <strong>Explicação:</strong> ${question.explanation}
+        </div>
+      </div>
+    `;
+
+    resultsQuestionsContainer.innerHTML += resultHTML;
   });
+}
+
+// Função auxiliar para comparar arrays
+function arraysEqual(a, b) {
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
 }
 
 // Reiniciar o simulado
 function restartExam() {
   clearInterval(examState.timerInterval);
-  
+
   // Resetar estado
   examState.currentQuestionIndex = 0;
   examState.answers = {};
   examState.markedForReview = new Set();
   examState.timeRemaining = 90 * 60;
   examState.examFinished = false;
-  
+
   // Reembaralhar questões usando original
   questions = shuffleArray([...originalQuestions]);
-  
+
   // Resetar UI
   timerDisplay.textContent = formatTime(examState.timeRemaining);
   timerDisplay.classList.remove('countdown-warning');
   examContainer.classList.remove('hidden');
   resultsContainer.classList.add('hidden');
-  
+
   // Reiniciar componentes
   renderQuestionNav();
   renderCurrentQuestion();

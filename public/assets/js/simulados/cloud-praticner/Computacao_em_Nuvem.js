@@ -1,183 +1,243 @@
 const originalQuestions = [
   {
     id: 1,
-    text: "Uma empresa deseja usar uma solução de rede da AWS que possa atuar como um gateway centralizado entre várias VPCs e redes locais. Qual serviço ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual das seguintes opções descreve melhor o uso do AWS Fargate?",
     options: [
-      "Gateway VPC endpoint",
-      "AWS Direct Connect",
-      "AWS Transit Gateway",
-      "VPC Peering"
+      "Um serviço que permite executar contêineres sem gerenciar servidores ou clusters",
+      "Um serviço para provisionar instâncias EC2 de forma automática",
+      "Um ambiente de execução para funções serverless",
+      "Um serviço para deploy de aplicativos web em máquinas virtuais"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Transit Gateway é um serviço que atua como um hub centralizado para conectar várias VPCs e redes locais, facilitando a comunicação entre elas de forma escalável e segura."
+    correctAnswer: 0,
+    explanation: "O AWS Fargate é um serviço que permite executar contêineres sem a necessidade de gerenciar servidores ou clusters, sendo uma opção para Amazon ECS e EKS."
   },
   {
     id: 2,
-    text: "Qual serviço ou ferramenta complementar da AWS cria casos de negócios baseados em dados para planejamento de nuvem?",
+    text: "Quais das seguintes afirmações sobre o Amazon EKS estão corretas? (Escolha duas)",
     options: [
-      "Avaliador de migração (Migration Evaluator)",
-      "Condutor de faturamento da AWS (AWS Billing Conductor)",
-      "Console de faturamento da AWS (AWS Billing Console)",
-      "Previsão da Forecast (Amazon Forecast)"
+      "É um serviço gerenciado para executar Kubernetes na AWS",
+      "Requer a configuração manual de nós de trabalho",
+      "Integra-se nativamente com o AWS Fargate para execução de contêineres",
+      "É uma solução ideal apenas para aplicativos monolíticos"
     ],
-    correctAnswer: 0,
-    explanation: "O Avaliador de Migração (Migration Evaluator) ajuda a criar casos de negócios baseados em dados para planejamento de migração para a nuvem, fornecendo insights sobre custos e benefícios."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon EKS é um serviço gerenciado para Kubernetes e integra-se com o AWS Fargate para execução de contêineres sem gerenciamento de servidores."
   },
   {
     id: 3,
-    text: "Um administrador observou que vários recursos da AWS foram excluídos ontem. Qual serviço da AWS ajudará a identificar a causa e determinar qual usuário excluiu os recursos?",
+    text: "Qual é a principal vantagem do AWS Lambda@Edge em comparação com o AWS Lambda tradicional?",
     options: [
-      "AWS CloudTrail",
-      "Amazon Inspector",
-      "Amazon GuardDuty",
-      "AWS Trusted Advisor"
+      "Executa funções mais próximas aos usuários finais, reduzindo a latência",
+      "Permite a execução de funções por períodos ilimitados",
+      "Oferece maior capacidade de memória e CPU",
+      "Não requer configuração de permissões IAM"
     ],
     correctAnswer: 0,
-    explanation: "O AWS CloudTrail registra todas as chamadas de API feitas na conta da AWS, permitindo rastrear quem realizou ações como a exclusão de recursos."
+    explanation: "O AWS Lambda@Edge executa funções mais próximas aos usuários finais, reduzindo a latência ao processar solicitações na borda da rede da AWS."
   },
   {
     id: 4,
-    text: "Uma empresa de telecomunicações está procurando expandir sua cobertura 5G em todo o país e, como resultado, precisa provisionar e construir sua própria rede celular privada com a ajuda da AWS. Qual solução a AWS fornece para ajudar com isso?",
+    text: "Quais das seguintes opções são casos de uso adequados para o AWS Batch? (Escolha duas)",
     options: [
-      "AWS Private 5G",
-      "AWS Wavelength",
-      "AWS Outposts",
-      "AWS Direct Connect"
+      "Processamento de grandes volumes de dados em paralelo",
+      "Execução de aplicativos web escaláveis",
+      "Orquestração de contêineres em clusters Kubernetes",
+      "Execução de jobs de computação de alta performance (HPC)"
     ],
-    correctAnswer: 0,
-    explanation: "O AWS Private 5G é uma solução que permite às empresas implantar e gerenciar suas próprias redes celulares privadas 5G de forma rápida e fácil."
+    correctAnswer: [0, 3],
+    explanation: "O AWS Batch é ideal para processamento de grandes volumes de dados em paralelo e execução de jobs de computação de alta performance (HPC)."
   },
   {
     id: 5,
-    text: "Qual é o volume total de dados que pode ser armazenado no Amazon S3?",
+    text: "Qual das seguintes opções descreve melhor o AWS Outposts?",
     options: [
-      "10 PB",
-      "50 PB",
-      "100 PB",
-      "ilimitado"
+      "Um serviço que estende a infraestrutura da AWS para o data center local",
+      "Um serviço para deploy de aplicativos serverless",
+      "Uma solução para gerenciamento de contêineres em nuvem híbrida",
+      "Um serviço de armazenamento de objetos para ambientes locais"
     ],
-    correctAnswer: 3,
-    explanation: "O Amazon S3 oferece armazenamento ilimitado, permitindo que os usuários armazenem qualquer quantidade de dados sem preocupação com limites de capacidade."
+    correctAnswer: 0,
+    explanation: "O AWS Outposts estende a infraestrutura da AWS para o data center local, permitindo a execução de serviços AWS em ambientes on-premises."
   },
   {
     id: 6,
-    text: "Um aplicativo herdado de computação de alto desempenho (HPC) herdado será migrado para a AWS. Qual tipo de adaptador de rede deve ser usado?",
+    text: "Quais das seguintes afirmações sobre o Amazon Lightsail estão corretas? (Escolha duas)",
     options: [
-      "Endereço IP elástico",
-      "Elastic Network Adapter/ENA",
-      "Elastic Fabric Adapter/EFA",
-      "Elastic Network Interface/ENI"
+      "Oferece uma maneira simplificada de lançar instâncias virtuais privadas (VPS)",
+      "É ideal para aplicativos que exigem alto desempenho e escalabilidade automática",
+      "Inclui um plano de preços fixos com recursos pré-configurados",
+      "Requer configuração manual de balanceadores de carga e auto scaling"
     ],
-    correctAnswer: 2,
-    explanation: "O Elastic Fabric Adapter (EFA) é projetado para aplicativos de computação de alto desempenho (HPC), oferecendo baixa latência e alta taxa de transferência para comunicação entre instâncias."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Lightsail oferece uma maneira simplificada de lançar VPS e inclui um plano de preços fixos com recursos pré-configurados."
   },
   {
     id: 7,
-    text: "Qual entidade garante que seu aplicativo no Amazon Elastic Compute Cloud (Amazon EC2) sempre tenha a quantidade certa de capacidade para lidar com a demanda de tráfego atual?",
+    text: "Qual das seguintes opções é uma característica do AWS Elastic Beanstalk?",
     options: [
-      "Amazon EC2 Auto Scaling",
-      "Multi-AZ deployment",
-      "Network Load Balancer",
-      "Application Load Balancer"
+      "Fornece um ambiente totalmente gerenciado para deploy de aplicativos web",
+      "Permite a execução de contêineres sem gerenciamento de servidores",
+      "É um serviço para orquestração de clusters Kubernetes",
+      "Oferece armazenamento de objetos ilimitado para aplicativos"
     ],
     correctAnswer: 0,
-    explanation: "O Amazon EC2 Auto Scaling ajusta automaticamente o número de instâncias EC2 com base na demanda, garantindo que o aplicativo tenha capacidade suficiente para lidar com o tráfego."
+    explanation: "O AWS Elastic Beanstalk fornece um ambiente totalmente gerenciado para deploy de aplicativos web, abstraindo a infraestrutura subjacente."
   },
   {
     id: 8,
-    text: "Uma empresa deseja configurar uma conexão de rede segura do local para a Nuvem AWS em até 1 semana. Qual solução atenderá a esses requisitos?",
+    text: "Quais das seguintes afirmações sobre o Amazon ECS estão corretas? (Escolha duas)",
     options: [
-      "AWS Direct Connect",
-      "Amazon VPC",
-      "AWS Site-to-Site VPN",
-      "Edge location"
+      "É um serviço de orquestração de contêineres compatível com Docker",
+      "Requer o uso exclusivo do AWS Fargate para execução de tarefas",
+      "Permite a execução de contêineres em instâncias EC2 gerenciadas pelo usuário",
+      "É uma solução apenas para aplicativos serverless"
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Site-to-Site VPN permite configurar uma conexão segura entre a rede local e a AWS em poucos dias, sem a necessidade de hardware físico adicional."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon ECS é um serviço de orquestração de contêineres compatível com Docker e permite a execução de contêineres em instâncias EC2 gerenciadas pelo usuário."
   },
   {
     id: 9,
-    text: "Quando um usuário deseja utilizar suas licenças de software existentes por soquete, por núcleo ou por máquina virtual para um servidor Microsoft Windows em execução na AWS, qual tipo de instância do Amazon EC2 é necessário?",
+    text: "Qual das seguintes opções descreve melhor o uso do AWS Lambda?",
     options: [
-      "Instâncias spot",
-      "Instâncias Dedicadas",
-      "Hosts Dedicados",
-      "Instâncias Reservadas"
+      "Execução de código em resposta a eventos sem gerenciamento de servidores",
+      "Provisionamento automático de instâncias EC2 para aplicativos web",
+      "Orquestração de contêineres em clusters Kubernetes",
+      "Execução de jobs de longa duração com alto uso de CPU"
     ],
-    correctAnswer: 2,
-    explanation: "Os Hosts Dedicados permitem que os usuários utilizem suas licenças de software existentes por soquete, núcleo ou máquina virtual, atendendo a requisitos de licenciamento específicos."
+    correctAnswer: 0,
+    explanation: "O AWS Lambda permite a execução de código em resposta a eventos sem a necessidade de gerenciamento de servidores."
   },
   {
     id: 10,
-    text: "Qual princípio de design está relacionado ao pilar de confiabilidade de acordo com o AWS Well-Architected Framework?",
+    text: "Quais das seguintes opções são benefícios do Amazon EC2 Spot Instances? (Escolha duas)",
     options: [
-      "Testar procedimentos de recuperação",
-      "Realizar experimentos com mais frequência",
-      "Expandir globalmente em minutos",
-      "Analisar e atribuir despesas"
+      "Custos significativamente reduzidos em comparação com instâncias On-Demand",
+      "Garantia de disponibilidade contínua por 24 horas",
+      "Ideal para workloads críticos que não toleram interrupções",
+      "Permite a execução de workloads tolerantes a interrupções"
     ],
-    correctAnswer: 0,
-    explanation: "Testar procedimentos de recuperação é um princípio fundamental do pilar de Confiabilidade, garantindo que os sistemas possam se recuperar de falhas de forma eficaz."
+    correctAnswer: [0, 3],
+    explanation: "As Spot Instances oferecem custos reduzidos e são ideais para workloads tolerantes a interrupções."
   },
   {
     id: 11,
-    text: "Uma empresa armazena dados em um bucket do Amazon S3. Qual tarefa é responsabilidade da AWS?",
+    text: "Qual das seguintes opções descreve melhor o uso do AWS Batch?",
     options: [
-      "Configurar uma política de ciclo de vida do S3.",
-      "Ativar o versionamento do S3.",
-      "Configurar políticas de bucket do S3.",
-      "Proteger a infraestrutura que suporta o armazenamento S3."
+      "Execução de jobs de computação em larga escala",
+      "Gerenciamento de clusters Kubernetes",
+      "Provisionamento automático de instâncias EC2 para aplicativos web",
+      "Execução de funções serverless em resposta a eventos"
     ],
-    correctAnswer: 3,
-    explanation: "De acordo com o modelo de responsabilidade compartilhada, a AWS é responsável pela segurança da infraestrutura que suporta o armazenamento S3, enquanto o cliente é responsável por configurar políticas e versionamento."
+    correctAnswer: 0,
+    explanation: "O AWS Batch é projetado para execução de jobs de computação em larga escala, como processamento de dados e HPC."
   },
   {
     id: 12,
-    text: "Qual serviço da AWS é um banco de dados NoSQL totalmente gerenciado?",
+    text: "Quais das seguintes afirmações sobre o AWS Lambda@Edge estão corretas? (Escolha duas)",
     options: [
-      "Amazon RDS",
-      "Amazon Redshift",
-      "Amazon DynamoDB",
-      "Amazon Aurora"
+      "Executa funções mais próximas aos usuários finais para reduzir a latência",
+      "Permite a execução de funções por períodos ilimitados",
+      "É integrado ao Amazon CloudFront para processamento na borda",
+      "Requer o uso de instâncias EC2 para execução"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado que oferece desempenho rápido e consistente com escalabilidade automática."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Lambda@Edge executa funções mais próximas aos usuários finais e é integrado ao Amazon CloudFront."
   },
   {
     id: 13,
-    text: "Uma empresa deseja transferir um Windows Server 2022 virtual que está atualmente em execução em seu próprio data center para a AWS. A empresa quer converter automaticamente o servidor existente para rodar diretamente na infraestrutura da AWS em vez de em um hardware virtualizado. Qual serviço da AWS atenderá a esses requisitos?",
+    text: "Qual das seguintes opções descreve melhor o uso do Amazon Lightsail?",
     options: [
-      "AWS DataSync",
-      "AWS Database Migration Service (AWS DMS)",
-      "AWS Application Discovery Service",
-      "AWS Application Migration Service"
+      "Uma solução simplificada para lançar e gerenciar VPS",
+      "Um serviço para orquestração de contêineres em clusters Kubernetes",
+      "Um ambiente de execução para funções serverless",
+      "Um serviço para deploy de aplicativos web altamente escaláveis"
     ],
-    correctAnswer: 3,
-    explanation: "O AWS Application Migration Service permite migrar servidores físicos ou virtuais para a AWS, convertendo automaticamente o sistema operacional e os aplicativos para rodar na infraestrutura da AWS."
+    correctAnswer: 0,
+    explanation: "O Amazon Lightsail é uma solução simplificada para lançar e gerenciar VPS, ideal para workloads simples."
   },
   {
     id: 14,
-    text: "Uma empresa deseja migrar seu banco de dados SQL Server local para a AWS Cloud. A empresa quer que a AWS gerencie a administração diária do banco de dados. Qual serviço da AWS atenderá aos requisitos da empresa?",
+    text: "Quais das seguintes afirmações sobre o AWS Outposts estão corretas? (Escolha duas)",
     options: [
-      "Amazon EC2 for Microsoft SQL Server",
-      "Amazon DynamoDB",
-      "Amazon RDS",
-      "Amazon Aurora"
+      "Permite a execução de serviços AWS em ambientes on-premises",
+      "É uma solução apenas para armazenamento de objetos locais",
+      "Integra-se com a infraestrutura local e a nuvem da AWS",
+      "Requer a configuração manual de todos os serviços AWS"
     ],
-    correctAnswer: 2,
-    explanation: "O Amazon RDS é um serviço gerenciado que facilita a configuração, operação e escalabilidade de bancos de dados relacionais, como o SQL Server, sem a necessidade de gerenciar a infraestrutura subjacente."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Outposts permite a execução de serviços AWS em ambientes on-premises e integra-se com a infraestrutura local e a nuvem da AWS."
   },
   {
     id: 15,
-    text: "Uma empresa precisa de filtragem de rede sem estado para sua VPC. Qual serviço, ferramenta ou recurso da AWS atenderá a esse requisito?",
+    text: "Qual das seguintes opções descreve melhor o uso do AWS Elastic Beanstalk?",
     options: [
-      "VPC Peering",
-      "Security Group",
-      "Network ACL",
-      "AWS WAF"
+      "Um serviço para deploy e gerenciamento de aplicativos web",
+      "Um serviço para execução de contêineres sem gerenciamento de servidores",
+      "Um ambiente de execução para funções serverless",
+      "Um serviço para orquestração de clusters Kubernetes"
     ],
-    correctAnswer: 2,
-    explanation: "As Network ACLs (Listas de Controle de Acesso) fornecem filtragem de rede sem estado para controlar o tráfego de entrada e saída em uma VPC."
+    correctAnswer: 0,
+    explanation: "O AWS Elastic Beanstalk é um serviço para deploy e gerenciamento de aplicativos web, abstraindo a infraestrutura subjacente."
+  },
+  {
+    id: 16,
+    text: "Quais das seguintes opções são características do Amazon EKS? (Escolha duas)",
+    options: [
+      "É um serviço gerenciado para Kubernetes na AWS",
+      "Requer a configuração manual de todos os nós de trabalho",
+      "Integra-se com o AWS Fargate para execução de contêineres",
+      "É uma solução apenas para aplicativos monolíticos"
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Amazon EKS é um serviço gerenciado para Kubernetes e integra-se com o AWS Fargate para execução de contêineres."
+  },
+  {
+    id: 17,
+    text: "Qual das seguintes opções descreve melhor o uso do AWS Fargate?",
+    options: [
+      "Execução de contêineres sem gerenciamento de servidores",
+      "Provisionamento automático de instâncias EC2 para aplicativos web",
+      "Orquestração de clusters Kubernetes",
+      "Execução de funções serverless em resposta a eventos"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS Fargate permite a execução de contêineres sem a necessidade de gerenciamento de servidores."
+  },
+  {
+    id: 18,
+    text: "Quais das seguintes afirmações sobre o Amazon EC2 Auto Scaling estão corretas? (Escolha duas)",
+    options: [
+      "Ajusta automaticamente a capacidade de instâncias para atender à demanda",
+      "Garante alta disponibilidade e otimização de custos",
+      "Requer configuração manual de cada instância adicionada",
+      "É um serviço apenas para aplicativos serverless"
+    ],
+    correctAnswer: [0, 1],
+    explanation: "O Amazon EC2 Auto Scaling ajusta automaticamente a capacidade de instâncias para atender à demanda, garantindo alta disponibilidade e otimização de custos."
+  },
+  {
+    id: 19,
+    text: "Qual das seguintes opções descreve melhor o uso do AWS Lambda?",
+    options: [
+      "Execução de código em resposta a eventos sem gerenciamento de servidores",
+      "Provisionamento automático de instâncias EC2 para aplicativos web",
+      "Orquestração de contêineres em clusters Kubernetes",
+      "Execução de jobs de longa duração com alto uso de CPU"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS Lambda permite a execução de código em resposta a eventos sem a necessidade de gerenciamento de servidores."
+  },
+  {
+    id: 20,
+    text: "Quais das seguintes opções são benefícios do AWS Fargate? (Escolha duas)",
+    options: [
+      "Elimina a necessidade de gerenciar servidores para contêineres",
+      "Oferece maior controle sobre a infraestrutura subjacente",
+      "É ideal apenas para aplicativos monolíticos",
+      "Integra-se com Amazon ECS e EKS"
+    ],
+    correctAnswer: [0, 3],
+    explanation: "O AWS Fargate elimina a necessidade de gerenciar servidores para contêineres e integra-se com Amazon ECS e EKS."
   }
 ];
 
