@@ -189,7 +189,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 30 * 60, // 90 minutos em segundos
+  timeRemaining: 30 * 60, // 30 minutos em segundos
   timerInterval: null,
   examFinished: false
 };
@@ -465,14 +465,14 @@ function restartExam() {
   examState.currentQuestionIndex = 0;
   examState.answers = {};
   examState.markedForReview = new Set();
-  examState.timeRemaining = 90 * 60;
+  examState.timeRemaining = 30 * 60; // Reinicia o tempo para 30 minutos
   examState.examFinished = false;
 
   // Reembaralhar questões usando original
   questions = shuffleArray([...originalQuestions]);
 
   // Resetar UI
-  timerDisplay.textContent = formatTime(examState.timeRemaining);
+  timerDisplay.textContent = formatTime(examState.timeRemaining); // Atualiza o display do tempo
   timerDisplay.classList.remove('countdown-warning');
   examContainer.classList.remove('hidden');
   resultsContainer.classList.add('hidden');
