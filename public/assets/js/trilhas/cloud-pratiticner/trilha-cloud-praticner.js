@@ -90,6 +90,132 @@ const awsServices = [
     description: "O AWS Lambda@Edge é uma extensão do Lambda que permite executar funções para personalizar o conteúdo entregue pelo CloudFront, executando o código mais próximo dos usuários para melhorar o desempenho.",
     useCase: "Um site global de comércio eletrônico utiliza o Lambda@Edge para personalizar dinamicamente o conteúdo da página inicial com base na localização geográfica do usuário, exibindo produtos, preços e promoções regionais sem a necessidade de redirecionar o tráfego para servidores de origem."
   },
+  {
+    id: 11,
+    name: "AWS SQS",
+    category: "messaging",
+    categoryLabel: "Mensageria",
+    image: "https://www.apono.io/wp-content/uploads/2023/05/amazon-sqs-min.png",
+    description: "O Amazon Simple Queue Service (SQS) é um serviço de enfileiramento de mensagens totalmente gerenciado que permite a desacoplagem e escalabilidade de sistemas distribuídos, microsserviços e aplicações sem servidor.",
+    useCase: "Uma empresa de pagamentos online usa o SQS para gerenciar filas de transações, garantindo que cada pagamento seja processado de forma confiável e escalável, mesmo sob picos de tráfego."
+  },
+  {
+    id: 12,
+    name: "AWS SNS",
+    category: "messaging",
+    categoryLabel: "Mensageria",
+    image: "https://images.ctfassets.net/7rbn0raz0t75/3JzLsX7jyemmi2yvIqPfYG/59a0745e0c4cd783a8d879fb32d5e535/AWSSNS-icon-color.svg?w=384&q=100",
+    description: "O Amazon Simple Notification Service (SNS) é um serviço de mensagens pub/sub totalmente gerenciado que permite a comunicação entre aplicações e serviços distribuídos.",
+    useCase: "Uma plataforma de notificações em tempo real usa o SNS para enviar alertas personalizados para usuários móveis e web, garantindo entrega rápida e confiável."
+  },
+  {
+    id: 13,
+    name: "Família de instâncias do Amazon EC2: Uso geral",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias de uso geral do Amazon EC2 oferecem um equilíbrio entre recursos de computação, memória e rede, ideais para uma ampla variedade de cargas de trabalho.",
+    useCase: "Uma startup de tecnologia usa instâncias de uso geral para hospedar seu site e aplicativos, garantindo desempenho consistente e custo-efetivo."
+  },
+  {
+    id: 14,
+    name: "Família de instâncias do Amazon EC2: Otimizado para computação",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias otimizadas para computação do Amazon EC2 são projetadas para cargas de trabalho que exigem alto poder de processamento, como processamento de dados e servidores de jogos.",
+    useCase: "Uma empresa de análise de dados usa instâncias otimizadas para computação para processar grandes volumes de dados em tempo real, reduzindo o tempo de análise."
+  },
+  {
+    id: 15,
+    name: "Família de instâncias do Amazon EC2: Otimizado para memória",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias otimizadas para memória do Amazon EC2 são ideais para cargas de trabalho que exigem grande capacidade de memória, como bancos de dados em memória e análises de big data.",
+    useCase: "Uma empresa de finanças usa instâncias otimizadas para memória para executar análises complexas em grandes conjuntos de dados financeiros, garantindo desempenho rápido e eficiente."
+  },
+  {
+    id: 16,
+    name: "Família de instâncias do Amazon EC2: Otimizado para armazenamento",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias otimizadas para armazenamento do Amazon EC2 são projetadas para cargas de trabalho que exigem alto desempenho de armazenamento, como data warehouses e sistemas de arquivos distribuídos.",
+    useCase: "Uma empresa de mídia usa instâncias otimizadas para armazenamento para armazenar e processar grandes volumes de vídeos e imagens, garantindo acesso rápido e confiável."
+  },
+  {
+    id: 17,
+    name: "Família de instâncias do Amazon EC2: Computação acelerada",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias de computação acelerada do Amazon EC2 utilizam hardware especializado, como GPUs e FPGAs, para acelerar cargas de trabalho de machine learning, processamento gráfico e outras tarefas intensivas.",
+    useCase: "Uma empresa de inteligência artificial usa instâncias de computação acelerada para treinar modelos de deep learning em grandes conjuntos de dados, reduzindo o tempo de treinamento."
+  },
+  {
+    id: 18,
+    name: "Opções de compras do Amazon EC2: Sob demanda",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias sob demanda do Amazon EC2 permitem que você pague apenas pelo tempo de computação utilizado, sem compromissos de longo prazo ou custos iniciais.",
+    useCase: "Uma empresa de desenvolvimento de software usa instâncias sob demanda para testar novas versões de aplicativos, garantindo flexibilidade e controle de custos."
+  },
+  {
+    id: 19,
+    name: "Opções de compras do Amazon EC2: Saving Plans",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "Os Saving Plans do Amazon EC2 oferecem preços reduzidos em troca de um compromisso de uso de computação por um período de 1 ou 3 anos, proporcionando economia significativa.",
+    useCase: "Uma empresa de e-commerce usa Saving Plans para reduzir custos de infraestrutura durante períodos de alta demanda, como Black Friday."
+  },
+  {
+    id: 20,
+    name: "Opções de compras do Amazon EC2: Instâncias reservadas",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias reservadas do Amazon EC2 permitem que você reserve capacidade de computação por um período de 1 ou 3 anos, obtendo descontos significativos em comparação com instâncias sob demanda.",
+    useCase: "Uma empresa de SaaS usa instâncias reservadas para garantir capacidade de computação contínua e previsível para seus clientes, reduzindo custos operacionais."
+  },
+  {
+    id: 21,
+    name: "Opções de compras do Amazon EC2: Instâncias Spot",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "As instâncias Spot do Amazon EC2 permitem que você aproveite capacidade ociosa na nuvem a um custo significativamente reduzido, ideal para cargas de trabalho tolerantes a interrupções.",
+    useCase: "Uma empresa de pesquisa científica usa instâncias Spot para executar simulações complexas que podem ser interrompidas e reiniciadas sem impacto nos resultados."
+  },
+  {
+    id: 22,
+    name: "Opções de compras do Amazon EC2: Hosts dedicados",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/AWS_Simple_Icons_Compute_Amazon_EC2_Instances.svg",
+    description: "Os Hosts Dedicados do Amazon EC2 permitem que você utilize servidores físicos dedicados para suas instâncias EC2, atendendo a requisitos de conformidade e licenciamento.",
+    useCase: "Uma empresa de saúde usa Hosts Dedicados para garantir que suas aplicações de processamento de dados sensíveis cumpram regulamentações de privacidade."
+  },
+  {
+    id: 23,
+    name: "Auto Scaling",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64.svg",
+    description: "O Auto Scaling do Amazon EC2 permite ajustar automaticamente a capacidade de computação para manter o desempenho e a disponibilidade das aplicações, escalando para cima ou para baixo conforme a demanda.",
+    useCase: "Uma plataforma de streaming usa Auto Scaling para garantir que recursos suficientes estejam disponíveis durante picos de tráfego, como lançamentos de novos conteúdos."
+  },
+  {
+    id: 24,
+    name: "Elastic Load Balancing",
+    category: "compute",
+    categoryLabel: "Computação",
+    image: "https://cdn.prod.website-files.com/5f05d5858fab461d0d08eaeb/6357c4f9893194358f41b54a_elb_light.svg",
+    description: "O Elastic Load Balancing (ELB) distribui automaticamente o tráfego de entrada entre várias instâncias EC2, garantindo alta disponibilidade e escalabilidade para suas aplicações.",
+    useCase: "Uma empresa de comércio eletrônico usa ELB para distribuir o tráfego entre seus servidores web durante promoções, garantindo que o site permaneça responsivo e disponível."
+  }
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
