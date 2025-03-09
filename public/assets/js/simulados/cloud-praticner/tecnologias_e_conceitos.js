@@ -789,7 +789,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 90 * 60, // 30 minutos em segundos
+  timeRemaining: 90 * 60, // 90 minutos em segundos
   timerInterval: null,
   examFinished: false
 };
