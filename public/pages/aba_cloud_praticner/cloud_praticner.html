@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/assets/styles/cloud_praticner.css">
     <script src="/assets/js/header.js" defer></script>
     <script src="/autenticação de pagamento do usuario/payment-access-backend.js" defer></script>
+    <script src="/assets/js/simulados/cloud-praticner/filtro.js" defer></script>
     <title>CertifySimulator</title>
 </head>
 
@@ -56,309 +57,345 @@
                 <h2>Simulados por Certificação</h2>
                 <p>Prepare-se com simulados realistas que refletem o formato e a dificuldade dos exames oficiais</p>
             </div>
-
-            <div class="simulados-container">
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Domínio 1: Conceitos de nuvem</h3>
-                        <p>Aborda os fundamentos da computação em nuvem: modelos de implantação (pública, privada,
-                            híbrida) e serviços (IaaS, PaaS, SaaS). Foca em escalabilidade, alta disponibilidade e
-                            otimização de custos, base para arquiteturas modernas e seguras na nuvem.</p>
+    
+            <!-- Campo de busca para filtrar simulados -->
+            <div class="simulados-search">
+                <input type="text" id="simuladosSearch" placeholder="Buscar simulados..." class="search-input">
+            </div>
+    
+            <!-- Categorias de simulados -->
+            <div class="simulados-categories">
+                <!-- Categoria: Conceitos de Nuvem -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Conceitos de Nuvem</h3>
+                        <button class="toggle-btn">+</button>
                     </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/conceitos_de_nuvem.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Domínio 2: Segurança e conformidade</h3>
-                        <p>Foca em práticas para proteger ambientes em nuvem: controle de acesso, criptografia,
-                            monitoramento e conformidade. Garante segurança de dados, mitigação de riscos e adesão a
-                            padrões globais, com medidas robustas e eficientes.</p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Segurança_e_conformidade.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Domínio 3: Tecnologia e serviços</h3>
-                        <p>Abrange recursos e ferramentas de nuvem: computação, armazenamento, redes e bancos de dados.
-                            Explora soluções escaláveis e eficientes, garantindo desempenho, automação e inovação
-                            contínua para ambientes modernos.</p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Tecnologia_e_serviços_da_nuvem.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Domínio 4: Cobrança, preços e suporte</h3>
-                        <p>Aborda modelos de precificação, otimização de custos e governança financeira na nuvem.
-                            Explora níveis de suporte, garantindo eficiência operacional e controle orçamentário para
-                            empresas de todos os portes, preparando-se para a prova.</p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Cobrança_preços _suporte.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Tecnologias e conceitos</h3>
-                        <p>Tecnologias e Conceitos da AWS englobam serviços como computação, armazenamento, redes,
-                            segurança e banco de dados. Com ecossistema robusto e escalável, a AWS permite soluções
-                            inovadoras, garantindo alta disponibilidade, desempenho e conformidade com práticas de
-                            mercado.</p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/tecnologias_e_conceitos.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="conceitos">
+                            <div class="simulado-content">
+                                <h3>Domínio 1: Conceitos de nuvem</h3>
+                                <p>Aborda os fundamentos da computação em nuvem: modelos de implantação (pública, privada,
+                                    híbrida) e serviços (IaaS, PaaS, SaaS). Foca em escalabilidade, alta disponibilidade e
+                                    otimização de custos, base para arquiteturas modernas e seguras na nuvem.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/conceitos_de_nuvem.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="conceitos">
+                            <div class="simulado-content">
+                                <h3>Tecnologias e conceitos</h3>
+                                <p>Tecnologias e Conceitos da AWS englobam serviços como computação, armazenamento, redes,
+                                    segurança e banco de dados. Com ecossistema robusto e escalável, a AWS permite soluções
+                                    inovadoras, garantindo alta disponibilidade, desempenho e conformidade com práticas de
+                                    mercado.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/tecnologias_e_conceitos.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="conceitos">
+                            <div class="simulado-content">
+                                <h3>Recursos e produtos da AWS no escopo</h3>
+                                <p>Recursos e Produtos da AWS, como EC2, S3, RDS, Lambda e VPC, viabilizam arquiteturas
+                                    escaláveis e seguras. Oferecem flexibilidade e eficiência para hospedagem de aplicações,
+                                    machine learning e big data, atendendo diversas necessidades.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Recursos_e_produtos.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Recursos e produtos da AWS no escopo</h3>
-                        <p>Recursos e Produtos da AWS, como EC2, S3, RDS, Lambda e VPC, viabilizam arquiteturas
-                            escaláveis e seguras. Oferecem flexibilidade e eficiência para hospedagem de aplicações,
-                            machine learning e big data, atendendo diversas necessidades.</p>
+    
+                <!-- Categoria: Segurança e Conformidade -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Segurança e Conformidade</h3>
+                        <button class="toggle-btn">+</button>
                     </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Recursos_e_produtos.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Simulado 01</h3>
-                        <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
-                            conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
-                            serviços da AWS. Aumente suas chances de sucesso no exame!
-
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/simulado_one.html" class="btn" target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Simulado 02</h3>
-                        <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
-                            conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
-                            serviços da AWS. Aumente suas chances de sucesso no exame!
-
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/simulado_two.html" class="btn" target="_blank">Fazer
-                            Simulados</a>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="seguranca">
+                            <div class="simulado-content">
+                                <h3>Domínio 2: Segurança e conformidade</h3>
+                                <p>Foca em práticas para proteger ambientes em nuvem: controle de acesso, criptografia,
+                                    monitoramento e conformidade. Garante segurança de dados, mitigação de riscos e adesão a
+                                    padrões globais, com medidas robustas e eficientes.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Segurança_e_conformidade.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="seguranca">
+                            <div class="simulado-content">
+                                <h3>Segurança e Conformidade na AWS</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Segurança e
+                                    Conformidade, com 20 questões desafiadoras sobre IAM, KMS, CloudTrail, WAF, Shield e lhe preparando para a prova.
+                                    Ideal para testar e aprofundar conhecimentos em cenários reais da AWS.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Seguranca_e_Conformidade_Trilha.html"
+                                    class="btn" target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Simulado 03</h3>
-                        <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
-                            conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
-                            serviços da AWS. Aumente suas chances de sucesso no exame!
-
-                        </p>
+    
+                <!-- Categoria: Tecnologia e Infraestrutura -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Tecnologia e Infraestrutura</h3>
+                        <button class="toggle-btn">+</button>
                     </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/simulado_three.html" class="btn" target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Simulado 04</h3>
-                        <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
-                            conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
-                            serviços da AWS. Aumente suas chances de sucesso no exame!
-
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/simulado_four.html" class="btn" target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Mini Simulado - 10 questões</h3>
-                        <p>Este mini simulado para a certificação AWS Cloud Practitioner oferece perguntas baseadas no
-                            exame oficial. Revisão rápida de conceitos de nuvem, segurança, faturamento e serviços da
-                            AWS. Teste seus conhecimentos e avalie sua preparação!</p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/mini_simulado.html" class="btn" target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Computação em Nuvem - Trilha</h3>
-                        <p>Prepare-se para a certificação AWS Cloud Practitioner com 20 questões sobre EC2, Lambda, ECS,
-                            EKS, Fargate e mais. Aborda cenários reais da AWS, com questões de escolha única e múltipla,
-                            ideal para testar seus conhecimentos.
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Computacao_em_Nuvem.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Infraestrutura Global e Confiabilidade</h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Infraestrutura
-                            Global e Confiabilidade, com 20 questões desafiadoras sobre Regiões, AZs, CloudFront, Alta
-                            Disponibilidade e mais.
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Infraestrutura_Global_Confiabilidade.html" class="btn"
-                            target="_blank">Fazer Simulados</a>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="tecnologia">
+                            <div class="simulado-content">
+                                <h3>Domínio 3: Tecnologia e serviços</h3>
+                                <p>Abrange recursos e ferramentas de nuvem: computação, armazenamento, redes e bancos de dados.
+                                    Explora soluções escaláveis e eficientes, garantindo desempenho, automação e inovação
+                                    contínua para ambientes modernos.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Tecnologia_e_serviços_da_nuvem.html"
+                                    class="btn" target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="tecnologia">
+                            <div class="simulado-content">
+                                <h3>Computação em Nuvem - Trilha</h3>
+                                <p>Prepare-se para a certificação AWS Cloud Practitioner com 20 questões sobre EC2, Lambda, ECS,
+                                    EKS, Fargate e mais. Aborda cenários reais da AWS, com questões de escolha única e múltipla,
+                                    ideal para testar seus conhecimentos.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Computacao_em_Nuvem.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="tecnologia">
+                            <div class="simulado-content">
+                                <h3>Infraestrutura Global e Confiabilidade</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Infraestrutura
+                                    Global e Confiabilidade, com 20 questões desafiadoras sobre Regiões, AZs, CloudFront, Alta
+                                    Disponibilidade e mais.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Infraestrutura_Global_Confiabilidade.html"
+                                    class="btn" target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="tecnologia">
+                            <div class="simulado-content">
+                                <h3>Redes</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Redes na AWS, com 20
+                                    questões desafiadoras sobre VPC, Sub-redes, ELB, Security Groups, Route 53 e mais.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/redes.html" class="btn" 
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Redes </h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Redes na AWS, com 20
-                            questões desafiadoras sobre VPC, Sub-redes, ELB, Security Groups, Route 53 e mais.
-                        </p>
+    
+                <!-- Categoria: Armazenamento e Banco de Dados -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Armazenamento e Banco de Dados</h3>
+                        <button class="toggle-btn">+</button>
                     </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/redes.html" class="btn" target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Armazenamento e Banco de Dados </h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Armazenamento e
-                            Banco de Dados, com 20 questões desafiadoras sobre S3, RDS, DynamoDB, Aurora, Redshift e
-                            mais.
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Armazenamento_e_Banco_de_Dados.html" class="btn"
-                            target="_blank">Fazer
-                            Simulados</a>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="armazenamento">
+                            <div class="simulado-content">
+                                <h3>Armazenamento e Banco de Dados</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Armazenamento e
+                                    Banco de Dados, com 20 questões desafiadoras sobre S3, RDS, DynamoDB, Aurora, Redshift e
+                                    mais.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Armazenamento_e_Banco_de_Dados.html"
+                                    class="btn" target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Segurança e Conformidade na AWS </h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Segurança e
-                            Conformidade, com 20 questões desafiadoras sobre IAM, KMS, CloudTrail, WAF, Shield e lhe
-                            preparando para a prova.
-                            Ideal para testar e aprofundar conhecimentos em cenários reais da AWS.
-                        </p>
+    
+                <!-- Categoria: Preços e Suporte -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Preços e Suporte</h3>
+                        <button class="toggle-btn">+</button>
                     </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Seguranca_e_Conformidade_Trilha.html" class="btn"
-                            target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Monitoramento e Análise na AWS </h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Monitoramento e
-                            Análise, com 20 questões desafiadoras sobre CloudWatch, X-Ray, Athena, Glue, QuickSight e
-                            mais. Ideal para testar e aprofundar conhecimentos em cenários reais da AWS.
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Monitoramento_e_Analise.html" class="btn"
-                            target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Precificação e Suporte na AWS</h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Precificação e
-                            Suporte, com 20 questões desafiadoras sobre Pay-as-you-go, RIs, Savings Plans, Spot
-                            Instances, Cost Explorer e mais. Ideal para testar e aprofundar conhecimentos em cenários
-                            reais da AWS.
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Precificacao_e_Suporte.html" class="btn"
-                            target="_blank">Fazer
-                            Simulados</a>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="precos">
+                            <div class="simulado-content">
+                                <h3>Domínio 4: Cobrança, preços e suporte</h3>
+                                <p>Aborda modelos de precificação, otimização de custos e governança financeira na nuvem.
+                                    Explora níveis de suporte, garantindo eficiência operacional e controle orçamentário para
+                                    empresas de todos os portes, preparando-se para a prova.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Cobrança_preços _suporte.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="precos">
+                            <div class="simulado-content">
+                                <h3>Precificação e Suporte na AWS</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Precificação e
+                                    Suporte, com 20 questões desafiadoras sobre Pay-as-you-go, RIs, Savings Plans, Spot
+                                    Instances, Cost Explorer e mais. Ideal para testar e aprofundar conhecimentos em cenários
+                                    reais da AWS.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Precificacao_e_Suporte.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Migração e Inovação na AWS</h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Migração e Inovação,
-                            com 10 questões desafiadoras sobre AWS CAF, 6 Rs, Família Snow e inovação na nuvem. Ideal
-                            para testar e aprofundar conhecimentos em cenários reais da AWS, lhe preparando para tirar a
-                            certificação.
-                        </p>
+    
+                <!-- Categoria: Monitoramento e Análise -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Monitoramento e Análise</h3>
+                        <button class="toggle-btn">+</button>
                     </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Migracao_e_Inovacao.html" class="btn"
-                            target="_blank">Fazer
-                            Simulados</a>
-                    </div>
-                </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Automação e Integração na AWS</h3>
-                        <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Automação e
-                            Integração, com 10 questões desafiadoras sobre Systems Manager, Step Functions, EventBridge,
-                            CloudFormation e API Gateway. Ideal para testar conhecimentos em cenários reais da AWS e se
-                            preparar para a certificação.
-                        </p>
-                    </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/Automacao_e_Integracao.html" class="btn"
-                            target="_blank">Fazer
-                            Simulados</a>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="monitoramento">
+                            <div class="simulado-content">
+                                <h3>Monitoramento e Análise na AWS</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Monitoramento e
+                                    Análise, com 20 questões desafiadoras sobre CloudWatch, X-Ray, Athena, Glue, QuickSight e
+                                    mais. Ideal para testar e aprofundar conhecimentos em cenários reais da AWS.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Monitoramento_e_Analise.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="simulado-card">
-                    <div class="simulado-content">
-                        <h3>Simulado Completo AWS</h3>
-                        <p>Este simulado reúne questões oficiais da AWS para ajudar na sua preparação para o exame AWS
-                            Certified Cloud Practitioner. Teste seus conhecimentos, identifique pontos de melhoria e
-                            familiarize-se com o estilo das perguntas reais. Aproveite para reforçar seus estudos e
-                            aumentar suas chances de sucesso!
-                        </p>
+    
+                <!-- Categoria: Migração e Automação -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Migração e Automação</h3>
+                        <button class="toggle-btn">+</button>
                     </div>
-                    <div class="simulado-footer">
-                        <a href="/pages/simulados/cloud_Praticner/simulado_completo_aws.html" class="btn"
-                            target="_blank">Fazer
-                            Simulados</a>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="migracao">
+                            <div class="simulado-content">
+                                <h3>Migração e Inovação na AWS</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Migração e Inovação,
+                                    com 10 questões desafiadoras sobre AWS CAF, 6 Rs, Família Snow e inovação na nuvem. Ideal
+                                    para testar e aprofundar conhecimentos em cenários reais da AWS, lhe preparando para tirar a certificação.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Migracao_e_Inovacao.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="migracao">
+                            <div class="simulado-content">
+                                <h3>Automação e Integração na AWS</h3>
+                                <p>Este simulado avançado para a certificação AWS Cloud Practitioner aborda Automação e
+                                    Integração, com 10 questões desafiadoras sobre Systems Manager, Step Functions, EventBridge,
+                                    CloudFormation e API Gateway. Ideal para testar conhecimentos em cenários reais da AWS e se
+                                    preparar para a certificação.</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/Automacao_e_Integracao.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Categoria: Simulados Completos -->
+                <div class="category-container">
+                    <div class="category-header">
+                        <h3>Simulados Completos</h3>
+                        <button class="toggle-btn">+</button>
+                    </div>
+                    <div class="simulados-container category-content">
+                        <div class="simulado-card" data-category="completo">
+                            <div class="simulado-content">
+                                <h3>Simulado 01</h3>
+                                <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
+                                    conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
+                                    serviços da AWS. Aumente suas chances de sucesso no exame!</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/simulado_one.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="completo">
+                            <div class="simulado-content">
+                                <h3>Simulado 02</h3>
+                                <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
+                                    conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
+                                    serviços da AWS. Aumente suas chances de sucesso no exame!</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/simulado_two.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="completo">
+                            <div class="simulado-content">
+                                <h3>Simulado 03</h3>
+                                <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
+                                    conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
+                                    serviços da AWS. Aumente suas chances de sucesso no exame!</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/simulado_three.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="completo">
+                            <div class="simulado-content">
+                                <h3>Simulado 04</h3>
+                                <p>Prepare-se para a certificação AWS Cloud Practitioner com este simulado completo! Teste seus
+                                    conhecimentos com questões sobre conceitos de nuvem, segurança, faturamento, precificação e
+                                    serviços da AWS. Aumente suas chances de sucesso no exame!</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/simulado_four.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
+    
+                        <div class="simulado-card" data-category="completo">
+                            <div class="simulado-content">
+                                <h3>Mini Simulado - 10 questões</h3>
+                                <p>Este mini simulado para a certificação AWS Cloud Practitioner oferece perguntas baseadas no
+                                    exame oficial. Revisão rápida de conceitos de nuvem, segurança, faturamento e serviços da
+                                    AWS. Teste seus conhecimentos e avalie sua preparação!</p>
+                            </div>
+                            <div class="simulado-footer">
+                                <a href="/public/pages/simulados/cloud_Praticner/mini_simulado.html" class="btn"
+                                    target="_blank">Fazer Simulados</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

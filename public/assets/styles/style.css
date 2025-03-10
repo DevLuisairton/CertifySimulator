@@ -1,3 +1,4 @@
+/* Manter os estilos existentes */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -9,13 +10,11 @@
   color: var(--white);
   padding: 60px 0;
   text-align: center;
-  
 }
 
 .hero h1 {
   font-size: 42px;
   margin-bottom: 16px;
-  
 }
 
 .hero p {
@@ -214,7 +213,6 @@
 .simulado-image img {
   width: 9rem;
   height: 9rem;
-
 }
 
 .simulado-content {
@@ -264,51 +262,151 @@
   padding: 60px 0;
 }
 
-
 .back-to-top:hover {
   background-color: var(--primary-light);
 }
 
+/* Novos estilos para as categorias e funcionalidades */
+.simulados-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 20px;
+  border: 2px solid var(--gray-light);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.simulados-categories {
+  margin-top: 30px;
+}
+
+.category-container {
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background-color: var(--white);
+}
+
+.category-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--white);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.category-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.toggle-btn {
+  background-color: var(--white);
+  color: var(--primary);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn:hover {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-btn:focus {
+  outline: none;
+}
+
+.category-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.category-content.active {
+  max-height: 2000px;
+  transition: max-height 1s ease;
+}
+
+/* Estilos responsivos */
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      gap: 15px;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
 
   .nav-links.active {
-      display: flex;
+    display: flex;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 
   .hero h1 {
-      font-size: 32px;
+    font-size: 32px;
   }
 
   .hero p {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .btn {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .btn-secondary {
-      margin-left: 0;
+    margin-left: 0;
   }
 
-  .paths-container, .simulados-container {
-      grid-template-columns: 1fr;
+  .simulados-container {
+    grid-template-columns: 1fr;
+  }
+
+  .category-header h3 {
+    font-size: 18px;
+  }
+}
+
+/* Para tablets e dispositivos médios */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .simulados-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
