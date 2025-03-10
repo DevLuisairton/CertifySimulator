@@ -238,6 +238,186 @@ const originalQuestions = [
     ],
     correctAnswer: [0, 3],
     explanation: "O AWS Fargate elimina a necessidade de gerenciar servidores para contêineres e integra-se com Amazon ECS e EKS."
+  },
+  {
+    id: 21,
+    text: "Qual das seguintes famílias de instâncias EC2 é mais adequada para workloads que exigem alta capacidade de memória, como bancos de dados em memória e análises de big data?",
+    options: [
+      "Uso Geral (por exemplo, M5)",
+      "Otimizado para Memória (por exemplo, R5)",
+      "Otimizado para Computação (por exemplo, C5)",
+      "Otimizado para Armazenamento (por exemplo, I3)"
+    ],
+    correctAnswer: 1,
+    explanation: "As instâncias otimizadas para memória, como a família R5, são projetadas para workloads que exigem alta capacidade de memória, como bancos de dados em memória e análises de big data."
+  },
+  {
+    id: 22,
+    text: "Qual das seguintes opções de compra do Amazon EC2 permite que você pague por capacidade reservada com um compromisso de 1 ou 3 anos, oferecendo um desconto significativo em comparação com o modelo sob demanda?",
+    options: [
+      "Instâncias Spot",
+      "Instâncias Reservadas",
+      "Saving Plans",
+      "Hosts Dedicados"
+    ],
+    correctAnswer: 1,
+    explanation: "As Instâncias Reservadas permitem que você pague por capacidade reservada com um compromisso de 1 ou 3 anos, oferecendo um desconto significativo em comparação com o modelo sob demanda."
+  },
+  {
+    id: 23,
+    text: "Qual das seguintes afirmações sobre o Amazon SNS está correta?",
+    options: [
+      "O Amazon SNS é um serviço de fila de mensagens que permite o armazenamento temporário de mensagens.",
+      "O Amazon SNS é um serviço de notificação que permite o envio de mensagens para múltiplos assinantes.",
+      "O Amazon SNS é um serviço de banco de dados NoSQL.",
+      "O Amazon SNS é um serviço de computação em nuvem."
+    ],
+    correctAnswer: 1,
+    explanation: "O Amazon SNS (Simple Notification Service) é um serviço de notificação que permite o envio de mensagens para múltiplos assinantes, como endpoints HTTP, e-mails, ou dispositivos móveis."
+  },
+  {
+    id: 24,
+    text: "Qual das seguintes opções de compra do Amazon EC2 é mais adequada para workloads que podem ser interrompidas e não exigem tempo de execução contínuo?",
+    options: [
+      "Instâncias Sob Demanda",
+      "Instâncias Reservadas",
+      "Instâncias Spot",
+      "Hosts Dedicados"
+    ],
+    correctAnswer: 2,
+    explanation: "As Instâncias Spot são ideais para workloads que podem ser interrompidas e não exigem tempo de execução contínuo, oferecendo custos significativamente mais baixos em comparação com outras opções."
+  },
+  {
+    id: 25,
+    text: "Qual das seguintes famílias de instâncias EC2 é mais adequada para workloads que exigem alto desempenho de computação, como processamento de dados científicos e modelagem financeira?",
+    options: [
+      "Uso Geral (por exemplo, M5)",
+      "Otimizado para Computação (por exemplo, C5)",
+      "Otimizado para Armazenamento (por exemplo, I3)",
+      "Computação Acelerada (por exemplo, P3)"
+    ],
+    correctAnswer: 1,
+    explanation: "As instâncias otimizadas para computação, como a família C5, são projetadas para workloads que exigem alto desempenho de computação, como processamento de dados científicos e modelagem financeira."
+  },
+  {
+    id: 26,
+    text: "Qual das seguintes afirmações sobre o AWS Fargate está correta?",
+    options: [
+      "O AWS Fargate é um serviço que permite executar contêineres sem gerenciar servidores ou clusters.",
+      "O AWS Fargate é um serviço de armazenamento de objetos.",
+      "O AWS Fargate é um serviço de banco de dados relacional.",
+      "O AWS Fargate é um serviço de fila de mensagens."
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS Fargate é um serviço que permite executar contêineres sem a necessidade de gerenciar servidores ou clusters, sendo uma opção para Amazon ECS e EKS."
+  },
+  {
+    id: 27,
+    text: "Qual das seguintes opções de compra do Amazon EC2 oferece a maior flexibilidade em termos de capacidade de computação, sem compromisso de longo prazo?",
+    options: [
+      "Instâncias Reservadas",
+      "Instâncias Spot",
+      "Saving Plans",
+      "Instâncias Sob Demanda"
+    ],
+    correctAnswer: 3,
+    explanation: "As Instâncias Sob Demanda oferecem a maior flexibilidade em termos de capacidade de computação, sem compromisso de longo prazo, permitindo que você pague apenas pelo tempo de uso."
+  },
+  {
+    id: 28,
+    text: "Qual das seguintes afirmações sobre o Amazon SQS está correta?",
+    options: [
+      "O Amazon SQS é um serviço de notificação que permite o envio de mensagens para múltiplos assinantes.",
+      "O Amazon SQS é um serviço de fila de mensagens que permite o armazenamento temporário de mensagens.",
+      "O Amazon SQS é um serviço de banco de dados NoSQL.",
+      "O Amazon SQS é um serviço de computação em nuvem."
+    ],
+    correctAnswer: 1,
+    explanation: "O Amazon SQS (Simple Queue Service) é um serviço de fila de mensagens que permite o armazenamento temporário de mensagens, garantindo que as mensagens sejam processadas de forma confiável."
+  },
+  {
+    id: 29,
+    text: "Qual das seguintes famílias de instâncias EC2 é mais adequada para workloads que exigem alto desempenho de armazenamento, como bancos de dados NoSQL e data warehouses?",
+    options: [
+      "Uso Geral (por exemplo, M5)",
+      "Otimizado para Armazenamento (por exemplo, I3)",
+      "Otimizado para Computação (por exemplo, C5)",
+      "Computação Acelerada (por exemplo, P3)"
+    ],
+    correctAnswer: 1,
+    explanation: "As instâncias otimizadas para armazenamento, como a família I3, são projetadas para workloads que exigem alto desempenho de armazenamento, como bancos de dados NoSQL e data warehouses."
+  },
+  {
+    id: 30,
+    text: "Qual das seguintes opções de compra do Amazon EC2 é mais adequada para empresas que precisam de isolamento físico de hardware para cumprir requisitos de conformidade?",
+    options: [
+      "Instâncias Spot",
+      "Instâncias Reservadas",
+      "Hosts Dedicados",
+      "Saving Plans"
+    ],
+    correctAnswer: 2,
+    explanation: "Os Hosts Dedicados são ideais para empresas que precisam de isolamento físico de hardware para cumprir requisitos de conformidade, oferecendo controle total sobre o posicionamento das instâncias."
+  },
+  {
+    id: 31,
+    text: "Qual das seguintes afirmações sobre o AWS Elastic Beanstalk está correta?",
+    options: [
+      "O AWS Elastic Beanstalk é um serviço que permite o deploy de aplicativos web sem gerenciar a infraestrutura subjacente.",
+      "O AWS Elastic Beanstalk é um serviço de banco de dados relacional.",
+      "O AWS Elastic Beanstalk é um serviço de fila de mensagens.",
+      "O AWS Elastic Beanstalk é um serviço de armazenamento de objetos."
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS Elastic Beanstalk é um serviço que permite o deploy de aplicativos web sem a necessidade de gerenciar a infraestrutura subjacente, automatizando o provisionamento e a configuração."
+  },
+  {
+    id: 32,
+    text: "Qual das seguintes famílias de instâncias EC2 é mais adequada para workloads que exigem processamento de GPU, como machine learning e renderização de gráficos?",
+    options: [
+      "Uso Geral (por exemplo, M5)",
+      "Otimizado para Computação (por exemplo, C5)",
+      "Computação Acelerada (por exemplo, P3)",
+      "Otimizado para Armazenamento (por exemplo, I3)"
+    ],
+    correctAnswer: 2,
+    explanation: "As instâncias de computação acelerada, como a família P3, são projetadas para workloads que exigem processamento de GPU, como machine learning e renderização de gráficos."
+  },
+  {
+    id: 33,
+    text: "Qual das seguintes opções de compra do Amazon EC2 permite que você economize até 72% em comparação com o modelo sob demanda, com um compromisso de uso consistente de 1 ou 3 anos?",
+    options: [
+      "Instâncias Spot",
+      "Instâncias Reservadas",
+      "Saving Plans",
+      "Hosts Dedicados"
+    ],
+    correctAnswer: 2,
+    explanation: "Os Saving Plans permitem que você economize até 72% em comparação com o modelo sob demanda, com um compromisso de uso consistente de 1 ou 3 anos, aplicando-se a uma variedade de serviços da AWS."
+  },
+  {
+    id: 34,
+    text: "Qual das seguintes afirmações sobre o Amazon SNS e o Amazon SQS está correta?",
+    options: [
+      "O Amazon SNS é usado para armazenar mensagens temporariamente, enquanto o Amazon SQS é usado para notificar assinantes.",
+      "O Amazon SNS é usado para notificar assinantes, enquanto o Amazon SQS é usado para armazenar mensagens temporariamente.",
+      "Ambos são serviços de banco de dados NoSQL.",
+      "Ambos são serviços de computação em nuvem."
+    ],
+    correctAnswer: 1,
+    explanation: "O Amazon SNS é usado para notificar assinantes, enquanto o Amazon SQS é usado para armazenar mensagens temporariamente, garantindo que as mensagens sejam processadas de forma confiável."
+  },
+  {
+    id: 35,
+    text: "Qual das seguintes famílias de instâncias EC2 é mais adequada para workloads de uso geral, como servidores web e aplicativos empresariais?",
+    options: [
+      "Uso Geral (por exemplo, M5)",
+      "Otimizado para Computação (por exemplo, C5)",
+      "Otimizado para Armazenamento (por exemplo, I3)",
+      "Computação Acelerada (por exemplo, P3)"
+    ],
+    correctAnswer: 0,
+    explanation: "As instâncias de uso geral, como a família M5, são projetadas para workloads de uso geral, como servidores web e aplicativos empresariais, oferecendo um equilíbrio entre computação, memória e rede."
   }
 ];
 
@@ -249,7 +429,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 20 * 60, // 30 minutos em segundos
+  timeRemaining: 35 * 60, // 30 minutos em segundos
   timerInterval: null,
   examFinished: false
 };

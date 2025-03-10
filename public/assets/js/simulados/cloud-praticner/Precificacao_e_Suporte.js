@@ -238,6 +238,126 @@ const originalQuestions = [
     ],
     correctAnswer: [0, 1],
     explanation: "O AWS Cost Explorer permite visualizar padrões de gastos e oferece recomendações para otimização de custos."
+  },
+  {
+    id: 21,
+    text: "Quais das seguintes afirmações sobre a Cobrança Consolidada da AWS estão corretas? (Escolha duas)",
+    options: [
+      "A Cobrança Consolidada permite consolidar os custos de várias contas da AWS em uma única fatura.",
+      "A Cobrança Consolidada é disponível apenas para contas empresariais com suporte premium.",
+      "A Cobrança Consolidada oferece descontos automáticos para todas as instâncias reservadas.",
+      "A Cobrança Consolidada facilita a alocação de custos entre diferentes departamentos ou projetos."
+    ],
+    correctAnswer: [0, 3],
+    explanation: "A Cobrança Consolidada permite consolidar os custos de várias contas da AWS em uma única fatura e facilita a alocação de custos entre diferentes departamentos ou projetos."
+  },
+  {
+    id: 22,
+    text: "Quais das seguintes afirmações sobre o AWS Cost Explorer estão corretas? (Escolha duas)",
+    options: [
+      "O AWS Cost Explorer permite visualizar e analisar custos e uso da AWS até os últimos 12 meses.",
+      "O AWS Cost Explorer só pode ser usado por contas com plano de suporte empresarial.",
+      "O AWS Cost Explorer oferece previsões de custos com base no uso histórico.",
+      "O AWS Cost Explorer não permite a criação de relatórios personalizados."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O AWS Cost Explorer permite visualizar e analisar custos e uso da AWS até os últimos 12 meses e oferece previsões de custos com base no uso histórico."
+  },
+  {
+    id: 23,
+    text: "Quais das seguintes afirmações sobre os Planos de Suporte da AWS estão corretas? (Escolha duas)",
+    options: [
+      "O plano Basic Support inclui acesso a um Technical Account Manager (TAM).",
+      "O plano Enterprise Support oferece tempo de resposta de menos de 15 minutos para casos críticos.",
+      "O plano Developer Support é recomendado para workloads de produção.",
+      "O plano Business Support inclui orientação proativa sobre melhorias de arquitetura."
+    ],
+    correctAnswer: [1, 3],
+    explanation: "O plano Enterprise Support oferece tempo de resposta de menos de 15 minutos para casos críticos, e o plano Business Support inclui orientação proativa sobre melhorias de arquitetura."
+  },
+  {
+    id: 24,
+    text: "Quais das seguintes afirmações sobre o pilar de Segurança do Well-Architected Framework estão corretas? (Escolha duas)",
+    options: [
+      "Aplicar o princípio de menor privilégio ajuda a reduzir riscos de segurança.",
+      "A segurança deve ser tratada apenas na fase final do desenvolvimento de uma aplicação.",
+      "A AWS é responsável por garantir a segurança dos dados do cliente armazenados na nuvem.",
+      "A criptografia de dados em repouso e em trânsito é uma prática recomendada."
+    ],
+    correctAnswer: [0, 3],
+    explanation: "Aplicar o princípio de menor privilégio e a criptografia de dados em repouso e em trânsito são práticas recomendadas no pilar de Segurança."
+  },
+  {
+    id: 25,
+    text: "Quais das seguintes afirmações sobre o pilar de Confiabilidade do Well-Architected Framework estão corretas? (Escolha duas)",
+    options: [
+      "A recuperação de desastres deve ser planejada apenas para workloads críticos.",
+      "A utilização de múltiplas zonas de disponibilidade aumenta a confiabilidade de uma aplicação.",
+      "A AWS é responsável por garantir a confiabilidade de todas as aplicações dos clientes.",
+      "Testes de recuperação de falhas devem ser realizados regularmente."
+    ],
+    correctAnswer: [1, 3],
+    explanation: "A utilização de múltiplas zonas de disponibilidade e a realização regular de testes de recuperação de falhas são práticas recomendadas no pilar de Confiabilidade."
+  },
+  {
+    id: 26,
+    text: "Quais das seguintes afirmações sobre o pilar de Excelência Operacional do Well-Architected Framework estão corretas? (Escolha duas)",
+    options: [
+      "A automação de processos é uma prática recomendada para melhorar a excelência operacional.",
+      "A excelência operacional deve ser tratada apenas pela equipe de operações.",
+      "A documentação de procedimentos e a realização de post-mortems são práticas recomendadas.",
+      "A AWS é responsável por garantir a excelência operacional de todas as aplicações dos clientes."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "A automação de processos e a documentação de procedimentos, juntamente com a realização de post-mortems, são práticas recomendadas no pilar de Excelência Operacional."
+  },
+  {
+    id: 27,
+    text: "Quais das seguintes afirmações sobre o pilar de Eficiência de Performance do Well-Architected Framework estão corretas? (Escolha duas)",
+    options: [
+      "A escolha do tipo de instância EC2 adequado é crucial para a eficiência de performance.",
+      "A eficiência de performance deve ser tratada apenas após a aplicação estar em produção.",
+      "O uso de serviços gerenciados, como o Amazon RDS, pode melhorar a eficiência de performance.",
+      "A AWS é responsável por otimizar o desempenho de todas as aplicações dos clientes."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "A escolha do tipo de instância EC2 adequado e o uso de serviços gerenciados, como o Amazon RDS, são práticas recomendadas no pilar de Eficiência de Performance."
+  },
+  {
+    id: 28,
+    text: "Quais das seguintes afirmações sobre o pilar de Otimização de Custos do Well-Architected Framework estão corretas? (Escolha duas)",
+    options: [
+      "A utilização de instâncias reservadas pode reduzir custos em workloads previsíveis.",
+      "A otimização de custos deve ser tratada apenas após a aplicação estar em produção.",
+      "O uso do AWS Cost Explorer ajuda a identificar oportunidades de redução de custos.",
+      "A AWS é responsável por garantir a otimização de custos de todas as aplicações dos clientes."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "A utilização de instâncias reservadas e o uso do AWS Cost Explorer são práticas recomendadas no pilar de Otimização de Custos."
+  },
+  {
+    id: 29,
+    text: "Quais das seguintes afirmações sobre o pilar de Sustentabilidade do Well-Architected Framework estão corretas? (Escolha duas)",
+    options: [
+      "A escolha de regiões da AWS com fontes de energia renovável pode melhorar a sustentabilidade.",
+      "A sustentabilidade deve ser tratada apenas pela equipe de infraestrutura.",
+      "A AWS é responsável por garantir a sustentabilidade de todas as aplicações dos clientes.",
+      "A otimização de recursos e a redução de desperdícios são práticas recomendadas."
+    ],
+    correctAnswer: [0, 3],
+    explanation: "A escolha de regiões da AWS com fontes de energia renovável e a otimização de recursos são práticas recomendadas no pilar de Sustentabilidade."
+  },
+  {
+    id: 30,
+    text: "Quais das seguintes afirmações sobre o AWS Marketplace estão corretas? (Escolha duas)",
+    options: [
+      "O AWS Marketplace oferece soluções de software de terceiros que podem ser implantadas diretamente na AWS.",
+      "O AWS Marketplace é exclusivo para produtos desenvolvidos pela AWS.",
+      "O AWS Marketplace permite a compra de licenças de software com cobrança consolidada na fatura da AWS.",
+      "O AWS Marketplace não oferece suporte para soluções de machine learning."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O AWS Marketplace oferece soluções de software de terceiros que podem ser implantadas diretamente na AWS e permite a compra de licenças de software com cobrança consolidada na fatura da AWS."
   }
 ];
 
@@ -249,7 +369,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 20 * 60, // 30 minutos em segundos
+  timeRemaining: 30 * 60, // 30 minutos em segundos
   timerInterval: null,
   examFinished: false
 };

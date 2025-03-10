@@ -1,123 +1,363 @@
 const originalQuestions = [
   {
     id: 1,
-    text: "Qual dos seguintes conceitos faz parte do AWS Cloud Adoption Framework (CAF)?",
+    text: "Quais são os dois pilares do AWS Cloud Adoption Framework (CAF) que se concentram em pessoas e processos? (Escolha duas)",
     options: [
-      "Pilares de boas práticas para segurança em nuvem",
-      "Domínios como Pessoas, Processos e Tecnologia",
-      "Modelos de preços para otimização de custos",
-      "Estratégias de implementação de contêineres"
+      "Pilar de Negócios",
+      "Pilar de Governança",
+      "Pilar de Operações",
+      "Pilar de Plataforma"
     ],
-    correctAnswer: 1,
-    explanation: "O AWS Cloud Adoption Framework (CAF) ajuda organizações a migrar para a nuvem, abrangendo domínios como Pessoas, Processos e Tecnologia."
+    correctAnswer: [0, 1],
+    explanation: "O pilar de Negócios e o pilar de Governança do AWS CAF focam em pessoas e processos, ajudando as organizações a alinhar estratégias de negócios e governança com a adoção da nuvem."
   },
   {
     id: 2,
-    text: "Quais das seguintes opções são estratégias de migração conhecidas como os '6 Rs'? (Escolha duas)",
+    text: "Quais dos seguintes são dois dos 6 Rs de migração para a nuvem? (Escolha duas)",
     options: [
-      "Rehosting",
-      "Refactoring",
-      "Restructuring",
-      "Rebuilding"
+      "Rehost (Lift and Shift)",
+      "Reinvent",
+      "Retain",
+      "Replicate"
     ],
-    correctAnswer: [0, 1],
-    explanation: "Rehosting e Refactoring são duas das estratégias conhecidas como os '6 Rs' de migração para a nuvem AWS."
+    correctAnswer: [0, 2],
+    explanation: "Rehost (Lift and Shift) e Retain são dois dos 6 Rs de migração. Rehost envolve mover aplicações sem modificações, enquanto Retain significa manter a aplicação no ambiente atual."
   },
   {
     id: 3,
-    text: "Qual é a principal função da Família Snow da AWS?",
+    text: "Quais das seguintes afirmações sobre a família AWS Snow estão corretas? (Escolha duas)",
     options: [
-      "Fornecer soluções de armazenamento em nuvem de baixo custo",
-      "Facilitar a transferência de grandes volumes de dados para a AWS",
-      "Oferecer serviços de migração de aplicativos em tempo real",
-      "Automatizar a criação de instâncias EC2"
+      "O AWS Snowball é usado para transferir grandes volumes de dados para a nuvem.",
+      "O AWS Snowcone é projetado para ambientes com espaço limitado e baixa largura de banda.",
+      "O AWS Snowmobile é usado apenas para transferir dados para o Google Cloud.",
+      "O AWS Snowball Edge não suporta processamento de dados local."
     ],
-    correctAnswer: 1,
-    explanation: "A Família Snow facilita a transferência de grandes volumes de dados para a AWS, especialmente em cenários com conectividade limitada."
+    correctAnswer: [0, 1],
+    explanation: "O AWS Snowball é usado para transferir grandes volumes de dados, e o AWS Snowcone é projetado para ambientes com espaço limitado e baixa largura de banda."
   },
   {
     id: 4,
-    text: "Quais são benefícios do AWS Snowball? (Escolha duas)",
+    text: "Quais das seguintes afirmações sobre o Amazon SageMaker estão corretas? (Escolha duas)",
     options: [
-      "Permite transferir grandes volumes de dados de forma segura e rápida",
-      "Oferece armazenamento ilimitado em nuvem",
-      "Reduz custos de transferência de dados em redes públicas",
-      "Automatiza a migração de aplicativos para a nuvem"
+      "O Amazon SageMaker é um serviço totalmente gerenciado para machine learning.",
+      "O Amazon SageMaker não suporta frameworks de deep learning como TensorFlow e PyTorch.",
+      "O Amazon SageMaker inclui ferramentas para preparação de dados, treinamento e implantação de modelos.",
+      "O Amazon SageMaker é usado apenas para análise de dados em tempo real."
     ],
     correctAnswer: [0, 2],
-    explanation: "O AWS Snowball permite transferir grandes volumes de dados de forma segura e rápida, reduzindo custos de transferência em redes públicas."
+    explanation: "O Amazon SageMaker é um serviço totalmente gerenciado para machine learning e inclui ferramentas para preparação de dados, treinamento e implantação de modelos."
   },
   {
     id: 5,
-    text: "Qual é a principal vantagem do AWS Snowmobile?",
+    text: "Quais das seguintes afirmações sobre o Amazon Augmented AI (A2I) estão corretas? (Escolha duas)",
     options: [
-      "Transferir petabytes de dados para a AWS em um caminhão seguro",
-      "Oferecer armazenamento temporário para dados em trânsito",
-      "Automatizar a migração de aplicativos para a nuvem",
-      "Fornecer conectividade de alta velocidade para data centers"
+      "O Amazon A2I permite adicionar revisão humana a previsões de machine learning.",
+      "O Amazon A2I é usado apenas para automação de processos sem intervenção humana.",
+      "O Amazon A2I integra-se com serviços como Amazon Rekognition e Amazon Textract.",
+      "O Amazon A2I não suporta workflows personalizados."
     ],
-    correctAnswer: 0,
-    explanation: "O AWS Snowmobile é usado para transferir petabytes de dados para a AWS em um caminhão seguro, ideal para grandes volumes."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon A2I permite adicionar revisão humana a previsões de machine learning e integra-se com serviços como Amazon Rekognition e Amazon Textract."
   },
   {
     id: 6,
-    text: "Qual é a principal função do AWS Cloud Adoption Framework (CAF)?",
+    text: "Quais das seguintes afirmações sobre o Amazon Lex estão corretas? (Escolha duas)",
     options: [
-      "Otimizar custos de infraestrutura em nuvem",
-      "Ajudar organizações a planejar e implementar migrações para a nuvem",
-      "Fornecer ferramentas de monitoramento de desempenho",
-      "Automatizar a criação de instâncias EC2"
+      "O Amazon Lex é usado para criar chatbots e interfaces de voz.",
+      "O Amazon Lex não suporta integração com o Amazon Polly.",
+      "O Amazon Lex é baseado na mesma tecnologia do Alexa.",
+      "O Amazon Lex é usado apenas para análise de dados estruturados."
     ],
-    correctAnswer: 1,
-    explanation: "O AWS Cloud Adoption Framework (CAF) ajuda organizações a planejar e implementar migrações para a nuvem de forma eficiente."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Lex é usado para criar chatbots e interfaces de voz e é baseado na mesma tecnologia do Alexa."
   },
   {
     id: 7,
-    text: "Quais são estratégias de migração conhecidas como os '6 Rs'? (Escolha duas)",
+    text: "Quais das seguintes afirmações sobre o Amazon Textract estão corretas? (Escolha duas)",
     options: [
-      "Replatforming",
-      "Retiring",
-      "Restructuring",
-      "Rebuilding"
+      "O Amazon Textract é usado para extrair texto e dados de documentos.",
+      "O Amazon Textract não suporta documentos em PDF.",
+      "O Amazon Textract pode identificar campos e tabelas em formulários.",
+      "O Amazon Textract é usado apenas para processamento de imagens."
     ],
-    correctAnswer: [0, 1],
-    explanation: "Replatforming e Retiring são duas das estratégias conhecidas como os '6 Rs' de migração para a nuvem AWS."
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Textract é usado para extrair texto e dados de documentos e pode identificar campos e tabelas em formulários."
   },
   {
     id: 8,
-    text: "Qual é a principal vantagem do AWS Snowcone?",
+    text: "Quais das seguintes afirmações sobre o AWS DeepRacer estão corretas? (Escolha duas)",
     options: [
-      "Transferir grandes volumes de dados em um caminhão seguro",
-      "Oferecer uma solução portátil para coleta e processamento de dados",
-      "Automatizar a migração de aplicativos para a nuvem",
-      "Fornecer armazenamento ilimitado em nuvem"
+      "O AWS DeepRacer é uma plataforma de aprendizado por reforço para machine learning.",
+      "O AWS DeepRacer é usado apenas para treinamento de modelos de visão computacional.",
+      "O AWS DeepRacer inclui competições para aprimorar habilidades em machine learning.",
+      "O AWS DeepRacer não suporta integração com o Amazon SageMaker."
     ],
-    correctAnswer: 1,
-    explanation: "O AWS Snowcone é uma solução portátil para coleta e processamento de dados, ideal para ambientes remotos."
+    correctAnswer: [0, 2],
+    explanation: "O AWS DeepRacer é uma plataforma de aprendizado por reforço e inclui competições para aprimorar habilidades em machine learning."
   },
   {
     id: 9,
-    text: "Qual é a principal função do AWS Snowball Edge?",
+    text: "Quais das seguintes afirmações sobre o AWS IoT estão corretas? (Escolha duas)",
     options: [
-      "Transferir petabytes de dados para a AWS em um caminhão seguro",
-      "Oferecer armazenamento temporário para dados em trânsito",
-      "Fornecer capacidade de computação e armazenamento em locais remotos",
-      "Automatizar a migração de aplicativos para a nuvem"
+      "O AWS IoT Core permite conectar dispositivos IoT à nuvem.",
+      "O AWS IoT não suporta integração com o Amazon S3.",
+      "O AWS IoT Greengrass permite processamento de dados local em dispositivos IoT.",
+      "O AWS IoT é usado apenas para análise de dados em batch."
     ],
-    correctAnswer: 2,
-    explanation: "O AWS Snowball Edge fornece capacidade de computação e armazenamento em locais remotos, além de transferir dados para a AWS."
+    correctAnswer: [0, 2],
+    explanation: "O AWS IoT Core permite conectar dispositivos IoT à nuvem, e o AWS IoT Greengrass permite processamento de dados local em dispositivos IoT."
   },
   {
     id: 10,
-    text: "Quais são benefícios da inovação com AWS? (Escolha duas)",
+    text: "Quais das seguintes afirmações sobre o AWS Ground Station estão corretas? (Escolha duas)",
     options: [
-      "Permite experimentar e implementar novas ideias rapidamente",
-      "Oferece descontos automáticos em instâncias EC2",
-      "Reduz custos de transferência de dados em redes públicas",
-      "Facilita a criação de soluções escaláveis e seguras"
+      "O AWS Ground Station é usado para receber e processar dados de satélites.",
+      "O AWS Ground Station não suporta integração com o Amazon S3.",
+      "O AWS Ground Station permite controle de satélites em órbita.",
+      "O AWS Ground Station é usado apenas para comunicações terrestres."
     ],
-    correctAnswer: [0, 3],
-    explanation: "A inovação com AWS permite experimentar e implementar novas ideias rapidamente, além de facilitar a criação de soluções escaláveis e seguras."
+    correctAnswer: [0, 2],
+    explanation: "O AWS Ground Station é usado para receber e processar dados de satélites e permite controle de satélites em órbita."
+  },
+  {
+    id: 11,
+    text: "Quais das seguintes afirmações sobre o VMware Cloud on AWS estão corretas? (Escolha duas)",
+    options: [
+      "O VMware Cloud on AWS permite executar workloads VMware na nuvem da AWS.",
+      "O VMware Cloud on AWS não suporta migração de máquinas virtuais do VMware.",
+      "O VMware Cloud on AWS é uma solução híbrida que integra data centers locais com a AWS.",
+      "O VMware Cloud on AWS é usado apenas para desenvolvimento de aplicativos nativos da AWS."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O VMware Cloud on AWS permite executar workloads VMware na nuvem da AWS e é uma solução híbrida que integra data centers locais com a AWS."
+  },
+  {
+    id: 12,
+    text: "Quais das seguintes afirmações sobre o AWS CodeWhisperer estão corretas? (Escolha duas)",
+    options: [
+      "O AWS CodeWhisperer é uma ferramenta de desenvolvimento assistido por IA.",
+      "O AWS CodeWhisperer não suporta linguagens de programação como Python e Java.",
+      "O AWS CodeWhisperer sugere trechos de código com base no contexto do desenvolvedor.",
+      "O AWS CodeWhisperer é usado apenas para análise de código estático."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O AWS CodeWhisperer é uma ferramenta de desenvolvimento assistido por IA e sugere trechos de código com base no contexto do desenvolvedor."
+  },
+  {
+    id: 13,
+    text: "Quais dos seguintes são dois pilares do AWS Cloud Adoption Framework (CAF) que se concentram em tecnologia? (Escolha duas)",
+    options: [
+      "Pilar de Plataforma",
+      "Pilar de Segurança",
+      "Pilar de Operações",
+      "Pilar de Negócios"
+    ],
+    correctAnswer: [0, 1],
+    explanation: "O pilar de Plataforma e o pilar de Segurança do AWS CAF focam em tecnologia, ajudando a garantir que a infraestrutura e a segurança estejam alinhadas com a adoção da nuvem."
+  },
+  {
+    id: 14,
+    text: "Quais dos seguintes são dois dos 6 Rs de migração para a nuvem? (Escolha duas)",
+    options: [
+      "Replatform",
+      "Refactor",
+      "Replicate",
+      "Retain"
+    ],
+    correctAnswer: [0, 1],
+    explanation: "Replatform e Refactor são dois dos 6 Rs de migração. Replatform envolve fazer ajustes mínimos para otimizar a aplicação na nuvem, enquanto Refactor envolve reescrever partes da aplicação para aproveitar os serviços da nuvem."
+  },
+  {
+    id: 15,
+    text: "Quais das seguintes afirmações sobre o AWS CAF estão corretas? (Escolha duas)",
+    options: [
+      "O AWS CAF ajuda as organizações a planejar e implementar a adoção da nuvem.",
+      "O AWS CAF é focado apenas em aspectos técnicos da migração.",
+      "O AWS CAF inclui seis perspectivas que abrangem pessoas, processos e tecnologia.",
+      "O AWS CAF não oferece orientação sobre governança de nuvem."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O AWS CAF ajuda as organizações a planejar e implementar a adoção da nuvem e inclui seis perspectivas que abrangem pessoas, processos e tecnologia."
+  },
+  {
+    id: 16,
+    text: "Qual dos seguintes serviços da AWS é usado para treinar e implantar modelos de machine learning?",
+    options: [
+      "Amazon SageMaker",
+      "Amazon Lex",
+      "Amazon Textract",
+      "AWS DeepRacer"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon SageMaker é usado para treinar e implantar modelos de machine learning."
+  },
+  {
+    id: 17,
+    text: "Qual dos seguintes serviços da AWS é usado para criar chatbots e interfaces de voz?",
+    options: [
+      "Amazon Lex",
+      "Amazon Augmented AI",
+      "Amazon Textract",
+      "AWS IoT"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon Lex é usado para criar chatbots e interfaces de voz."
+  },
+  {
+    id: 18,
+    text: "Qual dos seguintes serviços da AWS é usado para extrair texto e dados de documentos?",
+    options: [
+      "Amazon Textract",
+      "Amazon SageMaker",
+      "Amazon Augmented AI",
+      "AWS DeepRacer"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon Textract é usado para extrair texto e dados de documentos."
+  },
+  {
+    id: 19,
+    text: "Qual dos seguintes serviços da AWS é usado para conectar dispositivos IoT à nuvem?",
+    options: [
+      "AWS IoT Core",
+      "AWS Ground Station",
+      "VMware Cloud on AWS",
+      "AWS CodeWhisperer"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS IoT Core é usado para conectar dispositivos IoT à nuvem."
+  },
+  {
+    id: 20,
+    text: "Qual dos seguintes serviços da AWS é usado para receber e processar dados de satélites?",
+    options: [
+      "AWS Ground Station",
+      "AWS IoT",
+      "Amazon SageMaker",
+      "Amazon Lex"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS Ground Station é usado para receber e processar dados de satélites."
+  },
+  {
+    id: 21,
+    text: "Qual dos seguintes serviços da AWS é usado para executar workloads VMware na nuvem?",
+    options: [
+      "VMware Cloud on AWS",
+      "AWS CodeWhisperer",
+      "AWS DeepRacer",
+      "Amazon Augmented AI"
+    ],
+    correctAnswer: 0,
+    explanation: "O VMware Cloud on AWS é usado para executar workloads VMware na nuvem."
+  },
+  {
+    id: 22,
+    text: "Qual dos seguintes serviços da AWS é uma ferramenta de desenvolvimento assistido por IA?",
+    options: [
+      "AWS CodeWhisperer",
+      "Amazon SageMaker",
+      "Amazon Lex",
+      "Amazon Textract"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS CodeWhisperer é uma ferramenta de desenvolvimento assistido por IA."
+  },
+  {
+    id: 23,
+    text: "Qual dos seguintes serviços da AWS é usado para treinar modelos de machine learning em um carro de corrida virtual?",
+    options: [
+      "AWS DeepRacer",
+      "Amazon SageMaker",
+      "Amazon Lex",
+      "Amazon Textract"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS DeepRacer é usado para treinar modelos de machine learning em um carro de corrida virtual."
+  },
+  {
+    id: 24,
+    text: "Qual dos seguintes serviços da AWS é usado para adicionar revisão humana a previsões de machine learning?",
+    options: [
+      "Amazon Augmented AI",
+      "Amazon SageMaker",
+      "Amazon Lex",
+      "Amazon Textract"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon Augmented AI é usado para adicionar revisão humana a previsões de machine learning."
+  },
+  {
+    id: 25,
+    text: "Qual dos seguintes serviços da AWS é usado para processamento de dados local em dispositivos IoT?",
+    options: [
+      "AWS IoT Greengrass",
+      "AWS IoT Core",
+      "AWS Ground Station",
+      "VMware Cloud on AWS"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS IoT Greengrass é usado para processamento de dados local em dispositivos IoT."
+  },
+  {
+    id: 26,
+    text: "Qual dos seguintes serviços da AWS é usado para transferir grandes volumes de dados para a nuvem?",
+    options: [
+      "AWS Snowball",
+      "AWS Ground Station",
+      "AWS IoT Core",
+      "AWS CodeWhisperer"
+    ],
+    correctAnswer: 0,
+    explanation: "O AWS Snowball é usado para transferir grandes volumes de dados para a nuvem."
+  },
+  {
+    id: 27,
+    text: "Qual dos seguintes serviços da AWS é usado para criar e gerenciar redes blockchain?",
+    options: [
+      "Amazon Managed Blockchain",
+      "AWS IoT",
+      "Amazon SageMaker",
+      "Amazon Lex"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon Managed Blockchain é usado para criar e gerenciar redes blockchain."
+  },
+  {
+    id: 28,
+    text: "Qual dos seguintes serviços da AWS é usado para análise de dados em tempo real?",
+    options: [
+      "Amazon Kinesis",
+      "Amazon SageMaker",
+      "Amazon Lex",
+      "Amazon Textract"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon Kinesis é usado para análise de dados em tempo real."
+  },
+  {
+    id: 29,
+    text: "Qual dos seguintes serviços da AWS é usado para armazenamento de objetos escalável?",
+    options: [
+      "Amazon S3",
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "Amazon Redshift"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon S3 é usado para armazenamento de objetos escalável."
+  },
+  {
+    id: 30,
+    text: "Qual dos seguintes serviços da AWS é usado para banco de dados relacional gerenciado?",
+    options: [
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "Amazon Redshift",
+      "Amazon Neptune"
+    ],
+    correctAnswer: 0,
+    explanation: "O Amazon RDS é usado para banco de dados relacional gerenciado."
   }
 ];
 
@@ -129,7 +369,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 10 * 60, // 30 minutos em segundos
+  timeRemaining: 30 * 60, // 30 minutos em segundos
   timerInterval: null,
   examFinished: false
 };

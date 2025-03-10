@@ -238,6 +238,126 @@ const originalQuestions = [
     ],
     correctAnswer: [0, 2],
     explanation: "O Amazon S3 é um serviço de armazenamento de objetos altamente escalável e ideal para dados não estruturados."
+  },
+  {
+    id: 21,
+    text: "Quais das seguintes afirmações sobre o Amazon EFS estão corretas? (Escolha duas)",
+    options: [
+      "O Amazon EFS é um serviço de armazenamento de blocos projetado para uso com instâncias EC2.",
+      "O Amazon EFS oferece escalabilidade automática e é compatível com o protocolo NFS.",
+      "O Amazon EFS é ideal para workloads que exigem baixa latência e alto desempenho de IOPS.",
+      "O Amazon EFS pode ser montado em várias instâncias EC2 simultaneamente, permitindo compartilhamento de arquivos."
+    ],
+    correctAnswer: [1, 3],
+    explanation: "O Amazon EFS é um serviço de armazenamento de arquivos escalável e compatível com o protocolo NFS, que pode ser montado em várias instâncias EC2 simultaneamente, permitindo o compartilhamento de arquivos."
+  },
+  {
+    id: 22,
+    text: "Quais das seguintes afirmações sobre o Amazon Aurora estão corretas? (Escolha duas)",
+    options: [
+      "O Amazon Aurora é compatível com os motores de banco de dados MySQL e PostgreSQL.",
+      "O Amazon Aurora oferece desempenho semelhante ao de bancos de dados comerciais, mas com custos mais altos.",
+      "O Amazon Aurora armazena dados em um único volume, o que limita sua escalabilidade.",
+      "O Amazon Aurora replica automaticamente os dados em três zonas de disponibilidade para alta disponibilidade."
+    ],
+    correctAnswer: [0, 3],
+    explanation: "O Amazon Aurora é compatível com MySQL e PostgreSQL, oferece alto desempenho e replica automaticamente os dados em três zonas de disponibilidade para alta disponibilidade."
+  },
+  {
+    id: 23,
+    text: "Quais das seguintes afirmações sobre o AWS DMS estão corretas? (Escolha duas)",
+    options: [
+      "O AWS DMS pode migrar bancos de dados entre diferentes engines, como Oracle para MySQL.",
+      "O AWS DMS é usado apenas para migrar dados para o Amazon S3.",
+      "O AWS DMS suporta migrações contínuas com replicação em tempo real.",
+      "O AWS DMS não suporta migrações de bancos de dados on-premises para a nuvem."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O AWS DMS pode migrar bancos de dados entre diferentes engines e suporta migrações contínuas com replicação em tempo real."
+  },
+  {
+    id: 24,
+    text: "Quais das seguintes afirmações sobre o Amazon DocumentDB estão corretas? (Escolha duas)",
+    options: [
+      "O Amazon DocumentDB é compatível com o MongoDB, permitindo a migração de aplicativos existentes.",
+      "O Amazon DocumentDB é um banco de dados relacional que usa SQL como linguagem de consulta.",
+      "O Amazon DocumentDB oferece escalabilidade automática e alta disponibilidade.",
+      "O Amazon DocumentDB é otimizado para workloads de data warehousing."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Amazon DocumentDB é compatível com o MongoDB e oferece escalabilidade automática e alta disponibilidade, sendo ideal para workloads de documentos JSON."
+  },
+  {
+    id: 25,
+    text: "Quais das seguintes afirmações sobre o Amazon Neptune estão corretas? (Escolha duas)",
+    options: [
+      "O Amazon Neptune é um banco de dados de grafos que suporta consultas em grafos usando Gremlin e SPARQL.",
+      "O Amazon Neptune é otimizado para workloads de análise de dados estruturados.",
+      "O Amazon Neptune oferece alta disponibilidade com replicação em múltiplas zonas de disponibilidade.",
+      "O Amazon Neptune é um banco de dados relacional que usa SQL como linguagem de consulta."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Neptune é um banco de dados de grafos que suporta consultas em grafos usando Gremlin e SPARQL e oferece alta disponibilidade com replicação em múltiplas zonas de disponibilidade."
+  },
+  {
+    id: 26,
+    text: "Quais das seguintes afirmações sobre o Amazon Managed Blockchain estão corretas? (Escolha duas)",
+    options: [
+      "O Amazon Managed Blockchain suporta frameworks como Hyperledger Fabric e Ethereum.",
+      "O Amazon Managed Blockchain é usado apenas para armazenar dados estruturados.",
+      "O Amazon Managed Blockchain permite a criação de redes blockchain escaláveis e gerenciadas.",
+      "O Amazon Managed Blockchain não oferece integração com outros serviços da AWS."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Amazon Managed Blockchain suporta frameworks como Hyperledger Fabric e Ethereum e permite a criação de redes blockchain escaláveis e gerenciadas."
+  },
+  {
+    id: 27,
+    text: "Quais das seguintes afirmações sobre o Amazon QLDB estão corretas? (Escolha duas)",
+    options: [
+      "O Amazon QLDB é um banco de dados de ledger que fornece um registro imutável e verificável de transações.",
+      "O Amazon QLDB é otimizado para workloads de análise de big data.",
+      "O Amazon QLDB usa SQL como linguagem de consulta para acessar dados.",
+      "O Amazon QLDB é um banco de dados relacional que suporta transações ACID."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Amazon QLDB é um banco de dados de ledger que fornece um registro imutável e verificável de transações e usa SQL como linguagem de consulta."
+  },
+  {
+    id: 28,
+    text: "Quais das seguintes afirmações sobre o Amazon ElastiCache estão corretas? (Escolha duas)",
+    options: [
+      "O Amazon ElastiCache suporta os motores Redis e Memcached.",
+      "O Amazon ElastiCache é usado apenas para armazenamento de dados persistentes.",
+      "O Amazon ElastiCache melhora o desempenho de aplicativos ao armazenar dados em memória.",
+      "O Amazon ElastiCache não oferece alta disponibilidade ou escalabilidade."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Amazon ElastiCache suporta Redis e Memcached e melhora o desempenho de aplicativos ao armazenar dados em memória."
+  },
+  {
+    id: 29,
+    text: "Quais das seguintes afirmações sobre o Amazon DynamoDB Accelerator (DAX) estão corretas? (Escolha duas)",
+    options: [
+      "O DAX é um cache em memória que reduz a latência de leitura do DynamoDB.",
+      "O DAX é usado apenas para melhorar o desempenho de operações de escrita no DynamoDB.",
+      "O DAX é compatível com todas as APIs do DynamoDB.",
+      "O DAX não oferece suporte a alta disponibilidade ou escalabilidade."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O DAX é um cache em memória que reduz a latência de leitura do DynamoDB e é compatível com todas as APIs do DynamoDB."
+  },
+  {
+    id: 30,
+    text: "Quais das seguintes afirmações sobre o Amazon Aurora Global Database estão corretas? (Escolha duas)",
+    options: [
+      "O Aurora Global Database permite replicação de dados entre regiões com latência mínima.",
+      "O Aurora Global Database é usado apenas para workloads de análise de big data.",
+      "O Aurora Global Database oferece recuperação de desastres em nível global.",
+      "O Aurora Global Database não suporta replicação assíncrona."
+    ],
+    correctAnswer: [0, 2],
+    explanation: "O Aurora Global Database permite replicação de dados entre regiões com latência mínima e oferece recuperação de desastres em nível global."
   }
 ];
 
@@ -249,7 +369,7 @@ const examState = {
   currentQuestionIndex: 0,
   answers: {},
   markedForReview: new Set(),
-  timeRemaining: 20 * 60, // 30 minutos em segundos
+  timeRemaining: 30 * 60, // 30 minutos em segundos
   timerInterval: null,
   examFinished: false
 };
