@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/img/logo.png" type="icon">
+    <title>Questionário</title>
+    <script src="/assets/js/simulados/cloud-praticner/AWS_WELL.js" defer></script>
+    <link rel="stylesheet" href="/assets/styles/formulario.css"/>
+  </head>
+  <body>
+    
+    <div class="container">
+      <header>
+        <h1>Simulado de Certificação AWS</h1>
+      </header>
+  
+      <div id="exam-container">
+        <div class="timer">
+          <span class="timer-info">Tempo Restante:</span>
+          <span id="timer-display" class="timer-display">20:00</span>
+        </div>
+  
+        <div class="question-nav" id="question-nav"></div>
+  
+        <div id="question-container" class="question-container">
+          <!-- Perguntas serão injetadas aqui pelo JavaScript -->
+        </div>
+  
+        <div class="navigation">
+          <button id="prev-btn" class="nav-button">Anterior</button>
+          <button id="next-btn" class="nav-button">Próxima</button>
+          <button id="finish-btn" class="nav-button primary">Finalizar Simulado</button>
+        </div>
+      </div>
+  
+      <div id="results-container" class="results hidden">
+        <div class="results-header">
+          <h2>Resultado do Simulado</h2>
+        </div>
+        <div class="score" id="score">0/0</div>
+        <div class="result-summary">
+          <div class="summary-item">
+            <div class="summary-item-value" id="correct-count">0</div>
+            <div class="summary-item-label">Respostas Corretas</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-value" id="incorrect-count">0</div>
+            <div class="summary-item-label">Respostas Incorretas</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-value" id="unanswered-count">0</div>
+            <div class="summary-item-label">Não Respondidas</div>
+          </div>
+        </div>
+        <button id="restart-btn" class="nav-button primary">Reiniciar Simulado</button>
+        <div class="results-questions" id="results-questions">
+          <!-- Resultados detalhados serão injetados aqui pelo JavaScript -->
+        </div>
+      </div>
+    </div>
+  
+    <div id="finish-modal" class="modal">
+      <div class="modal-content">
+        <h3 class="modal-title">Finalizar Simulado?</h3>
+        <p class="modal-text">Tem certeza que deseja finalizar o simulado? Somente as questões respondidas serão
+          corrigidas.</p>
+        <div class="modal-buttons">
+          <button id="cancel-finish" class="modal-button cancel">Cancelar</button>
+          <button id="confirm-finish" class="modal-button confirm">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  
+    <template id="question-template">
+      <div class="quiz-item">
+        <div class="card-content">
+          <h3 class="question-text"></h3>
+          <dl class="options-list"></dl>
+          <div class="justificativa" style="display: none;">
+            <h4>Justificativa:</h4>
+            <p class="explanation-text"></p>
+          </div>
+        </div>
+      </div>
+    </template>
+  
+  </body>
+</html>
