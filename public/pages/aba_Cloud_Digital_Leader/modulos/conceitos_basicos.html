@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/img/logo.png" type="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/trilha-cloud-praticner.css">
+  <link rel="stylesheet" href="/assets/styles/header.css">
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/config_global.css">
+  <script src="/assets/js/trilhas/Cloud_Digital_Leader/conceitos_basicos.js" defer></script>
+  <script src="/assets/js/header.js" defer></script>
+  <title>Conceitos Básicos</title>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="#progressText" class="logo">SertifySimulator</a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="/pages/">Trilha</a></li>
+        
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/index.html">Certificações AWS</a>
+      <span class="separator">›</span>
+      <a href="/pages/">Cloud Practitioner</a>
+      <span class="separator">›</span>
+      <span>Módulo 5: Segurança e Conformidade</span>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-title">
+        <span>Progresso do módulo</span>
+        <span id="progressText">0 de 4 serviços concluídos</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <div class="module-header">
+      <div>
+        <h2 class="module-title">Segurança e Conformidade na AWS</h2>
+        <p class="module-subtitle">Conheça os principais serviços de segurança e conformidade da AWS, projetados para proteger dados, aplicativos e infraestrutura.</p>
+      </div>
+    </div>
+
+    <div class="controls-container">
+      <div class="search-filter">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar serviço...">
+        <select id="categoryFilter" class="filter-select">
+          <option value="all">Todas as categorias</option>
+          <option value="security">Segurança</option>
+          <option value="governance">Governança</option>
+          <option value="compliance">Conformidade</option>
+          <option value="audit">Auditoria</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button id="expandAllBtn" class="btn">Expandir Tudo</button>
+        <button id="collapseAllBtn" class="btn btn-secondary">Recolher Tudo</button>
+      </div>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <!-- Os cards de serviços serão inseridos aqui via JavaScript -->
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Serviços</h3>
+          <ul>
+            <li><a href="#categoryFilter" target="_blank">AWS IAM</a></li>
+            <li><a href="#categoryFilter" target="_blank">AWS Organizations</a></li>
+            <li><a href="#categoryFilter" target="_blank">AWS KMS</a></li>
+            <li><a href="#categoryFilter" target="_blank">AWS CloudTrail</a></li>
+            <li><a href="#categoryFilter" target="_blank">AWS Config</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="mailto:luisairtonsilva@gmail.com" target="_blank">Enviar e-mail</a></li>
+            <li><a href="https://wa.me/5585981112800" target="_blank">Enviar mensagem no WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/luisairton/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <img src="/assets/img/logo_roxa.png" alt="logo" class="footer-logo">
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 SertifySimulator. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
