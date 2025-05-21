@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/img/logo.png" type="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/trilha-cloud-praticner.css">
+  <link rel="stylesheet" href="/assets/styles/header.css">
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/config_global.css">
+  <script src="/assets/js/trilhas/cloud-pratiticner/Migracao_e_Inovacao.js" defer></script>
+  <script src="/assets/js/header.js" defer></script>
+  <title>Migração e Inovação na AWS</title>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="#progressText" class="logo">SertifySimulator</a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/index.html">Início</a></li>
+          <li><a href="/pages/aba_cloud_praticner/trilha_certificacao.html">Trilha</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/index.html">Certificações AWS</a>
+      <span class="separator">›</span>
+      <a href="/pages/aba_cloud_praticner/cloud_praticner.html">Cloud Practitioner</a>
+      <span class="separator">›</span>
+      <span>Módulo 4: Migração e Inovação</span>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-title">
+        <span>Progresso do módulo</span>
+        <span id="progressText">0 de 4 tópicos concluídos</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <div class="module-header">
+      <div>
+        <h2 class="module-title">Migração e Inovação na AWS</h2>
+        <p class="module-subtitle">Conheça estratégias de migração, ferramentas como a Família Snow e serviços de inovação como IA e Serverless.</p>
+      </div>
+    </div>
+
+    <div class="controls-container">
+      <div class="search-filter">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar tópico...">
+        <select id="categoryFilter" class="filter-select">
+          <option value="all">Todas as categorias</option>
+          <option value="migracao">Migração</option>
+          <option value="inovacao">Inovação</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button id="expandAllBtn" class="btn">Expandir Tudo</button>
+        <button id="collapseAllBtn" class="btn btn-secondary">Recolher Tudo</button>
+      </div>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <!-- Cards serão inseridos aqui via JavaScript -->
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Serviços</h3>
+          <ul>
+            <li><a href="#categoryFilter" target="_blank">AWS CAF</a></li>
+            <li><a href="#categoryFilter" target="_blank">6 Rs de Migração</a></li>
+            <li><a href="#categoryFilter" target="_blank">Família Snow</a></li>
+            <li><a href="#categoryFilter" target="_blank">Inovação com AWS</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="mailto:luisairtonsilva@gmail.com" target="_blank">Enviar e-mail</a></li>
+            <li><a href="https://wa.me/5585981112800" target="_blank">Enviar mensagem no WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/luisairton/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <img src="/assets/img/logo_roxa.png" alt="logo" class="footer-logo">
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 SertifySimulator. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
