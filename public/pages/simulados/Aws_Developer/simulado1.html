@@ -1,117 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/assets/img/logo.png" type="icon">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles/trilha-cloud-praticner.css">
-  <link rel="stylesheet" href="/assets/styles/header.css">
-  <link rel="stylesheet" href="/assets/styles/footer.css">
-  <link rel="stylesheet" href="/assets/styles/config_global.css">
-  <script src="/assets/js/simulados/aws_developer/simulado1.js" defer></script>
-  <script src="/assets/js/header.js" defer></script>
-  <title>Conceitos Básicos</title>
-</head>
-
-<body>
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-content">
-        <a href="#progressText" class="logo">SertifySimulator</a>
-        <button class="menu-toggle" aria-label="Abrir menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="/index.html">Início</a></li>
-          <li><a href="/pages/">Trilha</a></li>
-        
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/index.html">Certificações AWS</a>
-      <span class="separator">›</span>
-      <a href="/pages/">Cloud Practitioner</a>
-      <span class="separator">›</span>
-      <span>Módulo 5: Segurança e Conformidade</span>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-title">
-        <span>Progresso do módulo</span>
-        <span id="progressText">0 de 4 serviços concluídos</span>
-      </div>
-      <div class="progress-bar-container">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
-    </div>
-
-    <div class="module-header">
-      <div>
-        <h2 class="module-title">Segurança e Conformidade na AWS</h2>
-        <p class="module-subtitle">Conheça os principais serviços de segurança e conformidade da AWS, projetados para proteger dados, aplicativos e infraestrutura.</p>
-      </div>
-    </div>
-
-    <div class="controls-container">
-      <div class="search-filter">
-        <input type="text" id="searchInput" class="search-input" placeholder="Buscar serviço...">
-        <select id="categoryFilter" class="filter-select">
-          <option value="all">Todas as categorias</option>
-          <option value="security">Segurança</option>
-          <option value="governance">Governança</option>
-          <option value="compliance">Conformidade</option>
-          <option value="audit">Auditoria</option>
-        </select>
-      </div>
-      <div class="actions">
-        <button id="expandAllBtn" class="btn">Expandir Tudo</button>
-        <button id="collapseAllBtn" class="btn btn-secondary">Recolher Tudo</button>
-      </div>
-    </div>
-
-    <div class="services-grid" id="servicesGrid">
-      <!-- Os cards de serviços serão inseridos aqui via JavaScript -->
-    </div>
-  </div>
-
-  <footer>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/img/logo.png" type="icon">
+    <title>Questionário</title>
+    <script src="/assets/js/simulados/aws_developer/simulado1.js" defer></script>
+    <link rel="stylesheet" href="/assets/styles/formulario.css"/>
+  </head>
+  <body>
+    
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>Serviços</h3>
-          <ul>
-            <li><a href="#categoryFilter" target="_blank">AWS IAM</a></li>
-            <li><a href="#categoryFilter" target="_blank">AWS Organizations</a></li>
-            <li><a href="#categoryFilter" target="_blank">AWS KMS</a></li>
-            <li><a href="#categoryFilter" target="_blank">AWS CloudTrail</a></li>
-            <li><a href="#categoryFilter" target="_blank">AWS Config</a></li>
-          </ul>
+      <header>
+        <h1>Simulado de Certificação AWS</h1>
+      </header>
+  
+      <div id="exam-container">
+        <div class="timer">
+          <span class="timer-info">Tempo Restante:</span>
+          <span id="timer-display" class="timer-display">30:00</span>
         </div>
-        <div class="footer-column">
-          <h3>Contato</h3>
-          <ul>
-            <li><a href="mailto:luisairtonsilva@gmail.com" target="_blank">Enviar e-mail</a></li>
-            <li><a href="https://wa.me/5585981112800" target="_blank">Enviar mensagem no WhatsApp</a></li>
-            <li><a href="https://www.linkedin.com/in/luisairton/" target="_blank">LinkedIn</a></li>
-          </ul>
+  
+        <div class="question-nav" id="question-nav"></div>
+  
+        <div id="question-container" class="question-container">
+          <!-- Perguntas serão injetadas aqui pelo JavaScript -->
         </div>
-        <div class="footer-column">
-          <img src="/assets/img/logo_roxa.png" alt="logo" class="footer-logo">
+  
+        <div class="navigation">
+          <button id="prev-btn" class="nav-button">Anterior</button>
+          <button id="next-btn" class="nav-button">Próxima</button>
+          <button id="finish-btn" class="nav-button primary">Finalizar Simulado</button>
         </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2025 SertifySimulator. Todos os direitos reservados.</p>
+  
+      <div id="results-container" class="results hidden">
+        <div class="results-header">
+          <h2>Resultado do Simulado</h2>
+        </div>
+        <div class="score" id="score">0/0</div>
+        <div class="result-summary">
+          <div class="summary-item">
+            <div class="summary-item-value" id="correct-count">0</div>
+            <div class="summary-item-label">Respostas Corretas</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-value" id="incorrect-count">0</div>
+            <div class="summary-item-label">Respostas Incorretas</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-value" id="unanswered-count">0</div>
+            <div class="summary-item-label">Não Respondidas</div>
+          </div>
+        </div>
+        <button id="restart-btn" class="nav-button primary">Reiniciar Simulado</button>
+        <div class="results-questions" id="results-questions">
+          <!-- Resultados detalhados serão injetados aqui pelo JavaScript -->
+        </div>
       </div>
     </div>
-  </footer>
-</body>
+  
+    <div id="finish-modal" class="modal">
+      <div class="modal-content">
+        <h3 class="modal-title">Finalizar Simulado?</h3>
+        <p class="modal-text">Tem certeza que deseja finalizar o simulado? Somente as questões respondidas serão
+          corrigidas.</p>
+        <div class="modal-buttons">
+          <button id="cancel-finish" class="modal-button cancel">Cancelar</button>
+          <button id="confirm-finish" class="modal-button confirm">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  
+    <template id="question-template">
+      <div class="quiz-item">
+        <div class="card-content">
+          <h3 class="question-text"></h3>
+          <dl class="options-list"></dl>
+          <div class="justificativa" style="display: none;">
+            <h4>Justificativa:</h4>
+            <p class="explanation-text"></p>
+          </div>
+        </div>
+      </div>
+    </template>
+  
+  </body>
 </html>
