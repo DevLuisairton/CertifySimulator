@@ -1,8 +1,8 @@
-# 🌥️ SertifySimulator: Sua Nuvem de Conhecimento para Certificações Cloud! 🚀
+# 🌥️CertifySimulator: Sua Nuvem de Conhecimento para Certificações Cloud! 🚀
 
-Bem-vindo ao **SertifySimulator**, o seu portal definitivo para dominar as certificações em Cloud Computing! Aqui, você encontra um ambiente interativo e desafiador para testar seus conhecimentos, aprimorar suas habilidades e se preparar para as principais certificações do mercado.
+Bem-vindo ao **CertifySimulator**, o seu portal definitivo para dominar as certificações em Cloud Computing! Aqui, você encontra um ambiente interativo e desafiador para testar seus conhecimentos, aprimorar suas habilidades e se preparar para as principais certificações do mercado.
 
-## 🌟 Por que escolher o SertifySimulator?
+## 🌟 Por que escolher o CertifySimulator?
 
 - **Simulados Realistas**: Questões elaboradas por especialistas, alinhadas com os exames reais das principais plataformas de nuvem (AWS, Azure, Google Cloud, e mais!).
 - **Plataforma Intuitiva**: Interface amigável e fácil de usar, para que você possa focar no que realmente importa: aprender!
@@ -17,7 +17,7 @@ Bem-vindo ao **SertifySimulator**, o seu portal definitivo para dominar as certi
 
 Pronto para decolar na sua jornada rumo à certificação em Cloud Computing? 
 
-👉 [https://sertifysimulatorteste.vercel.app/](#)
+👉 [https://certifysimulatorteste.vercel.app/](#)
 
 ## 📚 Recursos em andamento 
 
@@ -35,8 +35,8 @@ Tem dúvidas, sugestões ou quer saber mais? Entre em contato comigo em [luisair
 
 ---
 
-**SertifySimulator**: Onde o conhecimento encontra a nuvem, e a sua carreira decola! 🌥️🚀
+**CertifySimulator**: Onde o conhecimento encontra a nuvem, e a sua carreira decola! 🌥️🚀
 
 ---
 
-*SertifySimulator não é afiliado, patrocinado ou endossado por AWS, Microsoft, Google ou qualquer outra entidade de certificação em Cloud Computing.*
+*CertifySimulator não é afiliado, patrocinado ou endossado por AWS, Microsoft, Google ou qualquer outra entidade de certificação em Cloud Computing.*
