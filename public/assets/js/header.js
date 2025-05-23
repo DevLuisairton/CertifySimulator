@@ -1,77 +1,131 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const navbar = document.querySelector('.navbar');
-  const navItems = document.querySelectorAll('.nav-links li');
+document.addEventListener('DOMContentLoaded', function() {
+  // Menu Mobile
+  const navbarToggle = document.querySelector('.navbar__toggle');
+  const mobileMenu = document.querySelector('.mobile__menu');
+  const body = document.body;
 
-  // Verifica se os elementos existem antes de prosseguir
-  if (!menuToggle || !navLinks || !navbar) return;
+  // Overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'mobile-overlay';
+  overlay.classList.add('mobile__overlay');
+  body.appendChild(overlay);
 
-  // Adiciona índice para animação escalonada
-  navItems.forEach((item, index) => {
-      item.style.setProperty('--i', index);
-  });
-
-  // Função para alternar o menu
+  // Função para toggle do menu
   const toggleMenu = () => {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-      menuToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-
-      // Animação escalonada para os itens do menu
-      navItems.forEach((item, index) => {
-          if (navLinks.classList.contains('active')) {
-              item.style.transitionDelay = `${index * 0.1}s`;
-          } else {
-              item.style.transitionDelay = `${(navItems.length - index) * 0.1}s`;
-          }
-      });
+    navbarToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    
+    if (mobileMenu.classList.contains('active')) {
+      overlay.style.display = 'block';
+      setTimeout(() => overlay.style.opacity = '1', 10);
+      body.style.overflow = 'hidden';
+    } else {
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        body.style.overflow = '';
+      }, 300);
+    }
   };
 
-  // Adiciona evento de clique ao botão do menu
-  menuToggle.addEventListener('click', toggleMenu);
+  // Event listeners
+  navbarToggle.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
 
-  // Fecha o menu ao clicar fora
-  document.addEventListener('click', (e) => {
-      if (!e.target.closest('.navbar-content') && 
-          !e.target.closest('.nav-links') && 
-          navLinks.classList.contains('active')) {
+  // Navegação Suave - Ajustada para header full-page
+  const navLinks = document.querySelectorAll('.navbar__link, .mobile__link');
+  const sections = document.querySelectorAll('section[id], footer[id]'); // Seleciona apenas elementos com ID
+
+  const smoothScroll = (targetId) => {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      // Ajuste especial para o header (já que ocupa 100vh)
+      const offset = targetId === '#header' ? 0 : 70;
+      
+      // Calcula a posição considerando o viewport height para o header
+      const targetPosition = targetId === '#header' 
+        ? 0 
+        : targetElement.getBoundingClientRect().top + window.scrollY - offset;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      if (this.hash) {
+        e.preventDefault();
+        const targetId = this.hash;
+
+        // Fecha o menu mobile se estiver aberto
+        if (mobileMenu.classList.contains('active')) {
           toggleMenu();
+        }
+
+        smoothScroll(targetId);
+        
+        // Atualiza a URL sem recarregar a página
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        } else {
+          window.location.hash = targetId;
+        }
+        
+        updateActiveLinks();
       }
+    });
   });
 
-  // Scroll suave para links de navegação
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          
-          if (target) {
-              // Fecha o menu móvel se estiver aberto
-              if (navLinks.classList.contains('active')) {
-                  toggleMenu();
-              }
+  // Scroll Spy - Atualizado para considerar o header full-page
+  const updateActiveLinks = () => {
+    let currentSection = '';
+    const scrollPosition = window.scrollY + 100;
 
-              // Scroll suave para o alvo
-              target.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-              });
-          }
-      });
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.id;
+
+      // Tratamento especial para o header (primeira seção)
+      if (sectionId === 'header') {
+        if (scrollPosition < sections[1].offsetTop - 100) {
+          currentSection = 'header';
+        }
+      } else if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight - 100) {
+        currentSection = sectionId;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.hash === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  // Efeito de scroll na navbar
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    // Ajustado para ativar depois de sair do header (100vh)
+    const headerHeight = document.getElementById('header').offsetHeight;
+    navbar.classList.toggle('scrolled', window.scrollY > headerHeight - 100);
+    
+    updateActiveLinks();
   });
 
-  // Navegação por teclado para cartões de certificação
-  document.querySelectorAll('.cert-card').forEach(card => {
-      card.setAttribute('tabindex', '0'); // Melhora a acessibilidade
-      card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              card.click();
-          }
-      });
+  // Inicialização
+  updateActiveLinks();
+  overlay.style.display = 'none';
+
+  // Tratamento para redimensionamento da janela
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+      toggleMenu();
+    }
   });
 });

@@ -15,227 +15,318 @@
     <title>CertifySimulator</title>
 </head>
 
+
 <body>
+    <nav class="navbar">
+        <div class="navbar__container max-width">
+            <a href="#header" class="navbar__logo">
+                <span>CertifySimulator</span>
+            </a>
 
-    <body>
-        <header>
+            <div class="navbar__menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a href="#header" class="navbar__link active">
+                            <i class="fas fa-home"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#certification-paths" class="navbar__link">
+                            <i class="fas fa-map-signs"></i>
+                            <span>Trilhas</span>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#simulados-section" class="navbar__link">
+                            <i class="fas fa-certificate"></i>
+                            <span>Simulados</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-            <!-- Navbar -->
-            <nav class="navbar">
-                <div class="navbar-content">
-                    <a href="#home" class="logo">CertifySimulator</a>
+            <div class="navbar__mobile">
+                <button class="navbar__toggle">
+                    <span class="toggle__line"></span>
+                    <span class="toggle__line"></span>
+                    <span class="toggle__line"></span>
+                </button>
 
-                    <!-- Menu Toggle (Mobile) -->
-                    <button class="menu-toggle" aria-label="Abrir menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </button>
+                <div class="mobile__menu">
+                    <div class="mobile__header">
+                        <img src="/public/assets/img/logo_roxa.png" alt="CertifySimulator" class="mobile__avatar">
+                        <h3 class="mobile__title">CertifySimulator</h3>
+                        <p class="mobile__subtitle">Preparação AWS</p>
+                    </div>
 
-                    <!-- Nav Links -->
-                    <ul class="nav-links">
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#certification-paths">Trilhas</a></li>
-                        <li><a href="#simulados-section">Simulados</a></li>
+                    <ul class="mobile__list">
+                        <li class="mobile__item">
+                            <a href="#header" class="mobile__link active">
+                                <i class="fas fa-home"></i>
+                                <span>Início</span>
+                            </a>
+                        </li>
+                        <li class="mobile__item">
+                            <a href="#certification-paths" class="mobile__link">
+                                <i class="fas fa-map-signs"></i>
+                                <span>Trilhas</span>
+                            </a>
+                        </li>
+                        <li class="mobile__item">
+                            <a href="#simulados-section" class="mobile__link">
+                                <i class="fas fa-certificate"></i>
+                                <span>Simulados</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="mobile__footer">
+                        <div class="mobile__social">
+                            <a href="https://www.linkedin.com/in/luisairton/" class="social__link" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/DevLuisairton" class="social__link" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/luisairton_silva/" class="social__link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header" >
+        <div class="header__content">
+            <div class="header__left">
+                <span class="header__badge">PREPARE-SE PARA A NUVEM</span>
+                <h1>Domine as Certificações AWS com <span class="text-gradient">CertifySimulator</span></h1>
+                <p class="header__subtitle">
+                    Materiais atualizados e simulados que replicam o ambiente real de exame AWS.
+                    <span class="highlight">90% dos nossos alunos aprovados na primeira tentativa.</span>
+                </p>
+                <div class="header__buttons">
+                    <a href="#simulados-section" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Começar Agora
+                    </a>
+                    <a href="#certification-paths" class="btn btn-outline">
+                        <i class="fas fa-map-marked-alt"></i> Ver Trilhas
+                    </a>
+                </div>
+                <div class="header__trust">
+                    <div class="trust__avatars">
+                        <img src="/public/assets/img/AWS-Certified-AI-Practitioner.png" alt="Aluno"
+                            class="trust__avatar">
+                        <img src="/public/assets/img/AWS-Certified-Cloud-Practitioner.png" alt="Aluno"
+                            class="trust__avatar">
+                        <img src="/public/assets/img/Solutions Architect - Associate.png" alt="Aluno"
+                            class="trust__avatar">
+                    </div>
+                    <p class="trust__text">+100 profissionais certificados</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Prepare-se e conquiste suas certificações</h1>
+            <p>Simulados e trilhas de estudo personalizadas para garantir seu sucesso em qualquer certificação
+                profissional</p>
+            <a href="#certification-paths" class="btn">Ver trilhas</a>
+            <a href="#simulados-section" class="btn btn-secondary">Simulados</a>
+        </div>
+    </section>
+
+    <section id="certification-paths">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trilhas de Estudo</h2>
+                <p>Escolha sua área de interesse e siga um caminho estruturado para conquistar sua certificação</p>
+            </div>
+
+            <div class="paths-container">
+                <!-- Trilha 1 -->
+                <div class="path-card">
+                    <div class="path-card-header">
+                        <div class="path-icon"><img src="assets/img/AWS-Certified-Cloud-Practitioner.png"
+                                alt="Certified-Cloud-Practitioner" class="path-img"></div>
+                        <h3>AWS Cloud Practitioner</h3>
+                    </div>
+                    <div class="path-card-content">
+                        <p>Certificação inicial para profissionais de cloud computing com foco nos serviços da
+                            Amazon Web Services.</p>
+                        <div class="path-stats">
+                            <span>10 módulos</span>
+                        </div>
+                        <div class="path-progress">
+                            <div class="progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="path-card-footer">
+                        <a href="pages/aba_cloud_praticner/trilha_certificacao.html" class="btn">Acessar trilha</a>
+                    </div>
+                </div>
+
+                <!-- Trilha 2 -->
+                <div class="path-card">
+                    <div class="path-card-header">
+                        <div class="path-icon"><img src="assets/img/AWS-Certified-Developer-Associate.png"
+                                alt="Certified-Cloud-Practitioner" class="path-img"></div>
+                        <h3>AWS Certified Developer – Associate</h3>
+                    </div>
+                    <div class="path-card-content">
+                        <p>Valide a proficiência técnica no desenvolvimento, teste, implantação e depuração de
+                            aplicações baseadas na Nuvem AWS.</p>
+                        <div class="path-stats">
+                            <span>10 módulos</span>
+                        </div>
+                        <div class="path-progress">
+                            <div class="progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="path-card-footer">
+                        <a href="pages/aws_developer/trilha_certificacao.html" class="btn">Acessar trilha</a>
+                    </div>
+                </div>
+
+    </section>
+
+    <!-- Nova Seção de Simulados -->
+    <section id="simulados-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simulados por Certificação</h2>
+                <p>Prepare-se com simulados realistas que refletem o formato e a dificuldade dos exames oficiais</p>
+            </div>
+
+            <div class="simulados-container">
+                <!-- Simulado 1 -->
+                <div class="simulado-card">
+                    <div class="simulado-tag">Popular</div>
+                    <div class="simulado-image">
+                        <img src="assets/img/AWS-Certified-Cloud-Practitioner.png"
+                            alt="AWS Certified Cloud Practitioner">
+                    </div>
+                    <div class="simulado-content">
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p>Simulados completos com questões realistas para o exame de certificação AWS Certified
+                            Cloud Practitioner.</p>
+                        <div class="simulado-meta">
+                            <div class="item">📝 21 simulados</div>
+                        </div>
+                    </div>
+                    <div class="simulado-footer">
+                        <a href="/pages/aba_cloud_praticner/cloud_praticner.html" class="btn">Simulados</a>
+                    </div>
+                </div>
+
+                <!-- Simulado 2 -->
+                <div class="simulado-card">
+                    <div class="simulado-tag">Popular</div>
+                    <div class="simulado-image">
+                        <img src="assets/img/AWS-Certified-Developer-Associate.png"
+                            alt="AWS Certified Cloud Practitioner">
+                    </div>
+                    <div class="simulado-content">
+                        <h3>AWS Certified Developer Associate</h3>
+                        <p>Simulados completos com questões realistas para o exame de certificação AWS Certified
+                            Developer Associate.</p>
+                        <div class="simulado-meta">
+                            <div class="item">📝 10 simulados</div>
+                        </div>
+                    </div>
+                    <div class="simulado-footer">
+                        <a href="/pages/aws_developer/developer.html" class="btn">Simulados</a>
+                    </div>
+                </div>
+
+
+    </section>
+
+    <footer id="footer">
+        <div class="footer-wave"></div>
+        <div class="footer__container">
+            <div class="footer__grid">
+                <!-- Coluna Trilhas -->
+                <div class="footer-column">
+                    <h3 class="footer__heading">
+                        <i class="fas fa-map-signs"></i> Trilhas de estudo
+                    </h3>
+                    <ul class="footer__links-list">
+                        <li><a href="#certification-paths" class="footer__link"><span class="link-icon"><i
+                                        class="fas fa-cloud"></i></span>AWS Cloud Practitioner</a></li>
+                        <li><a href="#certification-paths" class="footer__link"><span class="link-icon"><i
+                                        class="fas fa-robot"></i></span>AWS Developer Associate</a></li>
                     </ul>
                 </div>
-            </nav>
-        </header>
 
-        <section class="hero" id="home">
-            <div class="container">
-                <h1>Prepare-se e conquiste suas certificações</h1>
-                <p>Simulados e trilhas de estudo personalizadas para garantir seu sucesso em qualquer certificação
-                    profissional</p>
-                <a href="#certification-paths" class="btn">Ver trilhas</a>
-                <a href="#simulados-section" class="btn btn-secondary">Simulados</a>
-            </div>
-        </section>
+                <!-- Coluna Certificações -->
+                <div class="footer-column">
+                    <h3 class="footer__heading">
+                        <i class="fas fa-certificate"></i> Certificações
+                    </h3>
+                    <ul class="footer__links-list">
+                        <li><a href="#simulados-section" class="footer__link"><span class="link-icon"><i
+                                        class="fas fa-shield-alt"></i></span>Cloud Practitioner</a></li>
+                        <li><a href="#simulados-section" class="footer__link"><span class="link-icon"><i
+                                        class="fas fa-brain"></i></span>AWS Developer Associate</a></li>
 
-        <section id="certification-paths">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Trilhas de Estudo</h2>
-                    <p>Escolha sua área de interesse e siga um caminho estruturado para conquistar sua certificação</p>
+                    </ul>
                 </div>
 
-                <div class="paths-container">
-                    <!-- Trilha 1 -->
-                    <div class="path-card">
-                        <div class="path-card-header">
-                            <div class="path-icon"><img src="assets/img/AWS-Certified-Cloud-Practitioner.png"
-                                    alt="Certified-Cloud-Practitioner" class="path-img"></div>
-                            <h3>AWS Cloud Practitioner</h3>
-                        </div>
-                        <div class="path-card-content">
-                            <p>Certificação inicial para profissionais de cloud computing com foco nos serviços da
-                                Amazon Web Services.</p>
-                            <div class="path-stats">
-                                <span>10 módulos</span>
-                            </div>
-                            <div class="path-progress">
-                                <div class="progress-bar" style="width: 65%"></div>
-                            </div>
-                        </div>
-                        <div class="path-card-footer">
-                            <a href="pages/aba_cloud_praticner/trilha_certificacao.html" class="btn">Acessar trilha</a>
+                <!-- Coluna Brand/Marca -->
+                <div class="footer-column footer__brand">
+                    <div class="footer__logo">
+                        <img src="/assets/img/logo_roxa.png" alt="CertifySimulator Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-name">CertifySimulator</span>
+                            <span class="logo-slogan">Excelência em Certificação AWS</span>
                         </div>
                     </div>
 
-                    <!-- Trilha 2 -->
-                    <div class="path-card">
-                        <div class="path-card-header">
-                            <div class="path-icon"><img src="assets/img/AWS-Certified-Developer-Associate.png"
-                                    alt="Certified-Cloud-Practitioner" class="path-img"></div>
-                            <h3>AWS Certified Developer – Associate</h3>
+                    <p class="footer__tagline">Preparação completa para suas certificações AWS com materiais
+                        atualizados e simulados reais.</p>
+
+                    <div class="social-container">
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/luisairton/" target="_blank" class="social-link"
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/DevLuisairton" target="_blank" class="social-link"
+                                aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/luisairton_silva/" target="_blank" class="social-link"
+                                aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/5585981112800" class="social-link" aria-label="WhatsApp"
+                                target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+
                         </div>
-                        <div class="path-card-content">
-                            <p>Valide a proficiência técnica no desenvolvimento, teste, implantação e depuração de aplicações baseadas na Nuvem AWS.</p>
-                            <div class="path-stats">
-                                <span>10 módulos</span>
-                            </div>
-                            <div class="path-progress">
-                                <div class="progress-bar" style="width: 65%"></div>
-                            </div>
-                        </div>
-                        <div class="path-card-footer">
-                            <a href="pages/aws_developer/trilha_certificacao.html" class="btn">Acessar trilha</a>
-                        </div>
-                    </div>
-
-        </section>
-
-        <!-- Nova Seção de Simulados -->
-        <section id="simulados-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Simulados por Certificação</h2>
-                    <p>Prepare-se com simulados realistas que refletem o formato e a dificuldade dos exames oficiais</p>
-                </div>
-
-                <div class="simulados-container">
-                    <!-- Simulado 1 -->
-                    <div class="simulado-card">
-                        <div class="simulado-tag">Popular</div>
-                        <div class="simulado-image">
-                            <img src="assets/img/AWS-Certified-Cloud-Practitioner.png"
-                                alt="AWS Certified Cloud Practitioner">
-                        </div>
-                        <div class="simulado-content">
-                            <h3>AWS Certified Cloud Practitioner</h3>
-                            <p>Simulados completos com questões realistas para o exame de certificação AWS Certified
-                                Cloud Practitioner.</p>
-                            <div class="simulado-meta">
-                                <div class="item">📝 21 simulados</div>
-                            </div>
-                        </div>
-                        <div class="simulado-footer">
-                            <a href="/pages/aba_cloud_praticner/cloud_praticner.html" class="btn">Simulados</a>
-                        </div>
-                    </div>
-
-                    <!-- Simulado 2 -->
-                    <div class="simulado-card">
-                        <div class="simulado-tag">Popular</div>
-                        <div class="simulado-image">
-                            <img src="assets/img/AWS-Certified-Developer-Associate.png"
-                                alt="AWS Certified Cloud Practitioner">
-                        </div>
-                        <div class="simulado-content">
-                            <h3>AWS Certified Developer Associate</h3>
-                            <p>Simulados completos com questões realistas para o exame de certificação AWS Certified
-                                Developer Associate.</p>
-                            <div class="simulado-meta">
-                                <div class="item">📝 10 simulados</div>
-                            </div>
-                        </div>
-                        <div class="simulado-footer">
-                            <a href="/pages/aws_developer/developer.html" class="btn">Simulados</a>
-                        </div>
-                    </div>
-
-                    
-        </section>
-
-        <footer id="footer">
-            <div class="footer-wave"></div>
-            <div class="footer__container">
-                <div class="footer__grid">
-                    <!-- Coluna Trilhas -->
-                    <div class="footer-column">
-                        <h3 class="footer__heading">
-                            <i class="fas fa-map-signs"></i> Trilhas de estudo
-                        </h3>
-                        <ul class="footer__links-list">
-                            <li><a href="#certification-paths" class="footer__link"><span class="link-icon"><i
-                                            class="fas fa-cloud"></i></span>AWS Cloud Practitioner</a></li>
-                            <li><a href="#certification-paths" class="footer__link"><span class="link-icon"><i
-                                            class="fas fa-robot"></i></span>AWS Developer Associate</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Coluna Certificações -->
-                    <div class="footer-column">
-                        <h3 class="footer__heading">
-                            <i class="fas fa-certificate"></i> Certificações
-                        </h3>
-                        <ul class="footer__links-list">
-                            <li><a href="#simulados-section" class="footer__link"><span class="link-icon"><i
-                                            class="fas fa-shield-alt"></i></span>Cloud Practitioner</a></li>
-                            <li><a href="#simulados-section" class="footer__link"><span class="link-icon"><i
-                                            class="fas fa-brain"></i></span>AWS Developer Associate</a></li>
-                            
-                        </ul>
-                    </div>
-
-                    <!-- Coluna Brand/Marca -->
-                    <div class="footer-column footer__brand">
-                        <div class="footer__logo">
-                            <img src="/assets/img/logo_roxa.png" alt="CertifySimulator Logo" class="logo-img">
-                            <div class="logo-text">
-                                <span class="logo-name">CertifySimulator</span>
-                                <span class="logo-slogan">Excelência em Certificação AWS</span>
-                            </div>
-                        </div>
-
-                        <p class="footer__tagline">Preparação completa para suas certificações AWS com materiais
-                            atualizados e simulados reais.</p>
-
-                        <div class="social-container">
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/in/luisairton/" target="_blank" class="social-link"
-                                    aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/DevLuisairton" target="_blank" class="social-link"
-                                    aria-label="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.instagram.com/luisairton_silva/" target="_blank"
-                                    class="social-link" aria-label="Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://wa.me/5585981112800" class="social-link" aria-label="WhatsApp"
-                                    target="_blank">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer__bottom">
-
-                    <div class="footer__legal">
-                        <p class="footer__copyright">&copy; 2025 <strong>CertifySimulator</strong>. Todos os direitos
-                            reservados.</p>
-                        
                     </div>
                 </div>
             </div>
-        </footer>
 
-    </body>
+            <div class="footer__bottom">
+
+                <div class="footer__legal">
+                    <p class="footer__copyright">&copy; 2025 <strong>CertifySimulator</strong>. Todos os direitos
+                        reservados.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
 
 </html>
