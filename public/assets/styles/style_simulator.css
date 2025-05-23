@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.navbar {
+  top: 0; /* Garante que fixa no topo */
+  left: 0;
+}
+
+
 /* Manter os estilos existentes com melhorias */
 .container {
   max-width: var(--max-width);
