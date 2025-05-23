@@ -16,28 +16,87 @@
 </head>
 
 <body>
-  <header>
+  <nav class="navbar">
+        <div class="navbar__container max-width">
+            <a href="#header" class="navbar__logo">
+                <span>CertifySimulator</span>
+            </a>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-content">
-        <a href="#cloud-practitioner" class="logo">CertifySimulator</a>
+            <div class="navbar__menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a href="#header" class="navbar__link active">
+                            <i class="fas fa-home"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#certification-paths" class="navbar__link">
+                            <i class="fas fa-map-signs"></i>
+                            <span>Trilhas</span>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#simulados-section" class="navbar__link">
+                            <i class="fas fa-certificate"></i>
+                            <span>Simulados</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-        <!-- Menu Toggle (Mobile) -->
-        <button class="menu-toggle" aria-label="Abrir menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+            <div class="navbar__mobile">
+                <button class="navbar__toggle">
+                    <span class="toggle__line"></span>
+                    <span class="toggle__line"></span>
+                    <span class="toggle__line"></span>
+                </button>
 
-        <!-- Nav Links -->
-        <ul class="nav-links">
-          <li><a href="/index.html">Início</a></li>
-          <li><a href="/pages/aba_cloud_praticner/cloud_praticner.html">Simulados</a></li>
-        </ul>
-      </div>
+                <div class="mobile__menu">
+                    <div class="mobile__header">
+                        <img src="/assets/img/logo_roxa.png" alt="CertifySimulator" class="mobile__avatar">
+                        <h3 class="mobile__title">CertifySimulator</h3>
+                        <p class="mobile__subtitle">Preparação AWS</p>
+                    </div>
+
+                    <ul class="mobile__list">
+                        <li class="mobile__item">
+                            <a href="#header" class="mobile__link active">
+                                <i class="fas fa-home"></i>
+                                <span>Início</span>
+                            </a>
+                        </li>
+                        <li class="mobile__item">
+                            <a href="#certification-paths" class="mobile__link">
+                                <i class="fas fa-map-signs"></i>
+                                <span>Trilhas</span>
+                            </a>
+                        </li>
+                        <li class="mobile__item">
+                            <a href="#simulados-section" class="mobile__link">
+                                <i class="fas fa-certificate"></i>
+                                <span>Simulados</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="mobile__footer">
+                        <div class="mobile__social">
+                            <a href="https://www.linkedin.com/in/luisairton/" class="social__link" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/DevLuisairton" class="social__link" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/luisairton_silva/" class="social__link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
-  </header>
 
   <div class="container-inicial">
     <div class="breadcrumb">
