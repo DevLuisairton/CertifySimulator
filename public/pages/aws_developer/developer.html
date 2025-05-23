@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/assets/styles/cards.css">
     <link rel="stylesheet" href="/assets/styles/config_global.css">
     <link rel="stylesheet" href="/assets/styles/cloud_praticner.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/assets/js/header.js" defer></script>
     <script src="/autenticação de pagamento do usuario/payment-access-backend.js" defer></script>
     <script src="/assets/js/simulados/cloud-praticner/filtro.js" defer></script>
@@ -94,40 +95,6 @@
                         </div>
 
                         <!--Simulado 2-->
-                        <div class="simulado-card" data-category="tecnologia">
-                            <div class="simulado-content">
-                                <h3>Simulado 2</h3>
-                                <p>Prepare-se para a certificação</p>
-                            </div>
-                            <div class="simulado-footer">
-                                <a href="/pages/simulados/Aws_Developer/simulado1.html" class="btn"
-                                    target="_blank">Fazer Simulados</a>
-                            </div>
-                        </div>
-
-                        <!--Simulado 3-->
-                        <div class="simulado-card" data-category="tecnologia">
-                            <div class="simulado-content">
-                                <h3>Simulado 3</h3>
-                                <p>Prepare-se para a certificação</p>
-                            </div>
-                            <div class="simulado-footer">
-                                <a href="/pages/simulados/Aws_Developer/simulado1.html" class="btn"
-                                    target="_blank">Fazer Simulados</a>
-                            </div>
-                        </div>
-
-                        <!--Simulado 4-->
-                        <div class="simulado-card" data-category="tecnologia">
-                            <div class="simulado-content">
-                                <h3>Simulado 4</h3>
-                                <p>Prepare-se para a certificação</p>
-                            </div>
-                            <div class="simulado-footer">
-                                <a href="/pages/simulados/Aws_Developer/simulado1.html" class="btn"
-                                    target="_blank">Fazer Simulados</a>
-                            </div>
-                        </div>
 
 
                     </div>
@@ -138,32 +105,65 @@
 
 
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
+    <footer id="footer">
+        <div class="footer-wave"></div>
+        <div class="footer__container">
+            <div class="footer__grid">
+                <!-- Coluna Trilhas -->
                 <div class="footer-column">
-                    <h3>Simulados</h3>
-                    <ul>
-                        <li><a href="#trilha" target="_blank">Trilha</a></li>
-                        <li><a href="#conceitos" target="_blank">Conceitos de Nuvem</a></li>
-                        <li><a href="#completo" target="_blank">Simulados Completos</a></li>
+                    <h3 class="footer__heading">
+                        <i class="fas fa-map-signs"></i> Simulados
+                    </h3>
+                    <ul class="footer__links-list">
+                        <li><a href="#trilha" class="footer__link"><span class="link-icon"><i
+                                        class="fas fa-cloud"></i></span>Simulados</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contato</h3>
-                    <ul>
-                        <li><a href="mailto:luisairtonsilva@gmail.com" target="_blank">Enviar e-mail</a></li>
-                        <li><a href="https://wa.me/5585981112800" target="_blank">Enviar mensagem no WhatsApp</a></li>
-                        <li><a href="https://www.linkedin.com/in/luisairton/" target="_blank">LinkedIn</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <img src="/assets/img/logo_roxa.png" alt="logo" class="footer-logo">
+
+                <!-- Coluna Brand/Marca -->
+                <div class="footer-column footer__brand">
+                    <div class="footer__logo">
+                        <img src="/assets/img/logo_roxa.png" alt="CertifySimulator Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-name">CertifySimulator</span>
+                            <span class="logo-slogan">Excelência em Certificação AWS</span>
+                        </div>
+                    </div>
+
+                    <p class="footer__tagline">Preparação completa para suas certificações AWS com materiais
+                        atualizados e simulados reais.</p>
+
+                    <div class="social-container">
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/luisairton/" target="_blank" class="social-link"
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/DevLuisairton" target="_blank" class="social-link"
+                                aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/luisairton_silva/" target="_blank" class="social-link"
+                                aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/5585981112800" class="social-link" aria-label="WhatsApp"
+                                target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="copyright">
-                <p>&copy; 2025 CertifySimulator. Todos os direitos reservados.</p>
+            <div class="footer__bottom">
+
+                <div class="footer__legal">
+                    <p class="footer__copyright">&copy; 2025 <strong>CertifySimulator</strong>. Todos os direitos
+                        reservados.</p>
+
+                </div>
             </div>
         </div>
     </footer>
