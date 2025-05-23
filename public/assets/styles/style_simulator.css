@@ -33,22 +33,7 @@
   opacity: 0.9;
 }
 
-.btn {
-  display: inline-block;
-  background-color: var(--white);
-  color: var(--primary);
-  padding: 14px 28px;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.02em;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
+
 
 .btn:hover {
   transform: translateY(-3px);
