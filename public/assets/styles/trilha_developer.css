@@ -420,6 +420,12 @@ a {
   gap: 15px;
 }
 
+.slide-image{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
 /* Espaçador */
 .page-spacer {
   height: 80px;
