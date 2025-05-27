@@ -395,9 +395,9 @@
     margin-left: 0;
   }
 
-  .path-card-header img {
+  .path-img{
     width: 100%;
-    height: 12.5rem;
+    height: 9rem;
     object-fit: cover;
   }
 
