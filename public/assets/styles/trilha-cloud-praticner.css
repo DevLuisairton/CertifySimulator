@@ -1,5 +1,3 @@
-
-
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -13,6 +11,7 @@
   margin-bottom: 30px;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 30px;
 }
 
 .module-title {

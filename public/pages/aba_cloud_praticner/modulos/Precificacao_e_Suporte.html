@@ -16,24 +16,87 @@
 </head>
 
 <body>
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-content">
-        <a href="#progressText" class="logo">CertifySimulator</a>
-        <button class="menu-toggle" aria-label="Abrir menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="/index.html">Início</a></li>
-          <li><a href="/pages/aba_cloud_praticner/trilha_certificacao.html">Trilha</a></li>
-          
+  <nav class="navbar">
+    <div class="navbar__container max-width">
+      <a href="#header" class="navbar__logo">
+        <span>CertifySimulator</span>
+      </a>
+
+      <div class="navbar__menu">
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a href="/index.html" class="navbar__link active">
+              <i class="fas fa-home"></i>
+              <span>Início</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a href="/pages/aba_cloud_praticner/trilha_certificacao.html" class="navbar__link">
+              <i class="fas fa-map-signs"></i>
+              <span>Trilhas</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a href="/pages/aba_cloud_praticner/cloud_praticner.html" class="navbar__link">
+              <i class="fas fa-certificate"></i>
+              <span>Simulados</span>
+            </a>
+          </li>
         </ul>
       </div>
-    </nav>
-  </header>
+
+      <div class="navbar__mobile">
+        <button class="navbar__toggle">
+          <span class="toggle__line"></span>
+          <span class="toggle__line"></span>
+          <span class="toggle__line"></span>
+        </button>
+
+        <div class="mobile__menu">
+          <div class="mobile__header">
+            <img src="/assets/img/logo_roxa.png" alt="CertifySimulator" class="mobile__avatar">
+            <h3 class="mobile__title">CertifySimulator</h3>
+            <p class="mobile__subtitle">Preparação AWS</p>
+          </div>
+
+          <ul class="mobile__list">
+            <li class="mobile__item">
+              <a href="#header" class="mobile__link active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="mobile__item">
+              <a href="#certification-paths" class="mobile__link">
+                <i class="fas fa-map-signs"></i>
+                <span>Trilhas</span>
+              </a>
+            </li>
+            <li class="mobile__item">
+              <a href="#simulados-section" class="mobile__link">
+                <i class="fas fa-certificate"></i>
+                <span>Simulados</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="mobile__footer">
+            <div class="mobile__social">
+              <a href="https://www.linkedin.com/in/luisairton/" class="social__link" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/DevLuisairton" class="social__link" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/luisairton_silva/" class="social__link" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <div class="container">
     <div class="breadcrumb">
@@ -82,32 +145,75 @@
     </div>
   </div>
 
-  <footer>
-    <div class="container">
-      <div class="footer-content">
+  <footer id="footer">
+    <div class="footer-wave"></div>
+    <div class="footer__container">
+      <div class="footer__grid">
+        <!-- Coluna Trilhas -->
         <div class="footer-column">
-          <h3>Serviços</h3>
-          <ul>
-            <li><a href="#categoryFilter" target="_blank">Pay-as-you-go</a></li>
-            <li><a href="#categoryFilter" target="_blank">Instâncias Reservadas</a></li>
-            <li><a href="#categoryFilter" target="_blank">AWS Cost Explorer</a></li>
-            <li><a href="#categoryFilter" target="_blank">Planos de Suporte</a></li>
+          <h3 class="footer__heading">
+            <i class="fas fa-map-signs"></i> Trilhas de estudo
+          </h3>
+          <ul class="footer__links-list">
+            <li><a href="/pages/aba_cloud_praticner/trilha_certificacao.html" class="footer__link"><span class="link-icon"><i
+                    class="fas fa-cloud"></i></span>AWS Cloud Practitioner</a></li>
           </ul>
         </div>
+
+        <!-- Coluna Certificações -->
         <div class="footer-column">
-          <h3>Contato</h3>
-          <ul>
-            <li><a href="mailto:luisairtonsilva@gmail.com" target="_blank">Enviar e-mail</a></li>
-            <li><a href="https://wa.me/5585981112800" target="_blank">Enviar mensagem no WhatsApp</a></li>
-            <li><a href="https://www.linkedin.com/in/luisairton/" target="_blank">LinkedIn</a></li>
+          <h3 class="footer__heading">
+            <i class="fas fa-certificate"></i> Certificações
+          </h3>
+          <ul class="footer__links-list">
+            <li><a href="/pages/aba_cloud_praticner/cloud_praticner.html" class="footer__link"><span class="link-icon"><i
+                    class="fas fa-shield-alt"></i></span>Cloud Practitioner</a></li>
+
           </ul>
         </div>
-        <div class="footer-column">
-          <img src="/assets/img/logo_roxa.png" alt="logo" class="footer-logo">
+
+        <!-- Coluna Brand/Marca -->
+        <div class="footer-column footer__brand">
+          <div class="footer__logo">
+            <img src="/assets/img/logo_roxa.png" alt="CertifySimulator Logo" class="logo-img">
+            <div class="logo-text">
+              <span class="logo-name">CertifySimulator</span>
+              <span class="logo-slogan">Excelência em Certificação AWS</span>
+            </div>
+          </div>
+
+          <p class="footer__tagline">Preparação completa para suas certificações AWS com materiais
+            atualizados e simulados reais.</p>
+
+          <div class="social-container">
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/luisairton/" target="_blank" class="social-link"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/DevLuisairton" target="_blank" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/luisairton_silva/" target="_blank" class="social-link"
+                aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/5585981112800" class="social-link" aria-label="WhatsApp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+
+            </div>
+          </div>
         </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2025 CertifySimulator. Todos os direitos reservados.</p>
+
+      <div class="footer__bottom">
+
+        <div class="footer__legal">
+          <p class="footer__copyright">&copy; 2025 <strong>CertifySimulator</strong>. Todos os direitos
+            reservados.</p>
+
+        </div>
       </div>
     </div>
   </footer>
