@@ -141,7 +141,7 @@
   overflow: hidden;
 }
 
-.path-img{
+.path-img {
   width: 100%;
   height: 12.5rem;
   object-fit: cover;
@@ -393,6 +393,12 @@
 
   .btn-secondary {
     margin-left: 0;
+  }
+
+  .path-card-header img {
+    width: 100%;
+    height: 12.5rem;
+    object-fit: cover;
   }
 
   .simulados-container {
