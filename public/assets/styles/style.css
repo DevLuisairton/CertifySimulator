@@ -396,9 +396,8 @@
   }
 
   .path-img{
-    width: 100%;
+    width: 9rem;
     height: 9rem;
-    object-fit: cover;
   }
 
   .simulados-container {
