@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/img/logo.png" type="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/trilha-cloud-praticner.css">
+  <link rel="stylesheet" href="/assets/styles/header.css">
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/config_global.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="/public/assets/js/trilhas/aws_developer/Dominio1.js" defer></script>
+  <script src="/assets/js/header.js" defer></script>
+  <title>Domínio 1: Development with AWS Services (32%) - Developer Associate</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar__container max-width">
+      <a href="/index.html" class="navbar__logo"> <span>CertifySimulator</span>
+      </a>
+
+      <div class="navbar__menu">
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a href="/index.html" class="navbar__link active">
+              <i class="fas fa-home"></i>
+              <span>Início</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a href="/pages/aws_developer/trilha_certificacao.html" class="navbar__link">
+              <i class="fas fa-map-signs"></i>
+              <span>Trilhas</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a href="/pages/aws_developer/developer.html" class="navbar__link">
+              <i class="fas fa-certificate"></i>
+              <span>Simulados</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar__mobile">
+        <button class="navbar__toggle">
+          <span class="toggle__line"></span>
+          <span class="toggle__line"></span>
+          <span class="toggle__line"></span>
+        </button>
+
+        <div class="mobile__menu">
+          <div class="mobile__header">
+            <img src="/assets/img/logo_roxa.png" alt="CertifySimulator" class="mobile__avatar">
+            <h3 class="mobile__title">CertifySimulator</h3>
+            <p class="mobile__subtitle">Preparação AWS</p>
+          </div>
+
+          <ul class="mobile__list">
+            <li class="mobile__item">
+              <a href="/index.html" class="mobile__link active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+              </a>
+            </li>
+            <li class="mobile__item">
+              <a href="/pages/aws_developer/trilha_certificacao.html" class="mobile__link">
+                <i class="fas fa-map-signs"></i>
+                <span>Trilhas</span>
+              </a>
+            </li>
+            <li class="mobile__item">
+              <a href="/pages/aws_developer/developer.html" class="mobile__link">
+                <i class="fas fa-certificate"></i>
+                <span>Simulados</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="mobile__footer">
+            <div class="mobile__social">
+              <a href="https://www.linkedin.com/in/luisairton/" class="social__link" target="_blank"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/DevLuisairton" class="social__link" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/luisairton_silva/" class="social__link" target="_blank"
+                aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/index.html">Certificações AWS</a>
+      <span class="separator">›</span>
+      <a href="/pages/aba_developer_associate/developer_associate_home.html">AWS Developer Associate</a>
+      <span class="separator">›</span>
+      <span>Domínio 1: Development with AWS Services</span>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-title">
+        <span>Progresso do módulo</span>
+        <span id="progressText">0 de 24 serviços concluídos</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <div class="module-header">
+      <div>
+        <h2 class="module-title">Domínio 1: Development with AWS Services (32%)</h2>
+        <p class="module-subtitle">Explore os principais serviços e conceitos para desenvolver, testar e manter
+          aplicações na AWS, conforme o Domínio 1 da certificação AWS Developer Associate.</p>
+      </div>
+    </div>
+
+    <div class="controls-container">
+      <div class="search-filter">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar serviço...">
+        <select id="categoryFilter" class="filter-select">
+          <option value="all">Todas as categorias</option>
+          <option value="development">Desenvolvimento com Serviços AWS</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button id="expandAllBtn" class="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 18H3M21 6H3M21 12H3M9 22V2M15 22V2"></path>
+          </svg>
+          Expandir Tudo
+        </button>
+        <button id="collapseAllBtn" class="btn btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 18H3M21 6H3M21 12H3"></path>
+          </svg>
+          Recolher Tudo
+        </button>
+      </div>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+    </div>
+
+    <div class="pagination" id="pagination">
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="footer-wave"></div>
+    <div class="footer__container">
+      <div class="footer__grid">
+        <div class="footer-column">
+          <h3 class="footer__heading">
+            <i class="fas fa-map-signs"></i> Trilhas de estudo
+          </h3>
+          <ul class="footer__links-list">
+            <li><a href="/pages/aba_developer_associate/trilha_certificacao_developer.html" class="footer__link"><span
+                  class="link-icon"><i class="fas fa-code"></i></span>AWS Developer Associate</a></li>
+            <li><a href="/pages/aba_cloud_praticner/trilha_certificacao.html" class="footer__link"><span
+                  class="link-icon"><i class="fas fa-cloud"></i></span>AWS Cloud Practitioner</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer__heading">
+            <i class="fas fa-certificate"></i> Certificações
+          </h3>
+          <ul class="footer__links-list">
+            <li><a href="/pages/aba_developer_associate/developer_associate_simulados.html" class="footer__link"><span
+                  class="link-icon"><i class="fas fa-laptop-code"></i></span>Developer Associate</a></li>
+            <li><a href="/pages/aba_cloud_praticner/cloud_praticner.html" class="footer__link"><span
+                  class="link-icon"><i class="fas fa-shield-alt"></i></span>Cloud Practitioner</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer__brand">
+          <div class="footer__logo">
+            <img src="/assets/img/logo_roxa.png" alt="CertifySimulator Logo" class="logo-img">
+            <div class="logo-text">
+              <span class="logo-name">CertifySimulator</span>
+              <span class="logo-slogan">Excelência em Certificação AWS</span>
+            </div>
+          </div>
+          <p class="footer__tagline">Preparação completa para suas certificações AWS com materiais atualizados e
+            simulados reais.</p>
+          <div class="social-container">
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/luisairton/" target="_blank" class="social-link"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/DevLuisairton" target="_blank" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/luisairton_silva/" target="_blank" class="social-link"
+                aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/5585981112800" class="social-link" aria-label="WhatsApp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__legal">
+          <p class="footer__copyright">&copy; 2025 <strong>CertifySimulator</strong>. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
