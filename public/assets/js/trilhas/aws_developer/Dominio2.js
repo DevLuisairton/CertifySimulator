@@ -1,7 +1,7 @@
-// Dados dos serviços - Domínio 1: Development with AWS Services (32%)
+// Dados dos serviços - Domínio 2: Security (26%) - Developer Associate
 const awsServices = [
   {
-    id: 1,
+    id: 1, // Mantendo o original para referência, você substituirá pelos seus 24 itens
     name: "Padrões de Arquitetura (Event-driven, Microservices, Monolítico)",
     category: "architecturePatterns",
     categoryLabel: "Padrões de Arquitetura",
@@ -101,16 +101,16 @@ const awsServices = [
   },
   {
     id: 12,
-    name: "Amazon Cognito",
+    name: "Amazon Cognito", // Já existe no Domínio 1, mas com foco em segurança aqui
     category: "securityIdentity",
     categoryLabel: "Segurança e Identidade",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
-    description: "Serviço que facilita a adição de funcionalidades de cadastro, login e controle de acesso a aplicações web e móveis. Gerencia identidades de usuários através dos 'User Pools' (diretórios de usuários próprios) ou permite federação com provedores de identidade externos como Google, Facebook, Apple ou provedores corporativos via SAML 2.0 e OpenID Connect. Os 'Identity Pools' permitem conceder aos usuários autenticados acesso temporário e limitado a outros serviços AWS.",
-    useCase: "Uma nova aplicação móvel precisa permitir que usuários se cadastrem com e-mail e senha ou façam login usando suas contas Google. Amazon Cognito User Pools podem gerenciar o diretório de usuários e o processo de login. Após a autenticação, Cognito Identity Pools podem fornecer credenciais temporárias para que a aplicação acesse, por exemplo, um bucket S3 específico do usuário para armazenar suas preferências."
+    description: "Gerencia identidades de usuários para suas aplicações, facilitando a autenticação (quem é você?) e autorização (o que você pode fazer?). Permite criar diretórios de usuários (User Pools) ou federar com provedores de identidade externos (Google, Facebook, SAML). Emite tokens (JWT) que suas aplicações podem usar para controlar o acesso a recursos backend e serviços AWS (via Identity Pools).",
+    useCase: "Uma aplicação móvel precisa permitir que usuários se cadastrem com e-mail/senha ou façam login via Facebook. Amazon Cognito User Pools gerencia esses usuários. Após o login, Cognito Identity Pools pode fornecer credenciais AWS temporárias para que o app do usuário acesse, de forma segura, um bucket S3 específico para suas fotos."
   },
   {
     id: 13,
-    name: "AWS SDKs (Software Development Kits)",
+    name: "AWS SDKs (Software Development Kits)", // Já existe no Domínio 1
     category: "developerTools",
     categoryLabel: "Ferramentas de Desenvolvimento",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
@@ -119,43 +119,43 @@ const awsServices = [
   },
   {
     id: 14,
-    name: "AWS Key Management Service (KMS)",
-    category: "securityIdentity",
-    categoryLabel: "Segurança e Identidade",
+    name: "AWS Key Management Service (KMS)", // Já existe no Domínio 1, mas com foco em segurança aqui
+    category: "encryptionKeys",
+    categoryLabel: "Criptografia e Chaves",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
-    description: "Serviço gerenciado que facilita a criação, o controle e o gerenciamento de chaves de criptografia usadas para proteger dados em repouso e em trânsito. Ele se integra com a maioria dos serviços AWS (como S3, EBS, RDS) para simplificar a criptografia. Permite o uso de chaves gerenciadas pela AWS, chaves gerenciadas pelo cliente (CMKs) ou a importação de suas próprias chaves. Oferece um módulo de segurança de hardware (HSM) validado pelo FIPS 140-2 para proteção das chaves.",
-    useCase: "Uma aplicação armazena informações financeiras sensíveis em um bucket S3 e em um banco de dados RDS. Para atender a requisitos de conformidade, o AWS KMS é utilizado para criar e gerenciar chaves de criptografia (CMKs) que são usadas pela S3 (via SSE-KMS) e pelo RDS para criptografar os dados em repouso, garantindo que apenas usuários autorizados possam descriptografá-los."
+    description: "Serviço gerenciado para criar e controlar chaves de criptografia (Customer Master Keys - CMKs) usadas para proteger seus dados. Integrado com a maioria dos serviços AWS (S3, EBS, RDS) para criptografia do lado do servidor. Permite definir políticas de uso das chaves, auditar seu uso (via CloudTrail) e suporta rotação de chaves. Você pode usar chaves gerenciadas pela AWS, chaves gerenciadas por você ou importar suas próprias chaves.",
+    useCase: "Para proteger dados sensíveis de clientes armazenados em um bucket S3, a criptografia do lado do servidor com chaves gerenciadas pelo KMS (SSE-KMS) é habilitada. O KMS controla o acesso à chave de criptografia, garantindo que apenas entidades autorizadas possam descriptografar os dados. A rotação automática da chave também pode ser habilitada para aumentar a segurança."
   },
   {
     id: 15,
-    name: "AWS Secrets Manager",
-    category: "securityIdentity",
-    categoryLabel: "Segurança e Identidade",
+    name: "AWS Secrets Manager", // Já existe no Domínio 1, mas com foco em segurança aqui
+    category: "secretsManagement",
+    categoryLabel: "Gerenciamento de Segredos",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
-    description: "Serviço dedicado ao gerenciamento seguro de segredos, como senhas de banco de dados, chaves de API e outros tokens. Permite armazenar, recuperar e rotacionar segredos de forma programática e segura, ajudando a substituir credenciais embutidas no código por chamadas de API. Suporta rotação automática de credenciais para serviços como RDS, Redshift e DocumentDB.",
-    useCase: "Uma aplicação precisa se conectar a um banco de dados Amazon RDS. Em vez de armazenar o nome de usuário e senha do banco no código fonte ou em arquivos de configuração, essas credenciais são armazenadas como um segredo no AWS Secrets Manager. A aplicação, em tempo de execução, solicita essas credenciais ao Secrets Manager usando permissões IAM. O serviço também pode ser configurado para rotacionar automaticamente a senha do banco periodicamente."
+    description: "Serviço para gerenciar, recuperar e rotacionar segredos como senhas de banco de dados, chaves de API e outros tokens de forma segura. Ajuda a evitar o 'hardcoding' de credenciais em aplicações. Integra-se com o AWS KMS para criptografar os segredos armazenados e suporta a rotação automática de credenciais para serviços como RDS, Redshift e DocumentDB, melhorando a postura de segurança.",
+    useCase: "Uma aplicação necessita de credenciais para acessar um banco de dados Amazon RDS. Em vez de armazenar a senha no código ou em arquivos de configuração, ela é guardada no AWS Secrets Manager. A aplicação, em tempo de execução, recupera a senha do Secrets Manager. O serviço pode ser configurado para rotacionar automaticamente essa senha no banco de dados e no segredo armazenado, sem intervenção manual."
   },
   {
     id: 16,
-    name: "SSM Parameter Store (AWS Systems Manager)",
-    category: "developerTools",
-    categoryLabel: "Ferramentas de Desenvolvimento",
+    name: "SSM Parameter Store (AWS Systems Manager)", // Já existe no Domínio 1, mas com foco em segurança aqui
+    category: "secretsManagement",
+    categoryLabel: "Gerenciamento de Segredos",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
-    description: "Componente do AWS Systems Manager que oferece armazenamento seguro e hierárquico para dados de configuração e segredos. Você pode armazenar valores como senhas, strings de conexão de banco de dados, chaves de licença e outros dados de configuração como parâmetros. Suporta parâmetros padrão (texto plano) e seguros (criptografados com KMS). É uma opção mais simples para gerenciamento de configuração, enquanto o Secrets Manager é mais focado em rotação e gerenciamento de ciclo de vida de segredos.",
-    useCase: "Uma função Lambda precisa da URL de um endpoint de API externa e de uma chave de API para acessá-la. Essas informações podem ser armazenadas no SSM Parameter Store (a chave de API como um SecureString). A função Lambda, em tempo de execução, recupera esses parâmetros para configurar suas chamadas, evitando que fiquem expostos no código."
+    description: "Oferece armazenamento hierárquico e seguro para dados de configuração e segredos. Você pode armazenar strings de texto plano (Standard) ou dados criptografados (SecureString, usando AWS KMS). É útil para armazenar senhas, strings de conexão de banco de dados, chaves de licença e outros dados de configuração que suas aplicações podem referenciar. É uma boa opção para gerenciamento de configuração, com o Secrets Manager sendo mais especializado para segredos que exigem rotação e ciclo de vida complexo.",
+    useCase: "Uma função Lambda precisa de uma chave de API para se comunicar com um serviço externo. Essa chave pode ser armazenada como um parâmetro do tipo 'SecureString' no SSM Parameter Store. A função Lambda, com as devidas permissões IAM, recupera e descriptografa essa chave em tempo de execução, evitando que ela seja exposta no código da função."
   },
   {
     id: 17,
-    name: "Amazon CloudWatch",
+    name: "Amazon CloudWatch", // Já existe no Domínio 1, mas pode ter foco em logs de segurança aqui
     category: "monitoringObservability",
     categoryLabel: "Monitoramento e Observabilidade",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
-    description: "Serviço de monitoramento e observabilidade abrangente para recursos e aplicações na AWS e on-premises. Coleta métricas de performance, logs de aplicação e sistema, e eventos. Permite visualizar dados através de dashboards, definir alarmes para notificar sobre condições específicas (ex: alta utilização de CPU, erros em Lambda) e automatizar ações em resposta a esses alarmes. É fundamental para entender a saúde e o desempenho das suas soluções.",
+    description: "Serviço de monitoramento e observabilidade abrangente para recursos e aplicações na AWS e on-premises. Coleta métricas de performance, logs de aplicação e sistema, e eventos. Permite visualizar dados através de dashboards, definir alarmes para notificar sobre condições específicas (ex: alta utilização de CPU, erros em Lambda) e automatizar ações em resposta a esses alarmes. É fundamental para entender a saúde e o desempenho das suas soluções. No contexto de segurança, CloudWatch Logs pode ser usado para armazenar logs de auditoria e ser integrado com KMS para criptografia de logs.",
     useCase: "Para uma aplicação web rodando em EC2, o CloudWatch coleta métricas como utilização de CPU, I/O de disco e tráfego de rede. Os logs da aplicação são enviados para o CloudWatch Logs. Alarmes são configurados para notificar a equipe de operações se a CPU ultrapassar 80% por 5 minutos ou se um número excessivo de erros 5xx for detectado nos logs, permitindo uma resposta rápida a problemas."
   },
   {
     id: 18,
-    name: "AWS X-Ray",
+    name: "AWS X-Ray", // Já existe no Domínio 1
     category: "monitoringObservability",
     categoryLabel: "Monitoramento e Observabilidade",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
@@ -164,7 +164,7 @@ const awsServices = [
   },
   {
     id: 19,
-    name: "AWS Step Functions",
+    name: "AWS Step Functions", // Já existe no Domínio 1
     category: "orchestration",
     categoryLabel: "Orquestração de Workflows",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
@@ -173,7 +173,7 @@ const awsServices = [
   },
   {
     id: 20,
-    name: "Amazon DynamoDB",
+    name: "Amazon DynamoDB", // Já existe no Domínio 1
     category: "databaseNoSQL",
     categoryLabel: "Banco de Dados NoSQL",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
@@ -182,7 +182,7 @@ const awsServices = [
   },
   {
     id: 21,
-    name: "Amazon RDS (Relational Database Service)",
+    name: "Amazon RDS (Relational Database Service)", // Já existe no Domínio 1
     category: "databaseRelational",
     categoryLabel: "Banco de Dados Relacional",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
@@ -191,7 +191,7 @@ const awsServices = [
   },
   {
     id: 22,
-    name: "Amazon Aurora",
+    name: "Amazon Aurora", // Já existe no Domínio 1
     category: "databaseRelational",
     categoryLabel: "Banco de Dados Relacional",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
@@ -200,7 +200,7 @@ const awsServices = [
   },
   {
     id: 23,
-    name: "Amazon ElastiCache",
+    name: "Amazon ElastiCache", // Já existe no Domínio 1
     category: "caching",
     categoryLabel: "Caching em Memória",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
@@ -209,12 +209,139 @@ const awsServices = [
   },
   {
     id: 24,
-    name: "AWS SAM (Serverless Application Model)",
+    name: "AWS SAM (Serverless Application Model)", // Já existe no Domínio 1
     category: "developerTools",
     categoryLabel: "Ferramentas de Desenvolvimento",
     image: "/assets/img/AWS-Certified-Developer-Associate.png",
     description: "Framework de infraestrutura como código (IaC) de código aberto, construído sobre o AWS CloudFormation, especificamente projetado para simplificar o desenvolvimento e a implantação de aplicações serverless. Usa uma sintaxe YAML ou JSON concisa para definir funções Lambda, APIs do API Gateway, tabelas DynamoDB e outras fontes de eventos. A AWS SAM CLI permite construir, testar localmente (simulando Lambda e API Gateway) e implantar aplicações serverless de forma eficiente.",
     useCase: "Um desenvolvedor está construindo um backend serverless para uma aplicação, consistindo em várias funções Lambda e um API Gateway. Ele utiliza o AWS SAM para definir todos esses recursos em um arquivo `template.yaml`. Com a SAM CLI, ele pode testar as funções e a API localmente antes de usar o comando `sam deploy` para provisionar e atualizar a aplicação na nuvem AWS de forma automatizada."
+  },
+  // --- NOVOS ITENS DO DOMÍNIO 2 (SEGURANÇA) ---
+  {
+    id: 25,
+    name: "AWS IAM (Identity and Access Management)",
+    category: "securityIdentityCore",
+    categoryLabel: "IAM e Acesso Central",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Serviço fundamental da AWS para gerenciar o acesso aos seus recursos de forma segura. Permite criar e gerenciar usuários, grupos de usuários e 'roles' (funções) com permissões específicas. As permissões são definidas através de 'políticas' JSON, que determinam quais ações podem ser realizadas em quais recursos. O IAM é crucial para implementar o princípio do menor privilégio.",
+    useCase: "Uma empresa cria um usuário IAM para um novo desenvolvedor, adiciona-o a um grupo 'Desenvolvedores' e anexa uma política a esse grupo que concede permissões para criar e gerenciar funções Lambda e tabelas DynamoDB, mas não para excluir instâncias EC2 de produção, seguindo o princípio do menor privilégio."
+  },
+  {
+    id: 26,
+    name: "AWS STS (Security Token Service)",
+    category: "securityIdentityCore",
+    categoryLabel: "IAM e Acesso Central",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Serviço web global que permite solicitar credenciais temporárias com privilégios limitados para usuários IAM ou para usuários que você autentica (identidades federadas). Essas credenciais temporárias (compostas por um ID de chave de acesso, uma chave de acesso secreta e um token de sessão) são válidas por um período definido, aumentando a segurança ao evitar o uso de chaves de acesso de longa duração.",
+    useCase: "Uma aplicação rodando em uma instância EC2 precisa acessar um bucket S3 para ler arquivos. Em vez de armazenar credenciais IAM de longa duração na instância, uma IAM Role é associada à instância. A aplicação usa o SDK da AWS para 'assumir' essa role via STS, obtendo credenciais temporárias para acessar o S3 de forma segura e com as permissões definidas na role."
+  },
+  {
+    id: 27,
+    name: "Políticas de Acesso (Baseadas em Identidade vs. Recursos)",
+    category: "iamConcepts",
+    categoryLabel: "Conceitos do IAM",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Políticas IAM definem permissões. Políticas baseadas em identidade são anexadas a usuários, grupos ou roles IAM e especificam o que essa identidade pode fazer. Políticas baseadas em recursos são anexadas diretamente a recursos (ex: políticas de bucket S3, políticas de tópico SNS) e especificam quem (quais principais) tem acesso a esse recurso e sob quais condições. Ambas interagem para determinar o acesso final.",
+    useCase: "Para permitir que uma função Lambda leia de um bucket S3: uma política baseada em identidade pode ser anexada à role da Lambda permitindo `s3:GetObject`. Alternativamente ou complementarmente, uma política baseada em recurso (política de bucket) no S3 pode permitir explicitamente que a role da Lambda realize a ação `s3:GetObject` no bucket."
+  },
+  {
+    id: 28,
+    name: "Tokens e Protocolos de Federação (JWT, OAuth 2.0, OIDC)",
+    category: "authenticationAuthorization",
+    categoryLabel: "Autenticação e Autorização",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Tokens são credenciais digitais usadas para autenticação e autorização. JWT (JSON Web Tokens) são um padrão compacto para transmitir informações de forma segura. OAuth 2.0 é um framework de autorização que permite que aplicações de terceiros acessem recursos de um usuário sem expor suas credenciais. OIDC (OpenID Connect) é uma camada de identidade construída sobre o OAuth 2.0, permitindo que clientes verifiquem a identidade de um usuário final com base na autenticação realizada por um servidor de autorização.",
+    useCase: "Uma aplicação web permite 'Login com Google' usando OIDC. O Google (provedor de identidade) autentica o usuário e retorna um ID Token (JWT) para a aplicação. A aplicação valida o token e pode usá-lo para criar uma sessão local ou para obter credenciais AWS temporárias via Amazon Cognito Identity Pools para acessar recursos AWS."
+  },
+  {
+    id: 29,
+    name: "AWS Managed Policies vs. Customer Managed Policies",
+    category: "iamConcepts",
+    categoryLabel: "Conceitos do IAM",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "AWS Managed Policies são políticas de permissão predefinidas e mantidas pela AWS, cobrindo casos de uso comuns (ex: `AmazonS3ReadOnlyAccess`). Elas simplificam a atribuição de permissões. Customer Managed Policies são políticas criadas e gerenciadas por você na sua conta AWS, oferecendo controle granular e personalização total para atender requisitos específicos de segurança, seguindo o princípio do menor privilégio.",
+    useCase: "Para um administrador de banco de dados, a AWS Managed Policy `AmazonRDSFullAccess` pode ser um bom começo. No entanto, para um analista de dados que só precisa executar consultas `SELECT` em tabelas específicas, uma Customer Managed Policy seria criada para conceder apenas essas permissões mínimas necessárias, em vez de acesso total ao RDS."
+  },
+  {
+    id: 30,
+    name: "Acesso Programático e RBAC (Role-Based Access Control)",
+    category: "iamConcepts",
+    categoryLabel: "Conceitos do IAM",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Acesso Programático permite que aplicações, scripts e ferramentas de CLI interajam com serviços AWS usando chaves de acesso (ID e chave secreta) ou roles IAM. RBAC é um modelo de controle de acesso onde permissões são atribuídas a 'roles' (funções) e os usuários ou serviços assumem essas roles para obter as permissões necessárias para suas tarefas, em vez de terem permissões diretamente atribuídas. Isso simplifica o gerenciamento de permissões e promove o menor privilégio.",
+    useCase: "Em uma empresa, são definidas roles como 'DesenvolvedorAppX', 'AuditorDeSeguranca', 'AdministradorDeBancoDeDados'. Cada role tem um conjunto específico de permissões. Desenvolvedores assumem a role 'DesenvolvedorAppX' para implantar suas aplicações. Scripts de automação para auditoria assumem a role 'AuditorDeSeguranca' para ler logs e configurações, utilizando acesso programático com as credenciais temporárias da role."
+  },
+  {
+    id: 31,
+    name: "Criptografia em Repouso (Data at Rest)",
+    category: "encryption",
+    categoryLabel: "Criptografia",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Protege os dados armazenados fisicamente em mídias como discos (EBS), armazenamento de objetos (S3) ou bancos de dados (RDS, DynamoDB). Envolve a cifragem dos dados antes de serem gravados e a decifragem quando são lidos. Serviços AWS frequentemente se integram com o AWS KMS para gerenciar as chaves de criptografia usadas para proteger os dados em repouso, ajudando a prevenir o acesso não autorizado aos dados mesmo que o meio físico seja comprometido.",
+    useCase: "Ao criar um novo volume Amazon EBS para uma instância EC2, a opção de criptografia pode ser habilitada. O EBS então usa uma chave do AWS KMS para criptografar todos os dados gravados no volume. Se alguém obtivesse acesso físico ao disco subjacente, os dados estariam ilegíveis sem a chave de decriptografia."
+  },
+  {
+    id: 32,
+    name: "Criptografia em Trânsito (Data in Transit)",
+    category: "encryption",
+    categoryLabel: "Criptografia",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Protege os dados enquanto são transferidos entre sistemas, como entre sua aplicação e um serviço AWS, ou entre serviços AWS. Comumente implementada usando protocolos como TLS/SSL (HTTPS) para criptografar a comunicação pela rede, prevenindo que os dados sejam interceptados ou alterados por terceiros durante a transmissão. AWS Certificate Manager (ACM) pode ser usado para provisionar e gerenciar certificados SSL/TLS.",
+    useCase: "Quando um usuário acessa um site hospedado na AWS e envia informações de login, a conexão entre o navegador do usuário e o servidor web (ex: EC2 atrás de um Application Load Balancer) deve ser protegida usando HTTPS. O Application Load Balancer pode usar um certificado SSL/TLS do AWS Certificate Manager (ACM) para criptografar esses dados em trânsito."
+  },
+  {
+    id: 33,
+    name: "AWS CloudTrail (para Auditoria de Segurança)",
+    category: "auditingLogging",
+    categoryLabel: "Auditoria e Logs de Segurança",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Serviço que registra todas as chamadas de API feitas na sua conta AWS, incluindo chamadas feitas pelo console, SDKs, CLI e outros serviços AWS. Esses registros (logs do CloudTrail) fornecem um histórico detalhado de quem fez o quê, quando, de onde e em quais recursos. É essencial para auditoria de segurança, análise de conformidade, solução de problemas operacionais e rastreamento de atividades não autorizadas ou anômalas. Pode ser usado para auditar o uso de chaves KMS, por exemplo.",
+    useCase: "Uma empresa precisa monitorar quem está acessando ou modificando chaves criptográficas importantes no AWS KMS. Os logs do AWS CloudTrail são configurados para capturar todas as chamadas de API para o KMS (ex: `CreateKey`, `Encrypt`, `Decrypt`, `DisableKey`). Esses logs podem ser analisados para detectar atividades suspeitas ou para fins de auditoria de conformidade."
+  },
+  {
+    id: 34,
+    name: "AWS Certificate Manager (ACM)",
+    category: "encryption",
+    categoryLabel: "Criptografia",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Serviço que simplifica o provisionamento, gerenciamento e implantação de certificados SSL/TLS públicos e privados para uso com serviços AWS e seus recursos internos conectados. Automatiza a criação e a renovação de certificados, eliminando processos manuais propensos a erros. Integra-se facilmente com serviços como Elastic Load Balancing (ELB) e Amazon CloudFront para habilitar HTTPS.",
+    useCase: "Para proteger um site hospedado em instâncias EC2 atrás de um Application Load Balancer (ALB), um certificado SSL/TLS público é provisionado através do ACM para o domínio do site. O ACM gerencia a renovação automática desse certificado, e ele é associado ao listener HTTPS do ALB, garantindo que todo o tráfego entre os usuários e o site seja criptografado."
+  },
+  {
+    id: 35,
+    name: "AWS CloudHSM",
+    category: "encryptionKeys",
+    categoryLabel: "Criptografia e Chaves",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Serviço de nuvem que fornece Módulos de Segurança de Hardware (HSMs) dedicados, permitindo que você gere e use suas próprias chaves de criptografia na nuvem AWS com validação FIPS 140-2 Nível 3. Oferece controle total sobre as chaves e operações criptográficas, sendo ideal para organizações com requisitos rigorosos de conformidade ou que precisam proteger chaves de alta sensibilidade. É mais complexo de gerenciar que o AWS KMS.",
+    useCase: "Uma instituição financeira precisa armazenar e gerenciar chaves criptográficas para suas operações de pagamento em um ambiente que atenda a regulamentações estritas de segurança e que exija que eles tenham controle exclusivo das chaves em um HSM dedicado. Eles utilizam o AWS CloudHSM para criar um cluster de HSMs onde podem gerar, armazenar e usar suas chaves com alto nível de segurança e conformidade."
+  },
+  {
+    id: 36,
+    name: "Classificação de Dados e Sanitização (PII, PHI)",
+    category: "dataProtection",
+    categoryLabel: "Proteção de Dados Sensíveis",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Classificação de dados envolve identificar e categorizar informações com base em sua sensibilidade, como Informações Pessoais Identificáveis (PII) ou Informações de Saúde Protegidas (PHI). Sanitização de dados é o processo de modificar ou remover dados sensíveis de um conjunto de dados antes de seu uso ou armazenamento, para proteger a privacidade e reduzir riscos. Técnicas incluem mascaramento, tokenização, pseudonimização ou remoção. Ambos são cruciais para conformidade com regulamentações como GDPR e HIPAA.",
+    useCase: "Uma empresa de saúde coleta dados de pacientes (PHI). Antes de usar esses dados para análise ou em ambientes de teste, eles classificam quais campos contêm PHI (ex: nome, CPF, diagnóstico). Em seguida, aplicam técnicas de sanitização, como mascarar os últimos dígitos do CPF e substituir nomes por IDs anônimos, para proteger a privacidade dos pacientes enquanto ainda permitem que os dados sejam úteis para os propósitos definidos."
+  },
+  {
+    id: 37,
+    name: "Integração KMS com Secrets Manager para Criptografia de Segredos",
+    category: "secretsManagement",
+    categoryLabel: "Gerenciamento de Segredos",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "O AWS Secrets Manager pode ser configurado para usar uma chave gerenciada pelo cliente (CMK) do AWS KMS para fornecer uma camada adicional de criptografia para os segredos que ele armazena. Por padrão, o Secrets Manager criptografa segredos com uma chave gerenciada pela AWS. Usar uma CMK do KMS dá a você mais controle sobre a chave de criptografia, incluindo sua política de acesso e rotação, e permite auditar seu uso via CloudTrail. Isso é importante para atender a requisitos de conformidade e segurança mais rigorosos.",
+    useCase: "Uma organização precisa armazenar credenciais de banco de dados altamente sensíveis no AWS Secrets Manager. Para ter controle total sobre a criptografia desses segredos, eles configuram o Secrets Manager para usar uma Customer Managed Key (CMK) específica do AWS KMS. As políticas dessa CMK são definidas para restringir quem pode usar a chave para descriptografar os segredos, adicionando uma camada extra de proteção e controle."
+  },
+  {
+    id: 38,
+    name: "Criptografia de Logs do CloudWatch com KMS",
+    category: "auditingLogging",
+    categoryLabel: "Auditoria e Logs de Segurança",
+    image: "/assets/img/AWS-Certified-Developer-Associate.png", // Placeholder
+    description: "Os logs armazenados no Amazon CloudWatch Logs podem ser criptografados em repouso para proteger informações sensíveis que possam estar contidas neles. Essa criptografia é realizada usando chaves do AWS Key Management Service (KMS). Você pode usar uma chave gerenciada pela AWS para CloudWatch Logs ou especificar uma chave gerenciada pelo cliente (CMK) do KMS. Isso garante que os dados de log sejam protegidos e ajuda a atender a requisitos de conformidade.",
+    useCase: "Uma aplicação registra informações detalhadas sobre transações financeiras nos logs do CloudWatch. Para proteger esses dados sensíveis, o grupo de logs do CloudWatch é configurado para usar uma chave CMK do AWS KMS para criptografia. Isso garante que, mesmo que alguém obtenha acesso não autorizado aos arquivos de log, os dados estarão criptografados e ilegíveis sem as permissões adequadas para usar a chave KMS."
   }
 ];
 
